@@ -75,6 +75,6 @@ VARIABLE2_CID=$(docker create <image>)
 VARIABLE3_CID=$(docker create --link $VARIABLE1_CID:<name1> --link $VARIABLE1_CID:<name2> <image>
 
 docker start VARIABLE2_CID
-docker start VARIABLE1_CID```
-
-
+docker start VARIABLE1_CID
+```
+asdf
