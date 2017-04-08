@@ -68,7 +68,8 @@ See all the containers(including those in the exited state):
 
 create new instance using variables(needs to be started in reverse order of their dependency chain):
 
-```VARIABLE1_CID=$(docker run -d <image>)
+```
+VARIABLE1_CID=$(docker run -d <image>)
 VARIABLE2_CID=$(docker create <image>)
 
 VARIABLE3_CID=$(docker create --link $VARIABLE1_CID:<name1> --link $VARIABLE1_CID:<name2> <image>
