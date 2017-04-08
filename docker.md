@@ -1,4 +1,4 @@
 
 
-# run container sh
-```docker exec -it <container-id> 'sh'```
+run container sh
+`docker exec -it <container-id> 'sh'`
