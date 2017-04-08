@@ -22,5 +22,5 @@ stop container:
 
 creationg a PID namespace:
 
-`docker run -d --name namespaceA <image> /bin/sh -c "sleep 30000"
-docker run -d --name namespaceB <image> /bin/sh -c "nc -l -p 0.0.0.0:80"`
+`docker run -d --name namespaceA <image> /bin/sh -c "sleep 30000"`
+`docker run -d --name namespaceB <image> /bin/sh -c "nc -l -p 0.0.0.0:80"``
