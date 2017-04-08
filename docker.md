@@ -35,3 +35,23 @@ examine (docker exec command runs additional process in a running container):
 shows list all processes running on the computer(optionaly create container without their own PID namespace - docker create):
 
 `docker run --pid host <image> ps`
+
+rename the container with the docker rename command:
+
+`docker rename <container-name> <new-container-name>`
+
+use container-id with stop or exec command:
+
+`docker exec <container-id> ps`
+
+`docker stop <container-id> ps`
+
+create container without starting it (in a stopped state):
+
+`docker create <container-name>`
+
+assing container id to a shell variable and print it:
+
+`CID=$(docker create <image-name>) | echo $CID`
+
+
