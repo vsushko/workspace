@@ -20,8 +20,15 @@ stop container:
 
 `docker stop <container-name>`
 
-creationg a PID namespace:
+creating a PID namespace:
 
 `docker run -d --name namespaceA <image> /bin/sh -c "sleep 30000"`
 
 `docker run -d --name namespaceB <image> /bin/sh -c "nc -l -p 0.0.0.0:80"`
+
+examine:
+
+`docker exec namespaceA ps`
+
+`docker exec namespaceB ps`
+
