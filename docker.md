@@ -26,9 +26,12 @@ creating a PID namespace:
 
 `docker run -d --name namespaceB <image> /bin/sh -c "nc -l -p 0.0.0.0:80"`
 
-examine:
+examine (docker exec command runs additional process in a running container):
 
 `docker exec namespaceA ps`
 
 `docker exec namespaceB ps`
 
+shows list all processes running on the computer(optionaly create container without their own PID namespace - docker create):
+
+`docker run --pid host <image> ps`
