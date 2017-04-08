@@ -12,6 +12,14 @@ restart containers:
 
 `docker restart <container-name>`
 
+stop all containers:
+
+`docker stop $(docker ps -a -q)`
+
+remove all containers:
+
+`docker rm $(docker ps -a -q)`
+
 examine logs container (display the logs and then continue watching -f or --follow):
 
 `docker logs <container-name>`
@@ -19,6 +27,10 @@ examine logs container (display the logs and then continue watching -f or --foll
 stop container:
 
 `docker stop <container-name>`
+
+download, install and start container running application:
+
+`docker run --detach --name <container-name> <image>`
 
 creating a PID namespace:
 
