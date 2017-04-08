@@ -54,4 +54,26 @@ assing container id to a shell variable and print it:
 
 `CID=$(docker create <image-name>) | echo $CID`
 
+write the ID of a new container to a known file:
+
+`docker create --cidfile /tmp/<file-name>.cid <image-name>`
+
+get the trancated ID of the last created container (--no-trunc for full container ID):
+
+`CID=$(docker ps --latest --quiet)`
+
+See all the containers(including those in the exited state):
+
+`docker ps -a`
+
+create new instance using variables(needs to be started in reverse order of their dependency chain):
+
+`VARIABLE1_CID=$(docker run -d <image>)
+VARIABLE2_CID=$(docker create <image>)
+
+VARIABLE3_CID=$(docker create --link $VARIABLE1_CID:<name1> --link $VARIABLE1_CID:<name2> <image>
+
+docker start VARIABLE2_CID
+docker start VARIABLE1_CID` 
+
 
