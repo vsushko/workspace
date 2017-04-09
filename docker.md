@@ -100,3 +100,8 @@ print true if the container named <name> is running and false otherwise:
 execute the env command inside the container(the --env flag is used to inject any environment variable):
 
 `docker run -env MY_ENVIRONMENT_VAR="this is a test" <repository>:<tag> env`
+
+inject the value for a variable:
+
+`docker create --env VARIABLE=<variable-value> repository:tag`
+
