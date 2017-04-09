@@ -89,4 +89,14 @@ VARIABLE3_CID=$(docker create --link $VARIABLE1_CID:<name1> --link $VARIABLE1_CI
 docker start VARIABLE2_CID
 docker start VARIABLE1_CID
 ```
+start container in read-only state:
 
+`docker run -d --name <name> --read-only <image>`
+
+print true if the container named <name> is running and false otherwise:
+
+`docker inspect --format "{{.State.Running}}" <name>`
+
+execute the env command inside the container(the --env flag is used to inject any environment variable):
+
+`docker run -env MY_ENVIRONMENT_VAR="this is a test" <repository>:<tag> env`
