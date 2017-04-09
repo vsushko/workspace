@@ -129,4 +129,25 @@ quick cleanup command:
 
 `docker rm -vf $(docker ps -a -q)`
 
+download/remove another image in alternative registry (for example quay.io/dockerinaction/ch3_hello_registry:latest):
+
+`docker pull [REGISTRYHOST/][USERNAME/]NAME[:TAG]`
+`docker rmi [REGISTRYHOST/][USERNAME/]NAME[:TAG]`
+
+remove image:
+
+`docker rmi <repository>`
+
+save image to file (with preparation):
+
+`docker pull <repository:tag>`
+`docker save -o myfile.tar <repository:tag>`
+
+load image from a file:
+
+`docker load -i myfile.tar`
+
+build and install a Docker image using the Dockerfile (-t provide place to install image):
+
+`docker build -t [REGISTRYHOST/][USERNAME/]NAME[:TAG] <docker-file-name>`
 
