@@ -105,3 +105,28 @@ inject the value for a variable:
 
 `docker create --env VARIABLE=<variable-value> repository:tag`
 
+building a container that alwas restarts and simply prints the time:
+
+`docker run -d --name backoff-detector --restart always <repository> date`
+
+print processes which are running inside a container:
+
+`docker top <container-name>`
+
+get PIDs list from container's PID namespace:
+
+`docker exec <container-name> ps`
+
+kill program inside the container:
+
+`docker exec <container-name> kill <PID>`
+
+remove container (-f if state is running or use docker kill with docker ps <container-name>):
+
+`docker rm <container-name>`
+
+quick cleanup command:
+
+`docker rm -vf $(docker ps -a -q)`
+
+
