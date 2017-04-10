@@ -155,3 +155,8 @@ show a list which includes every installed intermediate image or layer:
 
 `docker images -a`
 
+start an Apache HTTP server where your new directory is bind mounted to the server's document root:
+
+`docker run -d --name bmweb -v ~/example-docs:/usr/local/apache2/htdocs -p 80:80 httpd:latest`
+
+
