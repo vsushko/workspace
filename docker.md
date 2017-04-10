@@ -151,3 +151,7 @@ build and install a Docker image using the Dockerfile (-t provide place to insta
 
 `docker build -t [REGISTRYHOST/][USERNAME/]NAME[:TAG] <docker-file-name>`
 
+show a list which includes every installed intermediate image or layer:
+
+`docker images -a`
+
