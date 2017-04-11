@@ -159,4 +159,20 @@ start an Apache HTTP server where your new directory is bind mounted to the serv
 
 `docker run -d --name bmweb -v ~/example-docs:/usr/local/apache2/htdocs -p 80:80 httpd:latest`
 
+create bind volume:
+
+create managed volume:
+
+create host-dependent sharing:
+
+`mkdir ~/foler-name`
+
+bind mount the location into a writing container:
+
+`docker run --name <container-name> -d -v ~/folder-name:/data <repo>`
+
+bind mount the same location into a container for reading (--rm is not required):
+
+`docker run --rm -v ~/folder-name:/reader-data <repo> head /reader-data/file-name`
+
 
