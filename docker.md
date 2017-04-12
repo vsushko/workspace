@@ -175,4 +175,8 @@ bind mount the same location into a container for reading (--rm is not required)
 
 `docker run --rm -v ~/folder-name:/reader-data <repo> head /reader-data/file-name`
 
+remove all stopped containers and their volumes:
+
+`docker rm -v $(docker ps -ap)`
+
 
