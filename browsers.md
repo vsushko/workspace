@@ -1,4 +1,4 @@
-firefox:
+Firefox:
 
 RESTClient:
 
