@@ -179,4 +179,11 @@ remove all stopped containers and their volumes:
 
 `docker rm -v $(docker ps -ap)`
 
+get a list of available users in a image with the following command:
+
+`docker run --rm <repo> awk -F: '$0=$1' /etc/passwd`
+
+display the history of images:
+
+`docker history <repo>`
 
