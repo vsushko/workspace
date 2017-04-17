@@ -18,3 +18,8 @@ Trigger the upgrade process:
 
 ```dnf system-upgrade reboot```
 
+IDE:
+
+`https://plugins.jetbrains.com/plugin/7973-sonarlint`
+
+`http://www.sonarlint.org/index.html`
