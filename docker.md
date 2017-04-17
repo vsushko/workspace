@@ -197,5 +197,7 @@ RUN apt-get update && apt-get install -y git
 ENTRYPOINT ["git"]
 ```
 `docker build --tag ubuntu-git:auto -f ./DockerFile .`
+
 test:
+
 `docker run --rm ubuntu-git:auto version`
