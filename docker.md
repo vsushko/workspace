@@ -187,3 +187,15 @@ display the history of images:
 
 `docker history <repo>`
 
+create image from DockerFile:
+
+DockerFile:
+
+```FROM ubuntu:latest
+MAINTAINER "my@mail.com"
+RUN apt-get update && apt-get install -y git
+ENTRYPOINT ["git"]
+```
+`docker build --tag ubuntu-git:auto -f ./DockerFile .`
+test:
+`docker run --rm ubuntu-git:auto version`
