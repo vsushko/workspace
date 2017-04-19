@@ -223,4 +223,27 @@ verify by searching for username and repository:
 
 `docker search vsushko/hell-dockerfile`
 
-  
+work with github (with existence repository in github named hello-docker):
+
+create HelloWorld.df: 
+
+```FROM busybox:latest
+CMD echo Hello World```
+
+create a local git repository, add the docker file, commit changes and push changed to github repository:
+
+```git init
+git config --global user.email "gmail.com"
+git config --global user.name "Your Name"
+git remote add origin username https://github.com/<your username>/hello-docker.git```
+
+bind repo at docker hub to github repo and then complete with these commands:
+
+```git add Dockerfile
+git commit -m "first commit"
+git push -u origin master```
+
+check the work:
+
+`docker search vsushko/hell-dockerfile`
+
