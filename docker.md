@@ -201,3 +201,26 @@ ENTRYPOINT ["git"]
 test:
 
 `docker run --rm ubuntu-git:auto version`
+
+create simple image (HelloWorld.df):
+
+```FROM busybox:latest
+CMD echo Hello World```
+
+build new image:
+
+`docker build -t vsushko/hello-dockerfile -f HelloWorld.df .`
+
+get authenticated:
+
+`docker login`
+
+push repository to the hosted registry:
+
+`docker push vsushko/hello-dockerfile`
+
+verify by searching for username and repository:
+
+`docker search vsushko/hell-dockerfile`
+
+  
