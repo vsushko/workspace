@@ -205,7 +205,8 @@ test:
 create simple image (HelloWorld.df):
 
 ```FROM busybox:latest
-CMD echo Hello World```
+CMD echo Hello World
+```
 
 build new image:
 
@@ -228,20 +229,23 @@ work with github (with existence repository in github named hello-docker):
 create HelloWorld.df: 
 
 ```FROM busybox:latest
-CMD echo Hello World```
+CMD echo Hello World
+```
 
 create a local git repository, add the docker file, commit changes and push changed to github repository:
 
 ```git init
 git config --global user.email "gmail.com"
 git config --global user.name "Your Name"
-git remote add origin username https://github.com/<your username>/hello-docker.git```
+git remote add origin username https://github.com/<your username>/hello-docker.git
+```
 
 bind repo at docker hub to github repo and then complete with these commands:
 
 ```git add Dockerfile
 git commit -m "first commit"
-git push -u origin master```
+git push -u origin master
+```
 
 check the work:
 
