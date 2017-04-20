@@ -247,3 +247,6 @@ check the work:
 
 `docker search vsushko/hell-dockerfile`
 
+verify image is discoverable with label filter (-f means that filter output based on conditions provided):
+
+`docker images -f "label=dia_excercise=ch9_registry_bound"`
