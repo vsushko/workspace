@@ -39,6 +39,9 @@ curl -L https://github.com/docker/machine/releases/download/v0.10.0/docker-machi
   ```
 virtualbox for docker-machine:
 
+```
 https://docs.docker.com/machine/drivers/virtualbox
 https://www.if-not-true-then-false.com/2010/install-virtualbox-with-yum-on-fedora-centos-red-hat-rhel/
-  
+https://www.virtualbox.org/wiki/Downloads  
+https://www.youtube.com/watch?v=xiqZYvu7gdE
+```
