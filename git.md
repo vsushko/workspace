@@ -5,3 +5,7 @@ hide untracked filed:
 ```
 git config --global status.showUntrackedFiles no
 ```
+list remote branches:
+```
+git remote show origin
+```
