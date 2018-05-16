@@ -9,3 +9,7 @@ list remote branches:
 ```
 git remote show origin
 ```
+comparing two branches:
+```
+git diff dev..master
+```
