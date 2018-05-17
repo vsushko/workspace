@@ -5,10 +5,11 @@ how to run postgres:
 ```
 sudo su - postgres
 ```
-create database:
-```
-https://www.postgresql.org/docs/9.0/static/sql-createdatabase.html
-```
+create database (https://www.postgresql.org/docs/9.0/static/sql-createdatabase.html):
 ```
 create database sampledb owner username
+```
+check if a database exists:
+```
+SELECT 1 from pg_database WHERE datname='abc';
 ```
