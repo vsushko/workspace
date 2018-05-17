@@ -9,3 +9,6 @@ create database:
 ```
 https://www.postgresql.org/docs/9.0/static/sql-createdatabase.html
 ```
+```
+create database sampledb owner username
+```
