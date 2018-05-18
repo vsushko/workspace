@@ -24,3 +24,7 @@ check for existing in java keystore
 ```
 keytool -keystore "$JAVA_HOME/jre/lib/security/cacerts" -storepass changeit -list | grep cert-to-der
 ```
+delete an existing certificate:
+```
+keytool -delete -alias cert-to-der -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass changeit -file cas-loc.der
+```
