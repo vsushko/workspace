@@ -31,3 +31,7 @@ shows the output of top, restricted by grep to show only lines containing the ch
 ```
 top -b -n1 | grep fb
 ```
+run firebird command line:
+```
+isql-fb
+```
