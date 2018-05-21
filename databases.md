@@ -27,3 +27,7 @@ sets permissions for specific users and to apply them recursively to all the sub
 ```
 setfacl -R -m u:username:rwx myfolder
 ```
+shows the output of top, restricted by grep to show only lines containing the characters fb:
+```
+top -b -n1 | grep fb
+```
