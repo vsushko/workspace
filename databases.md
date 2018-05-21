@@ -1,6 +1,6 @@
-Postgress:
-https://askubuntu.com/questions/50621/cannot-connect-to-postgresql-on-port-5432
-https://stackoverflow.com/questions/10861260/how-to-create-user-for-a-db-in-postgresql
+Postgress:<br>
+(https://askubuntu.com/questions/50621/cannot-connect-to-postgresql-on-port-5432)
+(https://stackoverflow.com/questions/10861260/how-to-create-user-for-a-db-in-postgresql)
 
 how to run postgres:
 ```
@@ -14,7 +14,7 @@ check if a database exists:
 ```
 SELECT 1 from pg_database WHERE datname='abc';
 ```
-FireBird:
+FireBird:<br>
 install FireBird:
 ```
 sudo apt-get install firebird2.5-superclassic
