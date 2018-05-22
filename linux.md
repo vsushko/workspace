@@ -14,5 +14,5 @@ sudo lsof -i | grep 8080
 ```
 reports a snapshot of the current processes on the system using BSD syntax:
 ```
-ps aux | grep 11389
+ps aux | grep 11111
 ```
