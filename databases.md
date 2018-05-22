@@ -1,4 +1,14 @@
 Postgress:<br>
+
+export table data via pgAdmin:
+```
+1. Right-click on your table and pick option Backup..
+2. On File Options, set Filepath/Filename and pick PLAIN for Format
+3. Ignore Dump Options #1 tab
+4. In Dump Options #2 tab, check USE INSERT COMMANDS
+5. Hit Backup button
+```
+
 (https://askubuntu.com/questions/50621/cannot-connect-to-postgresql-on-port-5432)
 (https://stackoverflow.com/questions/10861260/how-to-create-user-for-a-db-in-postgresql)
 
