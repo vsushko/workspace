@@ -13,3 +13,15 @@ comparing two branches:
 ```
 git diff dev..master
 ```
+will get you back 1 commit:
+```
+git reset --hard HEAD~1
+```
+to undo a merge that was already pushed:
+```
+git revert -m 1 commit_hash
+```
+assuming your local master was not ahead of origin/master, you should be able to do:
+```
+git reset --hard origin/master
+```
