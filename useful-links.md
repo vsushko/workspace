@@ -45,3 +45,7 @@ https://www.if-not-true-then-false.com/2010/install-virtualbox-with-yum-on-fedor
 https://www.virtualbox.org/wiki/Downloads  
 https://www.youtube.com/watch?v=xiqZYvu7gdE
 ```
+java decompiler:
+http://jd.benow.ca/
+
+
