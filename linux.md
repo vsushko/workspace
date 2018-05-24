@@ -16,3 +16,14 @@ reports a snapshot of the current processes on the system using BSD syntax:
 ```
 ps aux | grep 11111
 ```
+shows files with specific text:
+
+```
+grep -Ril "text-to-find-here" /
+
+1. i stands for ignore case (optional in your case)
+2. stands for recursive
+3. stands for "show the file name, not the result itself"
+4. / stands for starting at the root of your machine
+```
+
