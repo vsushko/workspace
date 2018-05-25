@@ -26,4 +26,7 @@ grep -Ril "text-to-find-here" /
 3. stands for "show the file name, not the result itself"
 4. / stands for starting at the root of your machine
 ```
-
+tool to inspect classpath:
+```
+jdeps -cp my.jar com.test.MyMainClass
+```
