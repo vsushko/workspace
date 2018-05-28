@@ -1,3 +1,7 @@
+quickstart:
+```
+mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.3
+```
 add dependency to local repo:
 ```
 mvn dependency:get -U -DrepoUrl=https://comany.repo.com/artifactory/libs-snapshot -Dartifact=ru.comany:some-library:LATEST:jar
