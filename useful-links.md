@@ -49,4 +49,8 @@ java decompiler:
 ```
 (http://jd.benow.ca/)
 ```
+audio recorder:
+```
+http://ubuntuhandbook.org/index.php/2016/02/install-audio-recorder-in-ubuntu-16-04-15-10/
+```
 
