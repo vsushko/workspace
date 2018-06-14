@@ -30,3 +30,7 @@ assuming your local master was not ahead of origin/master, you should be able to
 ```
 git reset --hard origin/master
 ```
+drops concrete record with changes from the stash list:
+```
+git stash drop stash@{0}
+```
