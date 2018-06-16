@@ -6,3 +6,7 @@ install postgress:
 ```
 https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb
 ```
+install maven:
+```
+brew install maven
+```
