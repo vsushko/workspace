@@ -27,6 +27,11 @@ check if a database exists:
 ```
 SELECT 1 from pg_database WHERE datname='abc';
 ```
+selects only last or first rows:
+```
+SELECT * FROM `table_name` order by id desc limit 1;
+SELECT * FROM `table_name` order by id asc limit 1;
+```
 FireBird:<br>
 install FireBird:
 ```
