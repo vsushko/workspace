@@ -30,3 +30,7 @@ tool to inspect classpath:
 ```
 jdeps -cp my.jar com.test.MyMainClass
 ```
+How to SSH on a port other than 22:
+```
+https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22
+```
