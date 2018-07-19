@@ -16,6 +16,10 @@ reports a snapshot of the current processes on the system using BSD syntax:
 ```
 ps aux | grep 11111
 ```
+kill the process by pid (Similarly ‘kill -9 PID‘ is similar to ‘kill -SIGKILL PID‘ and vice-versa):
+```
+kill -9 11111
+```
 shows files with specific text:
 
 ```
