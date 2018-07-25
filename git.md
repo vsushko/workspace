@@ -18,6 +18,10 @@ comparing two branches:
 ```
 git diff dev..master
 ```
+or:
+```
+git diff --stat origin/master
+```
 will get you back 1 commit:
 ```
 git reset --hard HEAD~1
