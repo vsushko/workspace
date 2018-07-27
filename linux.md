@@ -22,7 +22,7 @@ ps aux | grep 11111
 ```
 to see every process on the system using standard syntax:
 ```
- ps -ef | grep kafka
+ps -ef | grep kafka
 ```
 kill the process by pid (Similarly ‘kill -9 PID‘ is similar to ‘kill -SIGKILL PID‘ and vice-versa):
 ```
