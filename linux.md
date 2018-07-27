@@ -8,6 +8,10 @@ shows bash history:
 ```
 ~/.bash_history
 ```
+identify identify processes using files or sockets (fuser):
+``` 
+sudo fuser -k 2181/tcp
+```
  shows files which opened by which process:
 ```
 sudo lsof -i | grep 8080
