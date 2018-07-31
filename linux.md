@@ -1,5 +1,7 @@
-useful commands:
-
+prints existing ssh keys:
+```
+ls -al ~/.ssh
+```
 zip all files in directory:
 ```
 zip -r myarch.zip mydir
