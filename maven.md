@@ -15,3 +15,15 @@ tests only particularMethod:
 ```
 mvn clean test -Dtest=your.package.TestClassName#particularMethod
 ```
+with specifying file, groupId, artifactId, version and packaging:
+```
+mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+```
+via pom:
+```
+mvn install:install-file -Dfile=<path-to-file> -DpomFile=<path-to-pomfile>
+```
+using jar only:
+```
+mvn install:install-file -Dfile=<path-to-file>
+```
