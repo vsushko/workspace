@@ -38,3 +38,9 @@ drops concrete record with changes from the stash list:
 ```
 git stash drop stash@{0}
 ```
+install latest git version on ubuntu:
+```
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git
+```
