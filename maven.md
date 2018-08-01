@@ -2,7 +2,7 @@ generate quickstart:
 ```
 mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.3
 ```
-calls clean install with force update of snapshot dependencies flag:
+calls clean install with force update of dependencies:
 ```
 mvn clean install -U
 ```
