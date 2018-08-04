@@ -15,3 +15,7 @@ import all other
 
 import static *
 ```
+for bytecode and constant pool inspection of any class file:
+```
+ javap -c -v ClassName
+```
