@@ -22,6 +22,10 @@ reports a snapshot of the current processes on the system using BSD syntax:
 ```
 ps aux | grep 11111
 ```
+selects all processes and filters by jsvc:
+```
+ps -AH | grep jsvc
+```
 to see every process on the system using standard syntax:
 ```
 ps -ef | grep kafka
