@@ -51,3 +51,7 @@ How to SSH on a port other than 22:
 ```
 https://askubuntu.com/questions/264046/how-to-ssh-on-a-port-other-than-22
 ```
+post curl:
+```
+curl - k--header "Content-Type: application/json"--request POST--data '{"some":"json"}' https: //localhost:8080/url
+```
