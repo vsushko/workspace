@@ -35,7 +35,7 @@ sets the starting heap size:
 ```
 -Xms150m
 ```
-sets the size of the permgen:
+sets the size of the permgen (is used to keep informations for loaded classes and few other advanced features like String Pool):
 ```
 -XX:MaxPermSize=256M
 ```
