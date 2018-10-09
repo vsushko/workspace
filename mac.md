@@ -14,3 +14,7 @@ where is jdk located:
 ```
 /Library/Java/JavaVirtualMachines/
 ```
+or
+```
+/usr/libexec/java_home -v
+```
