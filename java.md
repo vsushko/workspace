@@ -19,3 +19,7 @@ for bytecode and constant pool inspection of any class file:
 ```
  javap -c -v ClassName
 ```
+memory analyzer mat:
+```
+https://www.eclipse.org/mat/
+```
