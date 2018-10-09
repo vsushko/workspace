@@ -23,3 +23,7 @@ memory analyzer mat:
 ```
 https://www.eclipse.org/mat/
 ```
+prints to the console when a gc takes place:
+```
+-verbose:gc
+```
