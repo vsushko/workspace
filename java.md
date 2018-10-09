@@ -35,6 +35,10 @@ sets the starting heap size:
 ```
 -Xms150m
 ```
+sets the size of the permgen:
+```
+-XX:MaxPermSize=256M
+```
 sets the size of the youn generation:
 ```
 -Xmn256m
