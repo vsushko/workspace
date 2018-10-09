@@ -27,7 +27,15 @@ prints to the console when a gc takes place:
 ```
 -verbose:gc
 ```
-set the size of the youn generation:
+sets the maximum heap size:
+```
+-Xmx512m
+```
+sets the starting heap size:
+```
+-Xms150m
+```
+sets the size of the youn generation:
 ```
 -Xmn256m
 ```
