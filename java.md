@@ -27,3 +27,28 @@ prints to the console when a gc takes place:
 ```
 -verbose:gc
 ```
+set the size of the youn generation:
+```
+-Xmn256m
+```
+creates a heap dump file when we get out of memory error ever:
+```
+-XX:HeapDumpOnOutOfMemory
+```
+type of collector
+* serial - uses single thread
+```
+-XX:+UserSerialGC
+```
+* Parallel - when we have multiple threads app for instance
+```
+-XX:+UserParallelGC
+```
+* Mostly Concurrent
+```
+-XX:+UseConcMarkSweepGC or -XX:+UseG1GC
+```
+to find out which is your default
+```
+-XX:+PrintCommandLineFlags
+```
