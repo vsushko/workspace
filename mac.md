@@ -10,3 +10,7 @@ install maven:
 ```
 brew install maven
 ```
+where is jdk located:
+```
+/Library/Java/JavaVirtualMachines/
+```
