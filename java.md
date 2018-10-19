@@ -39,7 +39,7 @@ sets the size of the permgen (is used to keep informations for loaded classes an
 ```
 -XX:MaxPermSize=256M
 ```
-sets the size of the youn generation:
+sets the size of the young generation:
 ```
 -Xmn256m
 ```
