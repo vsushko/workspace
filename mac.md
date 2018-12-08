@@ -18,3 +18,8 @@ or
 ```
 /usr/libexec/java_home -v
 ```
+
+instal the latests version of java 8 via cask from third party repo:
+```
+brew cask install java8
+```
