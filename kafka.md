@@ -61,3 +61,54 @@ will dump out messages to standard output from the beginning:
 ```
 kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning
 ```
+with specifying group:
+```
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-first-application
+```
+then ex run several:
+```
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-first-application
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-first-application
+```
+run and do input:
+```
+kafka-console-producer.sh --broker-list7.0.0.1:9092 --topic first_topic
+```
+and this command will dump out messages to standard output from the beginning but it will be another group:
+```
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-second-application --from-beginning
+```
+### kafka-consumer-groups
+will print out consuber gropus list:
+```
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
+```
+describes which app or which consumer is consuming onto your topic with specified consumer group:
+```
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-second-application
+```
+resetting offsets:
+```
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --to-earliest --execute --topic first_topic
+```
+after running the command:
+```
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-first-application
+```
+kafka will read all messages from first_topic, and after that:
+```
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --describe --group my-first-application
+```
+we can check out offsets, then we can shift the offset:
+```
+kafka-consumer-groups.sh --bootstrap-server localhost:9092 --group my-first-application --reset-offsets --shift-by -4 --execute --topic first_topic
+```
+producer with keys:
+```
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --property parse.key=true --property key.separator=,
+```
+consumer with keys:
+```
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
+
+```
