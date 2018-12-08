@@ -1,3 +1,4 @@
+ ## Common
 starts zookeeper:
 ```
 zookeeper-server-start.sh ../config/zookeeper.prerties 
@@ -21,7 +22,7 @@ ls data/kafka/
 vim config/server.properties
 log.dirs=/Users/myuser/apps/kafka_2.12-2.1.0/data/kafka
 ```
- ### kafka cli
+ ## kafka cli
 
 creates kafka topic with name "first_topic" (one running broker and zookeeper is required):
 ```
