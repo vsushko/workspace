@@ -55,3 +55,10 @@ post curl:
 ```
 curl - k--header "Content-Type: application/json"--request POST--data '{"some":"json"}' https: //localhost:8080/url
 ```
+ll:
+```
+vim ~/.bash_profile
+alias ll='ls -lGaf'
+```
+
+
