@@ -23,3 +23,8 @@ instal the latests version of java 8 via cask from third party repo:
 ```
 brew cask install java8
 ```
+
+alias for ll:
+```
+alias ll='ls -lG'
+```
