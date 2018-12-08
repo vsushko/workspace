@@ -41,7 +41,23 @@ deletes the topic (depends on delete.topic.enable, mark to delete when is no set
 kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic second_topic --delete
 ```
 ### kafka-console-producer
-creates the producer
+creates the producer:
 ```
 kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic
+```
+creates the producer with specified acks:
+```
+kafka-console-producer.sh --broker-list 127.01:9092 --topic first_topic --producer-property acks=all
+```
+### kafka-console-consumer
+```
+kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic first_topic
+```
+will dump out messages to standard output:
+```
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic
+```
+will dump out messages to standard output from the beginning:
+```
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning
 ```
