@@ -14,6 +14,10 @@ list remote branches:
 ```
 git remote show origin
 ```
+add local repo
+```
+git remote add <NAME> <PATH>
+```
 comparing two branches:
 ```
 git diff dev..master
