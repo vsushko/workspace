@@ -2,8 +2,10 @@ java rest client getting started:
 ```
 https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-getting-started-maven.html
 ```
-
-
+for the managing elasticsearch in the cloud: 
+```
+https://app.bonsai.io/clusters
+```
 maven configuration:
 ```
 <dependency>
