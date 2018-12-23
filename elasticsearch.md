@@ -18,3 +18,12 @@ running as a daemon:
 ```
 ./bin/elasticsearch -d -p pid
 ```
+
+add index:
+```
+curl -X PUT "localhost:9200/twitter"
+```
+search twitter index:
+```
+curl -X GET "localhost:9200/twitter/_search?q=user:kimchy"
+```
