@@ -36,8 +36,7 @@ gives extended information about "first_topic":
 ```
 kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic first_topic --describe
 ```
-deletes the topic (depends on delete.topic.enable, mark to delete when is no set to true), make sure that 
-that the flag `delete.topic.enable=true`, otherwise this will have no impact:
+deletes the topic (depends on delete.topic.enable, mark to delete when is no set to true), make sure that the flag `delete.topic.enable=true`, otherwise this will have no impact:
 ```
 kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic second_topic --delete
 ```
