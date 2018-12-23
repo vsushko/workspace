@@ -14,3 +14,7 @@ maven configuration:
     <version>6.5.4</version>
 </dependency>
 ```
+running as a daemon:
+```
+./bin/elasticsearch -d -p pid
+```
