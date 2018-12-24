@@ -1,4 +1,4 @@
-chech current running session:
+check current running session:
 ```
 select a.SID, a.SERIAL#, c.OBJECT_NAME 
   from v$session a, v$locked_object b, user_objects c
