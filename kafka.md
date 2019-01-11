@@ -1,7 +1,7 @@
  ## Common
 starts zookeeper:
 ```
-zookeeper-server-start.sh ../config/zookeeper.properties 
+zookeeper-server-start.sh config/zookeeper.properties 
 ```
 starts kafka:
 ```
