@@ -112,3 +112,9 @@ consumer with keys:
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
 
 ```
+
+## Kafka connect
+resourse:
+```
+https://www.confluent.io/hub
+```
