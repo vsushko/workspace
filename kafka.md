@@ -120,3 +120,29 @@ resourse:
 (https://medium.com/@stephane.maarek/the-kafka-api-battle-producer-vs-consumer-vs-kafka-connect-vs-kafka-streams-vs-ksql-ef584274c1e)
 ## Kafka topic naming conventions
 (https://medium.com/@criccomini/how-to-paint-a-bike-shed-kafka-topic-naming-conventions-1b7259790073)
+
+
+## Kafka Monitoring and Operations
+Monitoring Kafka
+https://docs.confluent.io/current/kafka/monitoring.html
+Monitoring Kafka performance metrics
+https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/
+Documetation:
+https://kafka.apache.org/documentation/#monitoring
+
+## Kafka Cluster and Replication
+Kafka mirroring (MirrorMaker):
+https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330
+MirrorMaker Performance Tuning:
+https://engineering.salesforce.com/mirrormaker-performance-tuning-63afaed12c21
+Tuning and Monitoring Replicator:
+https://docs.confluent.io/current/multi-dc-replicator/replicator-tuning.html#improving-network-utilization-of-a-connect-task
+Kafka Mirror Maker Best Practices:
+https://community.hortonworks.com/articles/79891/kafka-mirror-maker-best-practices.html
+Multi-Tenant, Multi-Cluster and Hierarchical Kafka Messaging Service
+https://www.confluent.io/kafka-summit-sf17/multitenant-multicluster-and-hieracrchical-kafka-messaging-service
+uReplicator: Uber Engineering’s Robust Apache Kafka Replicator:
+https://eng.uber.com/ureplicator/
+Multi-Cluster Deployment Options for Apache Kafka: Pros and Cons:
+https://www.altoros.com/blog/multi-cluster-deployment-options-for-apache-kafka-pros-and-cons/
+
