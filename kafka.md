@@ -115,14 +115,8 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --f
 
 ## Kafka connect
 resourse:
-```
 (https://www.confluent.io/hub)
-```
 ## Kafka API
-```
 (https://medium.com/@stephane.maarek/the-kafka-api-battle-producer-vs-consumer-vs-kafka-connect-vs-kafka-streams-vs-ksql-ef584274c1e)
-```
 ## Kafka topic naming conventions
-```
 (https://medium.com/@criccomini/how-to-paint-a-bike-shed-kafka-topic-naming-conventions-1b7259790073)
-```
