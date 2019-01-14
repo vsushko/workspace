@@ -113,6 +113,146 @@ kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --f
 
 ```
 
+## Kafka configs
+list the configs:
+
+```
+kafka-configs.sh --zookeeper 127.0.0.1:2181 --entity-type topics --entity-name configured-topic --describe
+```
+add min.insync.replicas=2 to config:
+```
+kafka-configs.sh --zookeeper 127.0.0.1:2181 --entity-type topics --entity-name configured-topic --add-config min.insync.replicas=2 --alter
+```
+delete min.insync.replicas from config:
+```
+kafka-configs.sh --zookeeper 127.0.0.1:2181 --entity-type topics --entity-name configured-topic --delete-config min.insync.replicas --alter
+```
+
+list of configs:
+```
+ Key Value pairs of configs to add.     
+                                         Square brackets can be used to group 
+                                         values which contain commas: 'k1=v1, 
+                                         k2=[v1,v2,v2],k3=v3'. The following  
+                                         is a list of valid configurations:   
+                                         For entity-type 'topics':            
+                                       	cleanup.policy                        
+                                       	compression.type                      
+                                       	delete.retention.ms                   
+                                       	file.delete.delay.ms                  
+                                       	flush.messages                        
+                                       	flush.ms                              
+                                       	follower.replication.throttled.       
+                                         replicas                             
+                                       	index.interval.bytes                  
+                                       	leader.replication.throttled.replicas 
+                                       	max.message.bytes                     
+                                       	message.downconversion.enable         
+                                       	message.format.version                
+                                       	message.timestamp.difference.max.ms   
+                                       	message.timestamp.type                
+                                       	min.cleanable.dirty.ratio             
+                                       	min.compaction.lag.ms                 
+                                       	min.insync.replicas                   
+                                       	preallocate                           
+                                       	retention.bytes                       
+                                       	retention.ms                          
+                                       	segment.bytes                         
+                                       	segment.index.bytes                   
+                                       	segment.jitter.ms                     
+                                       	segment.ms                            
+                                       	unclean.leader.election.enable        
+                                       For entity-type 'brokers':             
+                                       	log.message.timestamp.type            
+                                       	ssl.client.auth                       
+                                       	log.retention.ms                      
+                                       	sasl.login.refresh.window.jitter      
+                                       	sasl.kerberos.ticket.renew.window.    
+                                         factor                               
+                                       	log.preallocate                       
+                                       	log.index.size.max.bytes              
+                                       	sasl.login.refresh.window.factor      
+                                       	ssl.truststore.type                   
+                                       	ssl.keymanager.algorithm              
+                                       	log.cleaner.io.buffer.load.factor     
+                                       	sasl.login.refresh.min.period.seconds 
+                                       	ssl.key.password                      
+                                       	background.threads                    
+                                       	log.retention.bytes                   
+                                       	ssl.trustmanager.algorithm            
+                                       	log.segment.bytes                     
+                                       	max.connections.per.ip.overrides      
+                                       	log.cleaner.delete.retention.ms       
+                                       	log.segment.delete.delay.ms           
+                                       	min.insync.replicas                   
+                                       	ssl.keystore.location                 
+                                       	ssl.cipher.suites                     
+                                       	log.roll.jitter.ms                    
+                                       	log.cleaner.backoff.ms                
+                                       	sasl.jaas.config                      
+                                       	principal.builder.class               
+                                       	log.flush.interval.ms                 
+                                       	log.cleaner.dedupe.buffer.size        
+                                       	log.flush.interval.messages           
+                                       	advertised.listeners                  
+                                       	num.io.threads                        
+                                       	listener.security.protocol.map        
+                                       	log.message.downconversion.enable     
+                                       	sasl.enabled.mechanisms               
+                                       	sasl.login.refresh.buffer.seconds     
+                                       	ssl.truststore.password               
+                                       	listeners                             
+                                       	metric.reporters                      
+                                       	ssl.protocol                          
+                                       	sasl.kerberos.ticket.renew.jitter     
+                                       	ssl.keystore.password                 
+                                       	sasl.mechanism.inter.broker.protocol  
+                                       	log.cleanup.policy                    
+                                       	sasl.kerberos.principal.to.local.rules
+                                       	sasl.kerberos.min.time.before.relogin 
+                                       	num.recovery.threads.per.data.dir     
+                                       	log.cleaner.io.max.bytes.per.second   
+                                       	log.roll.ms                           
+                                       	ssl.endpoint.identification.algorithm 
+                                       	unclean.leader.election.enable        
+                                       	message.max.bytes                     
+                                       	log.cleaner.threads                   
+                                       	log.cleaner.io.buffer.size            
+                                       	max.connections.per.ip                
+                                       	sasl.kerberos.service.name            
+                                       	ssl.provider                          
+                                       	follower.replication.throttled.rate   
+                                       	log.index.interval.bytes              
+                                       	log.cleaner.min.compaction.lag.ms     
+                                       	log.message.timestamp.difference.max. 
+                                         ms                                   
+                                       	ssl.enabled.protocols                 
+                                       	log.cleaner.min.cleanable.ratio       
+                                       	replica.alter.log.dirs.io.max.bytes.  
+                                         per.second                           
+                                       	ssl.keystore.type                     
+                                       	ssl.secure.random.implementation      
+                                       	ssl.truststore.location               
+                                       	sasl.kerberos.kinit.cmd               
+                                       	leader.replication.throttled.rate     
+                                       	num.network.threads                   
+                                       	compression.type                      
+                                       	num.replica.fetchers                  
+                                       For entity-type 'users':               
+                                       	request_percentage                    
+                                       	producer_byte_rate                    
+                                       	SCRAM-SHA-256                         
+                                       	SCRAM-SHA-512                         
+                                       	consumer_byte_rate                    
+                                       For entity-type 'clients':             
+                                       	request_percentage                    
+                                       	producer_byte_rate                    
+                                       	consumer_byte_rate                    
+                                       Entity types 'users' and 'clients' may 
+                                         be specified together to update      
+                                         config for clients of a specific     
+                                         user. 
+```                                         
 ## Kafka connect
 resourse:
 (https://www.confluent.io/hub)
