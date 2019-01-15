@@ -255,12 +255,13 @@ list of configs:
 ```                                         
 ## Kafka connect
 resourse:
-(https://www.confluent.io/hub)
+https://www.confluent.io/hub
 ## Kafka API
-(https://medium.com/@stephane.maarek/the-kafka-api-battle-producer-vs-consumer-vs-kafka-connect-vs-kafka-streams-vs-ksql-ef584274c1e)
+https://medium.com/@stephane.maarek/the-kafka-api-battle-producer-vs-consumer-vs-kafka-connect-vs-kafka-streams-vs-ksql-ef584274c1e
 ## Kafka topic naming conventions
-(https://medium.com/@criccomini/how-to-paint-a-bike-shed-kafka-topic-naming-conventions-1b7259790073)
-
+https://medium.com/@criccomini/how-to-paint-a-bike-shed-kafka-topic-naming-conventions-1b7259790073
+Mirror tool for kafka connect:
+https://github.com/Comcast/MirrorTool-for-Kafka-Connect
 
 ## Kafka Monitoring and Operations
 Monitoring Kafka
