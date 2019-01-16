@@ -271,6 +271,60 @@ https://www.datadoghq.com/blog/monitoring-kafka-performance-metrics/
 Documetation:
 https://kafka.apache.org/documentation/#monitoring
 
+## Kafka Cluster
+
+create properteis in config folder:
+cp server.properties server0.properties
+cp server.properties server1.properties
+cp server.properties server2.properties
+
+in these properties change:
+broker.id=0
+broker.id=1
+broker.id=2
+
+uncomment line (in server1.properties, server2.properties)
+listeners=PLAINTEXT://:9093
+listeners=PLAINTEXT://:9094
+
+log.dirs=/Users/vsushko/apps/kafka_2.12-2.1.0/data/kafka1
+log.dirs=/Users/vsushko/apps/kafka_2.12-2.1.0/data/kafka2
+
+start zookeeper:
+zookeeper-server-start.sh config/zookeeper.properties
+
+start kafka:
+kafka-server-start.sh config/server0.properties
+kafka-server-start.sh config/server1.properties
+kafka-server-start.sh config/server2.properties
+
+kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic many-reps --create --partitions 6 --replication-factor 3
+
+kafka-topics.sh --zookeeper 127.0.0.1:2181 --topic manyeps --describe
+
+the output will be:
+```
+Topic:many-reps	PartitionCount:6	ReplicationFactor:3	Configs:
+Topic: many-reps	Partition: 0	Leader: 1	Replicas: 1,2,0	Isr: 1,2,0
+Topic: many-reps	Partition: 1	Leader: 2	Replicas: 2,0,1	Isr: 2,0,1
+Topic: many-reps	Partition: 2	Leader: 0	Replicas: 0,1,2	Isr: 0,1,2
+Topic: many-reps	Partition: 3	Leader: 1	Replicas: 1,0,2	Isr: 1,0,2
+Topic: many-reps	Partition: 4	Leader: 2	Replicas: 2,1,0	Isr: 2,1,0
+Topic: many-reps	Partition: 5	Leader: 0	Replicas: 0,2,1	Isr: 0,2,1
+```
+ 
+write something to all brokers:
+kafka-console-producer.sh --broker-list 127.0.0.1:9092,127.0.0.1:9093,127.0.0.1:9094 --topic many-reps
+write something to one broker:
+kafka-console-producer.sh --broker-list 127.0.0.1:9094 --topic many-reps
+
+all messages is here
+
+ls data/kafka1
+ls data/kafka2
+ls data/kafka3
+
+kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9093 --topic many-reps --from-beginning
 ## Kafka Cluster and Replication
 Kafka mirroring (MirrorMaker):
 https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=27846330
@@ -286,4 +340,12 @@ uReplicator: Uber Engineering’s Robust Apache Kafka Replicator:
 https://eng.uber.com/ureplicator/
 Multi-Cluster Deployment Options for Apache Kafka: Pros and Cons:
 https://www.altoros.com/blog/multi-cluster-deployment-options-for-apache-kafka-pros-and-cons/
+
+## Confluent CLI
+Start all services or a specific service along with its dependencies (bin/confluent for more information):
+```
+bin/confluent start
+```
+
+
 
