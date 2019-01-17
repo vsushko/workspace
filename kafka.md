@@ -3,6 +3,10 @@ starts zookeeper:
 ```
 zookeeper-server-start.sh config/zookeeper.properties 
 ```
+starts kafka as a daemon:
+```
+bin/zookeeper-server-start.sh -daemon config/zookeeper.properties 
+```
 starts kafka:
 ```
 kafka-server-start.sh config/server.properties 
@@ -22,6 +26,7 @@ ls data/kafka/
 vim config/server.properties
 log.dirs=/Users/myuser/apps/kafka_2.12-2.1.0/data/kafka
 ```
+export KAFKA_HEAP_OPTS='-Xmx256M -Xms128M"
  ## Kafka cli
 ### kafka-topics
 creates kafka topic with name "first_topic" (one running broker and zookeeper is required):
