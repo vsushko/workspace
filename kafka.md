@@ -347,5 +347,15 @@ Start all services or a specific service along with its dependencies (bin/conflu
 bin/confluent start
 ```
 
+## Kafka and Docker
 
+export DOCKER_HOST=192.168.99.100
 
+run (from https://github.com/simplesteph/kafka-stack-docker-compose) the command:
+```
+docker-compose -f zk-single-kafka-single.yml up
+```
+
+```
+kafka-topics.sh --zookeeper 127.0.0.1:2181 --create --topic test --partitions 3 --replication-factor 1
+```
