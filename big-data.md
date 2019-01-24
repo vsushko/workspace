@@ -46,6 +46,6 @@ pip install google-api-python-client==1.6.4
 wget http://media.sundog-soft.com/hadoop/ml-100k/u.data
 http://media.sundog-soft.com/hadoop/RatingsBreakdown.py
 
-
+python script.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar hdfs://file-path
 
 
