@@ -32,13 +32,14 @@ hadoop fs
 ```
 
 python:
+```
 yum install python-pip
 [Errno 14] PYCURL ERROR 22 - "The requested URL returned error: 403 Forbidden"
 cd /etc/yum.repos.d
 cp sandbox.repo /tmp
 rm sandbox.repo
 yum install python-pip
-
+```
 install mrjob
 pip install mrjob==0.5.11
 pip install google-api-python-client==1.6.4
@@ -47,5 +48,11 @@ wget http://media.sundog-soft.com/hadoop/ml-100k/u.data
 http://media.sundog-soft.com/hadoop/RatingsBreakdown.py
 
 python script.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar hdfs://file-path
+
+set ambari password:
+```
+su root
+ambari-admin-password-reset
+```
 
 
