@@ -1,0 +1,13 @@
+# Apache Pig:
+
+## Documentation:
+https://pig.apache.org/docs/latest/start.html
+
+
+
+* LOAD STORE DUMP
+* FILTER DISTINCT FOREACH/GENERATE MAPREDUCE STREAM SAMPLE
+* JOIN COGROUP GROUP CROSS CUBE 
+* ORDER RANK LIMIT
+* UNION SPLIT
+
