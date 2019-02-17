@@ -11,3 +11,9 @@ Creates react app
 ```
 create-react-app ppmtool-react-client
 ```
+
+## Bootstrap
+Installation:
+```
+npm install bootstrap
+```
