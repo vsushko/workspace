@@ -15,6 +15,9 @@ react router:
 ```
 npm install react-router-dom
 ```
+```
+npm install react-router-dom@4.3.1
+```
 ## Bootstrap
 Installation:
 ```
