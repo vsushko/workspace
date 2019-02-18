@@ -11,7 +11,10 @@ Creates react app
 ```
 create-react-app ppmtool-react-client
 ```
-
+react router:
+```
+npm install react-router-dom
+```
 ## Bootstrap
 Installation:
 ```
