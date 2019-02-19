@@ -18,6 +18,15 @@ npm install react-router-dom
 ```
 npm install react-router-dom@4.3.1
 ```
+redux:
+```
+npm i redux react-redux redux-thunk
+```
+axios
+```
+npm i axios
+```
+
 ## Bootstrap
 Installation:
 ```
