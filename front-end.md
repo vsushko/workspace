@@ -37,3 +37,9 @@ Installation:
 ```
 npm install bootstrap
 ```
+
+## Other
+for the input labels
+```
+npm i classnames
+```
