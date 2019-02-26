@@ -10,7 +10,7 @@ Redux DevTools - [link](https://chrome.google.com/webstore/detail/redux-devtools
 
 Install react app:
 ```
-npm install -g create-react-aap
+npm install -g create-react-app
 ```
 Creates react app
 ```
