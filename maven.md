@@ -31,3 +31,4 @@ using jar only:
 ```
 mvn install:install-file -Dfile=<path-to-file>
 ```
+#### frontend-maven-plugin: [click](https://github.com/eirslett/frontend-maven-plugin)
