@@ -6,3 +6,9 @@ solution:
 ```
 spring.datasource.url = jdbc:mysql://localhost:3306/ppmtcourse?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
 ```
+
+## Workbench
+[download link](https://dev.mysql.com/downloads/workbench/)
+
+## MySQL Community Server
+[download link](https://dev.mysql.com/downloads/mysql/)
