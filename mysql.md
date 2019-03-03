@@ -12,3 +12,8 @@ spring.datasource.url = jdbc:mysql://localhost:3306/ppmtcourse?useUnicode=true&u
 
 ## MySQL Community Server
 [download link](https://dev.mysql.com/downloads/mysql/)
+
+connect to db:
+```
+mysql -h localhost:3306 -u user -p
+```
