@@ -17,3 +17,7 @@ connect to db:
 ```
 mysql -h localhost:3306 -u user -p
 ```
+
+## Tutorials
+#### Accessing data with MySQL
+https://spring.io/guides/gs/accessing-data-mysql/
