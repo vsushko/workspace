@@ -1,4 +1,4 @@
-###Installation
+### Installation
 ```
 brew tap heroku/brew && brew install heroku
 ```
