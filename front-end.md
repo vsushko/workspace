@@ -12,6 +12,11 @@ solution:
 create-react-app react-client --use-npm
 ```
 
+IE11
+```
+<script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js" integrity="sha256-WRc/eG3R84AverJv0zmqxAmdwQxstUpqkiE+avJ3WSo="    crossorigin="anonymous"></script>
+```
+
 ## React
 React Developer Tools - [link](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related?hl=en)
 
