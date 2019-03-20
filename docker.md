@@ -263,3 +263,4 @@ VBoxManage modifyvm default --cpus 2
 VBoxManage modifyvm default --memory 4096
 docker-machine start
 ```
+for more information: https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac 
