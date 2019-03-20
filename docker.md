@@ -254,3 +254,12 @@ check the work:
 verify image is discoverable with label filter (-f means that filter output based on conditions provided):
 
 `docker images -f "label=dia_excercise=ch9_registry_bound"`
+
+
+increase ram for docker machine
+```
+docker-machine stop
+VBoxManage modifyvm default --cpus 2
+VBoxManage modifyvm default --memory 4096
+docker-machine start
+```
