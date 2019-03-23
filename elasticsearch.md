@@ -2,6 +2,10 @@ java rest client getting started:
 ```
 https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-getting-started-maven.html
 ```
+dejavu - UI for Elasticsearch:
+```
+https://github.com/appbaseio/dejavu
+```
 for the managing elasticsearch in the cloud: 
 ```
 https://app.bonsai.io/clusters
