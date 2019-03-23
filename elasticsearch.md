@@ -31,3 +31,7 @@ search twitter index:
 ```
 curl -X GET "localhost:9200/twitter/_search?q=user:kimchy"
 ```
+beautify json responses:
+```
+apk update && apk add jq
+```
