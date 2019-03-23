@@ -1,3 +1,6 @@
+\du
+\password postgres
+
 ### Troubleshooting
 role "postgres" does not exist
 ```
