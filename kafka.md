@@ -364,3 +364,23 @@ docker-compose -f zk-single-kafka-single.yml up
 ```
 kafka-topics.sh --zookeeper 127.0.0.1:2181 --create --topic test --partitions 3 --replication-factor 1
 ```
+
+## Kafka connect Archetype
+[link](https://github.com/jcustenborder/kafka-connect-archtype)
+```
+mvn archetype:generate \
+    -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
+    -DarchetypeArtifactId=kafka-connect-quickstart \
+    -DarchetypeVersion=2.0.0-cp1
+```
+```
+mvn archetype:generate \
+    -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
+    -DarchetypeArtifactId=kafka-connect-quickstart \
+    -DarchetypeVersion=2.0.0-cp1 \
+    -Dpackage=com.github.jcustenborder.kafka.connect.test \
+    -DgroupId=com.github.jcustenborder.kafka.connect \
+    -DartifactId=testconnect \
+    -DpackageName=com.github.jcustenborder.kafka.connect.test \
+    -Dversion=1.0-SNAPSHOT
+```
