@@ -4,6 +4,7 @@ https://github.com/Landoop/kafka-connect-ui
 ## Debezium connectors
 https://debezium.io/docs/install/
 
+## Others
 let's start a command line to all have linux commands
 
 ```
