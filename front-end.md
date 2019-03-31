@@ -1,7 +1,7 @@
 ## CSS Modules
 https://github.com/css-modules/css-modules
 
-### enable css modules
+### Enable css modules
 ```
 {
   test: cssRegex,
