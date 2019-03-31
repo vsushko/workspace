@@ -1,3 +1,16 @@
+### enable css modules
+```
+{
+  test: cssRegex,
+  exclude: cssModuleRegex,
+  use: getStyleLoaders({
+      importLoaders: 1,
+      modules: true,
+      localIdentName: '[name]__[local]__[hash:base64:5]'
+  }),
+}
+```
+
 ## Node js
 ### TROUBLESHOOTING
 #### NPM self_signed_cert_in_chain
