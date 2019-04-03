@@ -16,6 +16,9 @@ https://github.com/css-modules/css-modules
 #### How to Use CSS Modules with Create React App:
 https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2
 
+### Fontawesome
+https://stackoverflow.com/questions/23116591/how-to-include-a-font-awesome-icon-in-reacts-render
+
 ## Node js
 ### TROUBLESHOOTING
 #### NPM self_signed_cert_in_chain
