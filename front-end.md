@@ -13,6 +13,9 @@ https://github.com/css-modules/css-modules
   }),
 }
 ```
+### prop-types
+https://github.com/facebook/prop-types
+
 #### How to Use CSS Modules with Create React App:
 https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2
 
