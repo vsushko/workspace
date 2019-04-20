@@ -19,6 +19,12 @@ https://github.com/facebook/prop-types
 #### How to Use CSS Modules with Create React App:
 https://medium.com/nulogy/how-to-use-css-modules-with-create-react-app-9e44bec2b5c2
 
+### Validation & React validation
+https://validatejs.org/
+https://github.com/christianalfoni/formsy-react
+https://www.npmjs.com/package/react-validation
+https://react.rocks/tag/Validation
+
 ### Fontawesome
 https://stackoverflow.com/questions/23116591/how-to-include-a-font-awesome-icon-in-reacts-render
 
