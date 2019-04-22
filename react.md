@@ -14,7 +14,7 @@ Actions: http://redux.js.org/docs/basics/Actions.html<br>
 Reducers: http://redux.js.org/docs/basics/Reducers.html<br>
 Redux FAQs: http://redux.js.org/docs/FAQ.html<br>
 
-more advanced topics:
+### More advanced topics:
 Middleware: http://redux.js.org/docs/advanced/Middleware.html<br>
 redux-thunk package: https://github.com/gaearon/redux-thunk<br>
 Async Actions: https://redux.js.org/advanced/asyncactions<br>
