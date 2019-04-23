@@ -18,6 +18,10 @@ sudo fuser -k 2181/tcp
 ```
 sudo lsof -i | grep 8080
 ```
+ps wlax:
+```
+ps wlax | grep ssh
+```
 reports a snapshot of the current processes on the system using BSD syntax:
 ```
 ps aux | grep 11111
