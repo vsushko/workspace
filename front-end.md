@@ -90,3 +90,7 @@ npm i classnames
 
 ## Spring app with react
 [click](https://github.com/eugenp/tutorials/tree/master/spring-security-react)
+
+## Webpack
+#### Upgrade to Webpack 4 (from 3)
+https://dev.to/flexdinesh/upgrade-to-webpack-4---5bc5
