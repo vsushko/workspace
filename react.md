@@ -18,3 +18,10 @@ Redux FAQs: http://redux.js.org/docs/FAQ.html<br>
 Middleware: http://redux.js.org/docs/advanced/Middleware.html<br>
 redux-thunk package: https://github.com/gaearon/redux-thunk<br>
 Async Actions: https://redux.js.org/advanced/asyncactions<br>
+
+
+### Testing
+#### Enzyme
+https://airbnb.io/enzyme/docs/api/
+#### Jest
+https://jestjs.io/
