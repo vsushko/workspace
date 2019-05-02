@@ -21,10 +21,10 @@ Async Actions: https://redux.js.org/advanced/asyncactions<br>
 
 
 ### Testing
+```
+npm install enzyme react-test-renderer enzyme-adapter-react-16
+```
 #### Enzyme
 https://airbnb.io/enzyme/docs/api/
 #### Jest
 https://jestjs.io/
-```
-npm install enzyme react-test-renderer enzyme-adapter-react-16
-```
