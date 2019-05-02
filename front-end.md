@@ -107,3 +107,7 @@ npm install --save-dev babel-loader babel-core babel-preset-react babel-preset-e
 ```
 https://github.com/browserslist/browserslist
 ```
+### NextJS
+```
+https://github.com/zeit/next.js/
+```
