@@ -103,3 +103,7 @@ npm install --save-dev webpack webpack-dev-server
 ```
 npm install --save-dev babel-loader babel-core babel-preset-react babel-preset-env
 ```
+### Browser list
+```
+https://github.com/browserslist/browserslist
+```
