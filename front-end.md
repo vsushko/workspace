@@ -94,3 +94,12 @@ npm i classnames
 ## Webpack
 #### Upgrade to Webpack 4 (from 3)
 https://dev.to/flexdinesh/upgrade-to-webpack-4---5bc5
+
+### webpack project setup
+```
+npm install --save-dev webpack webpack-dev-server
+```
+### install babel
+```
+npm install --save-dev babel-loader babel-core babel-preset-react babel-preset-env
+```
