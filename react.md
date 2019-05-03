@@ -28,3 +28,23 @@ npm install enzyme react-test-renderer enzyme-adapter-react-16
 https://airbnb.io/enzyme/docs/api/
 #### Jest
 https://jestjs.io/
+
+### Animations and Transitions
+#### Using CSS transitions
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+#### Using CSS animations
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+#### React move
+https://react-move.js.org/#/
+#### React Router Transition
+https://www.npmjs.com/package/react-router-transition
+#### React motion
+https://github.com/chenglou/react-motion
+#### react-transition-group
+https://github.com/reactjs/react-transition-group
+
+### Redux Saga
+https://redux-saga.js.org/
+#### Pros & Cons for Redux Saga vs Thunks
+https://stackoverflow.com/questions/34930735/pros-cons-of-using-redux-saga-with-es6-generators-vs-redux-thunk-with-es2017-asy/34933395
+
