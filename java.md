@@ -2,7 +2,11 @@ install java via webupd8team:
 ```
 https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/
 ```
-
+set java home:
+```
+/etc/environment/ <- JAVA_HOME=/usr/java/jdk1.8.0_211
+                     JRE_HOME=/usr/java/jdk1.8.0_211/jre
+```
 imports order(https://github.com/twitter/commons/blob/master/src/java/com/twitter/common/styleguide.md):
 https://stackoverflow.com/questions/21787128/how-to-unit-test-jackson-jsonserializer-and-jsondeserializer
 ```
