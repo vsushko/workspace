@@ -55,4 +55,9 @@ su root
 ambari-admin-password-reset
 ```
 
+## Zookeeper
+indicates that the ZooKeeper server process did not start:
+```
+ps uxww | grep zookeeper
+```
 
