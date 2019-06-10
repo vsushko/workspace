@@ -1,3 +1,8 @@
+extract tar to the specified directory
+```
+mkdir ~/kafka && cd ~/kafka
+tar -xvzf ~/Downloads/kafka.tgz --strip 1
+```
 prints existing ssh keys:
 ```
 ls -al ~/.ssh
