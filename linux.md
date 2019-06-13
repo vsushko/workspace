@@ -69,5 +69,7 @@ ll:
 vim ~/.bash_profile
 alias ll='ls -lGaf'
 ```
-
-
+do ps -ef in infinite loop:
+```
+while (true); do ps -ef | grep zookeeper; sleep 1; done
+```
