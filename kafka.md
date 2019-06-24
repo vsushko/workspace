@@ -84,7 +84,7 @@ and this command will dump out messages to standard output from the beginning bu
 kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic first_topic --group my-second-application --from-beginning
 ```
 ### kafka-consumer-groups
-will print out consuber gropus list:
+will print out consumer gropus list:
 ```
 kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list
 ```
