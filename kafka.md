@@ -3,6 +3,10 @@ starts zookeeper:
 ```
 sh bin/zookeeper-server-start.sh config/zookeeper.properties 
 ```
+zookeeper shell:
+```
+./zookeeper-shell.sh localhost:2181
+```
 starts kafka as a daemon:
 ```
 sh bin/zookeeper-server-start.sh -daemon config/zookeeper.properties 
