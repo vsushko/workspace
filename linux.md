@@ -81,3 +81,13 @@ mate-screenshot (Key Bindings p)
 mate-screenshot -w (Key Bindings w)
 mate-screenshot -a (Key Bindings a)
 ```
+
+Add alias for ssh:
+```
+vim ~/.ssh/config
+
+Host <some.alias>
+  HostName 192.168.0.1
+  Port 22
+  User <username>
+``` 
