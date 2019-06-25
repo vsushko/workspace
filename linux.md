@@ -93,3 +93,8 @@ Host <some.alias>
   Port 22
   User <username>
 ``` 
+Application
+Installing a tar.gz on linux
+```
+https://stackoverflow.com/questions/33033538/installing-a-tar-gz-on-linux
+```
