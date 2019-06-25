@@ -1,11 +1,11 @@
  ## Common
 starts zookeeper:
 ```
-zookeeper-server-start.sh config/zookeeper.properties 
+sh bin/zookeeper-server-start.sh config/zookeeper.properties 
 ```
 starts kafka as a daemon:
 ```
-bin/zookeeper-server-start.sh -daemon config/zookeeper.properties 
+sh bin/zookeeper-server-start.sh -daemon config/zookeeper.properties 
 ```
 starts kafka:
 ```
