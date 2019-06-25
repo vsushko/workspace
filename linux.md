@@ -73,3 +73,7 @@ do ps -ef in infinite loop:
 ```
 while (true); do ps -ef | grep zookeeper; sleep 1; done
 ```
+ubuntu screenshot utils:
+```
+sudo apt install mate-utils
+```
