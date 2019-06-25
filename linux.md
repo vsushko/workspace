@@ -2,6 +2,8 @@ extract tar to the specified directory
 ```
 mkdir ~/kafka && cd ~/kafka
 tar -xvzf ~/Downloads/kafka.tgz --strip 1
+# The -J is the flag that specifically deals with .xz files.
+tar -xJf file.pkg.tar.xz
 ```
 prints existing ssh keys:
 ```
