@@ -76,4 +76,8 @@ while (true); do ps -ef | grep zookeeper; sleep 1; done
 ubuntu screenshot utils:
 ```
 sudo apt install mate-utils
+# using
+mate-screenshot (Key Bindings p)
+mate-screenshot -w (Key Bindings w)
+mate-screenshot -a (Key Bindings a)
 ```
