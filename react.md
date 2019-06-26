@@ -1,6 +1,43 @@
+## React
+React Developer Tools - [link](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/related?hl=en)
+
+Redux DevTools - [link](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+
+Install react app:
+```
+npm install -g create-react-app
+```
+Creates react app
+```
+create-react-app ppmtool-react-client
+```
+via npx:
+```
+npx create-react-app react-client
+```
+Missing dependencies in package.json solution:
+```
+create-react-app react-client --use-npm
+```
+
+react router:
+```
+npm install react-router-dom
+```
+```
+npm install react-router-dom@4.3.1
+```
+redux:
+```
+npm i redux react-redux redux-thunk
+```
+axios
+```
+npm i axios
+```
+
 ### Error Boundaries
 https://reactjs.org/docs/error-boundaries.html
-
 
 ### Immutable Update
 https://redux.js.org/recipes/structuring-reducers/immutable-update-patterns<br>
@@ -18,7 +55,6 @@ Redux FAQs: http://redux.js.org/docs/FAQ.html<br>
 Middleware: http://redux.js.org/docs/advanced/Middleware.html<br>
 redux-thunk package: https://github.com/gaearon/redux-thunk<br>
 Async Actions: https://redux.js.org/advanced/asyncactions<br>
-
 
 ### Testing
 ```
