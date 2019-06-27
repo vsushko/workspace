@@ -1,5 +1,8 @@
 https://www.kaggle.com/
 
+## Lectures
+https://yadi.sk/d/V9p7E6uAFjHcD
+
 ## Datasets:
 https://habr.com/ru/post/452392/
 
