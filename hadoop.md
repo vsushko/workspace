@@ -9,8 +9,8 @@ get hadoop version:
 $HADOOP_HOME/bin/hadoop version
 ```
 
-## troubleshooting:
-#### error:
+## Troubleshooting:
+### error:
 ```
 sudo ./start-dfs.sh
 Starting namenodes on [localhost]
@@ -20,7 +20,7 @@ pdsh@user: localhost: rcmd: socket: Permission denied
 Starting secondary namenodes [user]
 pdsh@user: user: rcmd: socket: Permission denied
 ```
-#### solution
+### solution
 ```
 pdsh -q -w localhost
 ```
@@ -31,11 +31,11 @@ edit ~/.bashrc, add:
 ```
 export PDSH_RCMD_TYPE=ssh
 ```
-#### error
+### error
 ```
 java.io.FileNotFoundException: /data/hadoop/namenode/current/VERSION (Permission denied)
 ```
-#### solution
+### solution
 ```
 sudo chown -R user:user /data/hadoop/
 ls -la /data/hadoop/namenode/
