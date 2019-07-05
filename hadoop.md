@@ -4,6 +4,11 @@ https://hadoop.apache.org/docs/r3.0.3/hadoop-project-dist/hadoop-common/SingleCl
 
 http://localhost:8088/cluster
 
+get hadoop version:
+```
+$HADOOP_HOME/bin/hadoop version
+```
+
 ## troubleshooting:
 error:
 ```
