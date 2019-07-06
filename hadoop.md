@@ -40,3 +40,14 @@ java.io.FileNotFoundException: /data/hadoop/namenode/current/VERSION (Permission
 sudo chown -R user:user /data/hadoop/
 ls -la /data/hadoop/namenode/
 ```
+
+### problem
+```
+http://localhost:50070 does not work HADOOP
+```
+### solution
+```
+Namenode ports: 50470 --> 9871, 50070 --> 9870, 8020 --> 9820
+Secondary NN ports: 50091 --> 9869, 50090 --> 9868
+Datanode ports: 50020 --> 9867, 50010 --> 9866, 50475 --> 9865, 50075 --> 9864
+```
