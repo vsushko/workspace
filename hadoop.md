@@ -40,7 +40,6 @@ java.io.FileNotFoundException: /data/hadoop/namenode/current/VERSION (Permission
 sudo chown -R user:user /data/hadoop/
 ls -la /data/hadoop/namenode/
 ```
-
 ### problem
 ```
 http://localhost:50070 does not work HADOOP
