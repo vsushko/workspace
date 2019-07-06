@@ -10,7 +10,7 @@ $HADOOP_HOME/bin/hadoop version
 ```
 
 ## Troubleshooting:
-### error:
+### problem:
 ```
 sudo ./start-dfs.sh
 Starting namenodes on [localhost]
@@ -31,7 +31,7 @@ edit ~/.bashrc, add:
 ```
 export PDSH_RCMD_TYPE=ssh
 ```
-### error
+### problem
 ```
 java.io.FileNotFoundException: /data/hadoop/namenode/current/VERSION (Permission denied)
 ```
