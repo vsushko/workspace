@@ -8,7 +8,14 @@ get hadoop version:
 ```
 $HADOOP_HOME/bin/hadoop version
 ```
-
+put file to hadoop fs
+```
+$HADOOP_HOME/bin/hadoop fs -put /home/Jon/test.txt /user
+```
+via copyFromLocal (source is restricted to a local file reference)
+```
+hadoop fs -copyFromLocal /usr/local/spark/jars/* /share/spark/lib/
+```
 ## Troubleshooting:
 ### problem:
 ```
