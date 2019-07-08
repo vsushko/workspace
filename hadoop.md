@@ -10,11 +10,11 @@ $HADOOP_HOME/bin/hadoop version
 ```
 put file to hadoop fs
 ```
-$HADOOP_HOME/bin/hadoop fs -put /home/Jon/test.txt /user
+$HADOOP_HOME/bin/hadoop fs -put /home/user/sample.txt /share/playground
 ```
 via copyFromLocal (source is restricted to a local file reference)
 ```
-hadoop fs -copyFromLocal /usr/local/spark/jars/* /share/spark/lib/
+hadoop fs -copyFromLocal /home/user/sample.txt /share/playground
 ```
 ## Troubleshooting:
 ### problem:
