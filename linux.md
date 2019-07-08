@@ -33,6 +33,10 @@ sudo fuser -k 2181/tcp
 ```
 sudo lsof -i | grep 8080
 ```
+generates 1GB file:
+```
+openssl rand -out sample.txt -base64 $(( 2**30 * 3/4 ))^C
+```
 ps wlax:
 ```
 ps wlax | grep ssh
