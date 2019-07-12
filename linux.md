@@ -33,6 +33,10 @@ sudo fuser -k 2181/tcp
 ```
 sudo lsof -i | grep 8080
 ```
+curl –no-check-certificate option like wget command
+```
+curl -k url
+```
 generates 1GB file:
 ```
 openssl rand -out sample.txt -base64 $(( 2**30 * 3/4 ))^C
