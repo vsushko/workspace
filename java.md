@@ -7,6 +7,11 @@ set java home:
 /etc/environment/ <- JAVA_HOME=/usr/java/jdk1.8.0_211
                      JRE_HOME=/usr/java/jdk1.8.0_211/jre
 ```
+unix time format:
+```
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+```
+
 imports order(https://github.com/twitter/commons/blob/master/src/java/com/twitter/common/styleguide.md):
 https://stackoverflow.com/questions/21787128/how-to-unit-test-jackson-jsonserializer-and-jsondeserializer
 ```
