@@ -20,3 +20,6 @@ Deactivate the virtual environment:
 ```
 deactivate
 ```
+
+
+pip freeze > requirements.txt
