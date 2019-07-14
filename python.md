@@ -16,7 +16,7 @@ Activate the virtual environment:
 ```
 source mypython/bin/activate
 ```
-Deactivate the virtual environment
+Deactivate the virtual environment:
 ```
 deactivate
 ```
