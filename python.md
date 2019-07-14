@@ -20,6 +20,7 @@ Deactivate the virtual environment:
 ```
 deactivate
 ```
-
-
+Save all the packages in the file:
+```
 pip freeze > requirements.txt
+```
