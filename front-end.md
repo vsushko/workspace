@@ -38,6 +38,11 @@ IE11
 <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js" integrity="sha256-WRc/eG3R84AverJv0zmqxAmdwQxstUpqkiE+avJ3WSo="    crossorigin="anonymous"></script>
 ```
 
+Trouble with finding the node in ubuntu:
+```
+https://askubuntu.com/questions/501485/having-trouble-to-find-the-node-in-ubuntu-14-04-after-installing
+```
+
 ## Bootstrap
 Installation:
 ```
