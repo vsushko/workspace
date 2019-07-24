@@ -29,7 +29,7 @@ unset var i.e. http_proxy from export:
 ```
 unset http_proxy
 ```
-identify identify processes using files or sockets (fuser):
+identify processes using files or sockets (fuser):
 ``` 
 sudo fuser -k 2181/tcp
 ```
