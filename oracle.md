@@ -1,3 +1,7 @@
+get oracle version:
+```
+SELECT * FROM v$version; 
+```
 check current running session:
 ```
 select a.SID, a.SERIAL#, c.OBJECT_NAME 
