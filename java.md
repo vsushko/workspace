@@ -82,3 +82,5 @@ to find out which is your default
 ## spring
 
 https://start.spring.io/
+
+https://www.baeldung.com/spring-profiles
