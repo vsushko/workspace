@@ -79,6 +79,9 @@ to find out which is your default
 -XX:+PrintCommandLineFlags
 ```
 
+### handling exceptions in streams
+https://dzone.com/articles/exception-handling-in-java-streams
+
 ## spring
 
 https://start.spring.io/
