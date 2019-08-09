@@ -87,3 +87,6 @@ https://dzone.com/articles/exception-handling-in-java-streams
 https://start.spring.io/
 
 https://www.baeldung.com/spring-profiles
+
+### JUnit 5
+https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-running-unit-tests-with-maven/
