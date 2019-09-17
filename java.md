@@ -90,3 +90,9 @@ https://www.baeldung.com/spring-profiles
 
 ### JUnit 5
 https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-running-unit-tests-with-maven/
+
+
+@Query(value = "SELECT * FROM USERS WHERE EMAIL_ADDRESS = ?0", nativeQuery = true)
+ ⁣ ⁣User findByEmailAddress(String emailAddress);
+
+https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html
