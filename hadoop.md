@@ -57,3 +57,16 @@ Namenode ports: 50470 --> 9871, 50070 --> 9870, 8020 --> 9820
 Secondary NN ports: 50091 --> 9869, 50090 --> 9868
 Datanode ports: 50020 --> 9867, 50010 --> 9866, 50475 --> 9865, 50075 --> 9864
 ```
+
+hadoop fs -mkdir /logins
+hadoop fs -put logins-2012-10-12.txt /logins
+hadoop fs -ls -R /logins
+hadoop fs - cat /logins/logins-2012-10-12.txt
+
+identify the blocks and their locations:
+```
+hadoop fsck /logins/logins-2012-10-12.txt -files -blocks -locations
+```
+
+Pail - a thin abstraction over files and folders from the dfs-datastores library (http://
+github.com/nathanmarz/dfs-datastores)
