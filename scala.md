@@ -19,3 +19,16 @@ If you are unable to create a ~/.sbt/repositories file, due to user permission e
 -Dsbt.repository.config=<path-to-your-repo-file>
 ```
 This is only necessary if users do not already have their own default repository file.
+
+## credentials
+file:
+```
+realm=My Nexus Repository Manager
+host=my.artifact.repo.net
+user=admin
+password=admin123
+```
+The second way is to specify them inline:
+```
+credentials += Credentials("Some Nexus Repository Manager", "my.artifact.repo.net", "admin", "admin123")
+```
