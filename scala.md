@@ -5,9 +5,9 @@ sudo tar xzvf sbt-1.0.0.tgz -C /usr/share/
 sudo update-alternatives --install /usr/bin/scala scala /usr/share/scala/bin/scala 9999
 ```
 
-#### ~/.sbt/repositories:
+### ~/.sbt/repositories:
 
-#####sbt.override.build.repos 
+#### sbt.override.build.repos 
 This setting is used to specify that all sbt project added resolvers should be ignored in favor of those configured in the repositories configuration. Using this with a properly configured ~/.sbt/repositories file leads to only your proxy repository used for builds.
 
 It is specified like so:
