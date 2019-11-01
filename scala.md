@@ -19,4 +19,3 @@ If you are unable to create a ~/.sbt/repositories file, due to user permission e
 -Dsbt.repository.config=<path-to-your-repo-file>
 ```
 This is only necessary if users do not already have their own default repository file.
-```
