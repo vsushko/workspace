@@ -32,3 +32,14 @@ The second way is to specify them inline:
 ```
 credentials += Credentials("Some Nexus Repository Manager", "my.artifact.repo.net", "admin", "admin123")
 ```
+
+java.util.concurrent.ExecutionException: java.lang.OutOfMemoryError: GC overhead limited exceeded:
+```
+sbt -mem 2048 test
+```
+Other options:
+For Mac & Linux user:
+if we need to execute this a lot. We can update the .bash_profile file and add below command:
+```
+export SBT_OPTS="-Xmx2G"
+```
