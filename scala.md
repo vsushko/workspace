@@ -43,3 +43,7 @@ if we need to execute this a lot. We can update the .bash_profile file and add b
 ```
 export SBT_OPTS="-Xmx2G"
 ```
+How run sbt assembly command without tests from command line?
+```
+sbt 'set test in assembly := {}' clean assembly
+```
