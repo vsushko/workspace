@@ -47,3 +47,6 @@ How run sbt assembly command without tests from command line?
 ```
 sbt 'set test in assembly := {}' clean assembly
 ```
+
+postfix operator <operator> needs to be enabled
+by making the implicit value scala.language.postfixOps visible.
