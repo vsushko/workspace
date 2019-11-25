@@ -1,6 +1,6 @@
 #### useful commands:
 returns spark version:
-```
+```sh
 spark-submit --version
 spark-shell --version
 spark-sql --version
