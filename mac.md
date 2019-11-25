@@ -16,6 +16,10 @@ where is jdk located:
 ```
 or
 ```
+echo $(/usr/libexec/java_home)
+```
+or
+```
 /usr/libexec/java_home -v
 ```
 
