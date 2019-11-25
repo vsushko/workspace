@@ -7,6 +7,6 @@ spark-sql --version
 ```
 
 read parquet file:
-```
+```python
 parquetFile = spark.read.parquet("/user/me/part-0001.snappy.parquet")
 ```
