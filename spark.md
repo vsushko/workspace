@@ -14,10 +14,22 @@ parquetFile = spark.read.parquet("/user/me/part-0001.snappy.parquet")
 ```
 find line in file:
 ```python
-lines.filter(lambda line: "Python" in line)
+pythonLines = lines.filter(lambda line: "Python" in line)
 ```
 ```scala
 val pythonLines = lines.filter(line => line.contains("Python"))
+```
+initializing spark context
+```python
+from pyspark import SparkConf, SparkContext
+conf = SparkConf().setMaster("local").setAppName("My App")
+sc = SparkContext(conf = conf)
+```
+```scala
+import org.apache.spark.SparkConf
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext._
+val conf = new SparkConf().setMaster("local").setAppName("My App") val sc = new SparkContext(conf)
 ```
 
 ## Troubleshooting
