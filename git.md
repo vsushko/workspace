@@ -9,6 +9,13 @@ git config --global user.email "john@doe.org"
 How do i update a github forked repository:<br>
 https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository
 
+server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none:
+https://stackoverflow.com/questions/21181231/server-certificate-verification-failed-cafile-etc-ssl-certs-ca-certificates-c
+```
+export GIT_SSL_NO_VERIFY=1
+#or
+git config --global http.sslverify false
+```
 hide untracked filed:
 ```
 git config --global status.showUntrackedFiles no
