@@ -39,3 +39,9 @@ add to ~/.bash_profile following lines
 export PYSPARK_PYTHON="/usr/local/bin/python3"
 export PYSPARK_DRIVER_PYTHON="/usr/local/bin/python3"
 ```
+
+How to set spark.akka.frameSize in spark-shell?
+Asked to send map output locations for shuffle
+```
+./bin/spark-submit --name "My app" --master local[4] --conf spark.akka.frameSize=100 --conf "spark.executor.extraJavaOptions=-XX:+PrintGCDetails -XX:+PrintGCTimeStamps" myApp.jar 
+```
