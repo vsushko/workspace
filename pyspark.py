@@ -232,3 +232,57 @@ rdd.mapValues(lambda x: (x, 1)).reduceByKey(lambda x, y: (x[0] + y[0], x[1] + y[
 rdd = sc.textFile("s3://...")
 words = rdd.flatMap(lambda x: x.split(" "))
 result = words.map(lambda x: (x, 1)).reduceByKey(lambda x, y: x + y)
+
+# Per-key average using combineByKey() in Python
+sumCount = nums.combineByKey((lambda x: (x,1)),
+(lambda x, y: (x[0] + y, x[1] + 1)),
+(lambda x, y: (x[0] + y[0], x[1] + y[1])))
+sumCount.map(lambda key, xy: (key, xy[0]/xy[1])).collectAsMap()
+
+# reduceByKey() with custom parallelism in Python
+data = [("a", 3), ("b", 4), ("a", 1)]
+sc.parallelize(data).reduceByKey(lambda x, y: x + y) # Default parallelism
+sc.parallelize(data).reduceByKey(lambda x, y: x + y, 10) # Custom parallelism
+
+# check the size of the RDD
+rdd.getNumPartitions()
+
+# group data sharing the same key from multiple RDDs
+x = sc.parallelize([("a", 1), ("b", 4)])
+y = sc.parallelize([("a", 2)])
+z = x.cogroup(y).collect()
+
+# Join
+# TODO
+storeAddress.join(storeRating) == {
+(Store("Ritual"), ("1026 Valencia St", 4.9)),
+(Store("Philz"), ("748 Van Ness Ave", 4.8)),
+(Store("Philz"), ("3101 24th St", 4.8))}
+
+# leftOuterJoin() and rightOuterJoin()
+# TODO
+storeAddress.leftOuterJoin(storeRating) ==
+{(Store("Ritual"),("1026 Valencia St",Some(4.9))),
+(Store("Starbucks"),("Seattle",None)),
+(Store("Philz"),("748 Van Ness Ave",Some(4.8))),
+(Store("Philz"),("3101 24th St",Some(4.8)))}
+storeAddress.rightOuterJoin(storeRating) ==
+{(Store("Ritual"),(Some("1026 Valencia St"),4.9)),
+(Store("Philz"),(Some("748 Van Ness Ave"),4.8)),
+(Store("Philz"), (Some("3101 24th St"),4.8))}
+
+# Custom sort order in Python, sorting integers as if strings
+rdd.sortByKey(ascending=True, numPartitions=None, keyfunc = lambda x: str(x))
+
+# Actions Available on Pair RDDs
+
+# Count the number of elements for each key. 
+rdd.countByKey()
+
+# Collect the result as a map to provide easy lookup.
+rdd.collectAsMap()
+
+# Return all values associated with the provided key.
+rdd.lookup(3)
+
+# Data Partitioning (Advanced)
