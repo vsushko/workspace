@@ -45,5 +45,5 @@ Asked to send map output locations for shuffle
 ```
 ./bin/spark-submit --name "My app" --master local[4] --conf spark.akka.frameSize=100 --conf "spark.executor.extraJavaOptions=-XX:+PrintGCDetails -XX:+PrintGCTimeStamps" myApp.jar 
 ```
-Stop displaying INFO messages:
+Stop displaying INFO messages:<br>
 https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displaying-on-spark-console
