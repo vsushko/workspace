@@ -286,3 +286,75 @@ rdd.collectAsMap()
 rdd.lookup(3)
 
 # Data Partitioning (Advanced)
+
+
+# Loading and saving your data
+
+Loading a text file in Python
+input = sc.textFile("file:///home/holden/repos/spark/README.md")
+
+# Saving as a text file in Python
+result.saveAsTextFile(outputFile)
+
+# Loading unstructured JSON in Python
+import json
+data = input.map(lambda x: json.loads(x))
+
+# saving JSOn in Python
+(data.filter(lambda x: x['lovesPandas']).map(lambda x: json.dumps(x)) .saveAsTextFile(outputFile))
+
+# Loading CSV with textFile() in Python
+import csv
+import StringIO
+
+def loadRecord(line):
+    """Parse a CSV line"""
+    input = StringIO.StringIO(line)
+    reader = csv.DictReader(input, fieldnames=["name", "favouriteAnimal"]) return reader.next()
+input = sc.textFile(inputFile).map(loadRecord)
+
+# Loading CSV in full in Python
+def loadRecords(fileNameContents):
+    """Load all the records in a given file"""
+    input = StringIO.StringIO(fileNameContents[1])
+    reader = csv.DictReader(input, fieldnames=["name", "favoriteAnimal"]) return reader
+fullFileData = sc.wholeTextFiles(inputFile).flatMap(loadRecords)
+
+#Writing CSV in Python
+def writeRecords(records):
+    """Write out CSV lines"""
+    output = StringIO.StringIO()
+    writer = csv.DictWriter(output, fieldnames=["name", "favoriteAnimal"]) for record in records:
+    writer.writerow(record) 
+        return [output.getvalue()]
+    
+pandaLovers.mapPartitions(writeRecords).saveAsTextFile(outputFile)
+
+
+#Loading a SequenceFile in Python
+val data = sc.sequenceFile(inFile, "org.apache.hadoop.io.Text", "org.apache.hadoop.io.IntWritable")
+
+# Saving a SequenceFile in Python
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
