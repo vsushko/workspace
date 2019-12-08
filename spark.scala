@@ -299,3 +299,74 @@ val sc = new SparkContext(...)
 val userData = sc.sequenceFile[UserID, UserInfo]("hdfs://...")
         .partitionBy(new HashPartitioner(100)) // Create 100 partitions
         .persist()
+
+// Loading and saving your data
+Loading a text file in Scala
+val input = sc.textFile("file:///home/holden/repos/spark/README.md")                  
+
+Average value per file in Scala
+val input = sc.wholeTextFiles("file://home/holden/salesFiles") 
+val result = input.mapValues{y =>
+    val nums = y.split(" ").map(x => x.toDouble)
+      nums.sum / nums.size.toDouble
+}
+
+
+// loading JSOn in Scala                  
+case class Person(name: String, lovesPandas: Boolean) {
+  // Must be a top-level class ...
+  // Parse it into a specific case class. We use flatMap to handle errors
+  // by returning an empty list (None) if we encounter an issue and a
+  // list with one element if everything is ok (Some(_)).
+  val result = input.flatMap(record => {
+    try {
+      Some(mapper.readValue(record, classOf[Person]))
+    } catch {
+      case e: Exception => None
+    }
+  })
+}      
+
+// Saving JSON in Scala
+result.filter(p => P.lovesPandas).map(mapper.writeValueAsString(_)).saveAsTextFile(outputFile)
+
+// Loading CSV with textFile() in Scala
+import Java.io.StringReader
+import au.com.bytecode.opencsv.CSVReader ...
+val input = sc.textFile(inputFile)
+val result = input.map{ line =>
+    val reader = new CSVReader(new StringReader(line));
+      reader.readNext();
+}
+
+# Loading CSV in full in Scala
+case class Person(name: String, favoriteAnimal: String)
+    val input = sc.wholeTextFiles(inputFile) val result = input.flatMap{ case (_, txt) =>
+    val reader = new CSVReader(new StringReader(txt));
+    reader.readAll().map(x => Person(x(0), x(1))) 
+}
+
+// Writing CSV in Scala
+pandaLovers.map(person => List(person.name, person.favoriteAnimal).toArray).mapPartitions{people =>
+    val stringWriter = new StringWriter();
+    val csvWriter = new CSVWriter(stringWriter); csvWriter.writeAll(people.toList)
+    Iterator(stringWriter.toString)
+}.saveAsTextFile(outFile)                  
+                  
+// Loading a SequenceFile in Scala
+val data = sc.sequenceFile(inFile, classOf[Text], classOf[IntWritable]). map{case (x, y) => (x.toString, y.get())}                  
+                  
+// Saving a SequenceFile in Scala
+val data = sc.parallelize(List(("Panda", 3), ("Kay", 6), ("Snail", 2))) data.saveAsSequenceFile(outputFile)
+                  
+                  
+                  
+                  
+
+                  
+                  
+                  
+                  
+                  
+                  
+                  
