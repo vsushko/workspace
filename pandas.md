@@ -33,3 +33,7 @@ df.loc[:, slice('quz',None, 2)]
 df.loc[:, ['foo','bar','dat']]
 # foo bar dat
 ```
+df to parquet:
+```
+df.to_parquet('myfile.parquet')
+```
