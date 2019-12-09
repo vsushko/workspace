@@ -1,7 +1,7 @@
 ### andaconda installation guide:
 https://docs.anaconda.com/anaconda/install/linux/
 
-take column-slices:
+take column-slices(https://stackoverflow.com/questions/10665889/how-to-take-column-slices-of-dataframe-in-pandas/33997632):
 ```
 # slice from 'foo' to 'cat' by every 2nd column
 df.loc[:, 'foo':'cat':2]
