@@ -2,6 +2,11 @@
 https://docs.anaconda.com/anaconda/install/linux/
 
 take column-slices(https://stackoverflow.com/questions/10665889/how-to-take-column-slices-of-dataframe-in-pandas/33997632):
+
+How to clear an IPython Notebook's output in all cells from the Linux terminal?
+```
+jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace Notebook.ipynb
+```
 ```
 # slice from 'foo' to 'cat' by every 2nd column
 df.loc[:, 'foo':'cat':2]
