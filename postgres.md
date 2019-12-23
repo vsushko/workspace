@@ -10,3 +10,4 @@ connecting to the docker container from outside:
 ```
 https://stackoverflow.com/questions/37694987/connecting-to-postgresql-in-a-docker-container-from-outside
 ```
+https://www.postgresql.org/docs/9.1/sql-vacuum.html
