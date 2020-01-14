@@ -42,6 +42,10 @@ Trouble with finding the node in ubuntu:
 ```
 https://askubuntu.com/questions/501485/having-trouble-to-find-the-node-in-ubuntu-14-04-after-installing
 ```
+npm throws error without sudo:
+```
+sudo chown -R `whoami` ~/.npm
+```
 
 ## Bootstrap
 Installation:
