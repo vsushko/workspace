@@ -93,6 +93,10 @@ start container in read-only state:
 
 `docker run -d --name <name> --read-only <image>`
 
+start container:
+
+`docker run --rm --name <container-name> -it <container-name:tag> bash`
+
 print true if the container named <name> is running and false otherwise:
 
 `docker inspect --format "{{.State.Running}}" <name>`
@@ -142,6 +146,11 @@ save image to file (with preparation):
 
 `docker pull <repository:tag>`
 `docker save -o myfile.tar <repository:tag>`
+
+save image to tar.gz:
+```
+docker save <container-name:tag> | gzip -c > <container-name:tag>.tar.gz
+```
 
 load image from a file:
 
