@@ -28,6 +28,10 @@ add local repo
 ```
 git remote add <NAME> <PATH>
 ```
+starting git bisect command:
+```
+git bisect start HEAD <commit>
+```
 comparing two branches:
 ```
 git diff dev..master
