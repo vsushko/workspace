@@ -1,3 +1,13 @@
+#### How to check os version in Linux command line
+1. Type any one of the following command to find os name and version in Linux:
+```
+cat /etc/os-release
+lsb_release -a
+hostnamectl
+```
+2. Type the following command to find Linux kernel version:
+`uname -r`
+
 extract tar to the specified directory
 ```
 mkdir ~/kafka && cd ~/kafka
