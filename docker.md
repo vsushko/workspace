@@ -273,3 +273,15 @@ VBoxManage modifyvm default --memory 4096
 docker-machine start
 ```
 for more information: https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac 
+
+## Troubleshooting
+List directory /var/lib/apt/lists/partial is missing. - Acquire (13: Permission denied)
+```
+FROM websphere-liberty:webProfile7
+ARG SSL_KEYSTORE_PASSWORD
+USER root
+RUN apt-get update && 
+apt-get install -y 
+curl
+USER 1001
+```
