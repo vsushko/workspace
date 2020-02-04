@@ -9,3 +9,8 @@ run image:
 ```
 docker run -i -t alpine /bin/bash
 ```
+Best Practices for Non-root User
+```
+addgroup -g $HOST_USER_GID -s myuser
+adduser -u $HOST_USER_UID -S myuser -G myuser
+```
