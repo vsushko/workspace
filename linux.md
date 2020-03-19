@@ -131,3 +131,8 @@ https://stackoverflow.com/questions/33033538/installing-a-tar-gz-on-linux
 
 generate id_rsa.pub from private key:
 https://blog.tinned-software.net/generate-public-ssh-key-from-private-ssh-key/
+
+Отключение systemd-timesyncd:
+```
+sudo timedatectl set-ntp no
+```
