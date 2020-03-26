@@ -136,3 +136,5 @@ https://blog.tinned-software.net/generate-public-ssh-key-from-private-ssh-key/
 ```
 sudo timedatectl set-ntp no
 ```
+“insufficient memory for the Java Runtime Environment ”
+https://stackoverflow.com/questions/22805552/insufficient-memory-for-the-java-runtime-environment-message-in-eclipse
