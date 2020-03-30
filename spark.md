@@ -47,3 +47,6 @@ Asked to send map output locations for shuffle
 ```
 Stop displaying INFO messages:<br>
 https://stackoverflow.com/questions/27781187/how-to-stop-info-messages-displaying-on-spark-console
+
+Dynamic resource allocation
+https://stackoverflow.com/questions/40200389/how-to-execute-spark-programs-with-dynamic-resource-allocation
