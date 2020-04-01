@@ -13,3 +13,7 @@ logstash plain log:
 ```
 less /var/log/logstash/logstash-plain.log
 ```
+logstash pipeline config:
+```
+cat /etc/logstash/pipelines.yml
+```
