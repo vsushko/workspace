@@ -11,3 +11,8 @@ echo ruok | nc localhost 2181
 ```
 ./zkCli.sh
 ```
+
+enter zk cli:
+```
+zookeeper-shell.sh localhost:2181
+```
