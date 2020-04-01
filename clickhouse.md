@@ -1,3 +1,15 @@
+### Commands
+Check status:
+```
+service clickhouse-server status
+```
+
+### Queries
+show tables:
+```
+clickhouse-client --port 9090 --query="show tables"
+```
+
 ### UI
 https://tabix.io/doc/Install/<br>
 
