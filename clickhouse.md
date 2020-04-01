@@ -1,3 +1,3 @@
-install gui:
+### UI
 https://tabix.io/doc/Install/<br>
 default user login - `default`
