@@ -17,3 +17,8 @@ https://tabix.io/doc/Install/<br>
 1. Uncomment section `http_server_default_response`
 2. Go to `http://localhost:8123`
 3. default user login - `default`
+
+how to remove data (https://stackoverflow.com/questions/52355143/is-it-possible-to-delete-old-records-from-clickhouse-table):
+```
+ALTER TABLE <table> DELETE WHERE 1=1
+```
