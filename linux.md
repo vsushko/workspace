@@ -75,6 +75,10 @@ kill the process by pid (Similarly ‘kill -9 PID‘ is similar to ‘kill -SIGK
 ```
 kill -9 11111
 ```
+netstat for checking who hang up on 8123
+```
+sudo netstat -tulpn | grep LISTEN | grep 8123
+```
 shows files with specific text:
 ```
 grep -Ril "text-to-find-here" /
