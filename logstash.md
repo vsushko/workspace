@@ -1,3 +1,8 @@
+Reloading the config file (https://www.elastic.co/guide/en/logstash/current/reloading-config.html#reloading-config):
+```
+bin/logstash -f apache.config --config.reload.automatic
+```
+
 ### Commands
 check logstash status:
 ```
