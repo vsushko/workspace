@@ -136,7 +136,10 @@ delete min.insync.replicas from config:
 ```
 kafka-configs.sh --zookeeper 127.0.0.1:2181 --entity-type topics --entity-name configured-topic --delete-config min.insync.replicas --alter
 ```
-
+log.retention.minutes to config(deprecated, use kafka-configs instead):
+```
+kafka-topics.sh --zookeeper localhost:2181 --alter --topic topic --config retention.ms=300000
+```
 list of configs:
 ```
  Key Value pairs of configs to add.     
