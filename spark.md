@@ -5,7 +5,10 @@ spark-submit --version
 spark-shell --version
 spark-sql --version
 ```
-
+environment variables (https://spark.apache.org/docs/latest/configuration.html#environment-variables): 
+```
+export PYSPARK_PYTHON=/usr/bin/python3
+```
 ## Commands
 
 read parquet file:
