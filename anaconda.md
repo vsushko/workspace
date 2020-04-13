@@ -4,3 +4,7 @@ We will name the environment snowflakes and install the package BioPython. At th
 ```
 conda create --name snowflakes biopython
 ```
+deactivate base env:
+```
+conda deactivate
+```
