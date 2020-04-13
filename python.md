@@ -12,6 +12,10 @@ Create the virtual environment:
 ```
 virtualenv mypython
 ```
+Create the virtual environment with specifying path:
+```
+virtualenv -p /usr/bin/python3 mypython
+```
 Activate the virtual environment:
 ```
 source mypython/bin/activate
