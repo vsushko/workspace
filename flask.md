@@ -12,3 +12,7 @@ then:
 ```
 flask run
 ```
+externally Visible Server:
+```
+flask run --host=0.0.0.0
+```
