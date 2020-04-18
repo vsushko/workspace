@@ -22,3 +22,4 @@ how to remove data (https://stackoverflow.com/questions/52355143/is-it-possible-
 ```
 ALTER TABLE <table> DELETE WHERE 1=1
 ```
+ALTER TABLE vasiliy_sushko_lab01_rt ADD COLUMN isDeleted UInt8;
