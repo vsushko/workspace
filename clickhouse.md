@@ -10,6 +10,11 @@ show tables:
 clickhouse-client --port 9090 --query="show tables"
 ```
 
+add column with specified type:
+```
+ALTER TABLE my_table ADD COLUMN deleted UInt8;
+```
+
 ### UI
 https://tabix.io/doc/Install/<br>
 
@@ -22,4 +27,3 @@ how to remove data (https://stackoverflow.com/questions/52355143/is-it-possible-
 ```
 ALTER TABLE <table> DELETE WHERE 1=1
 ```
-ALTER TABLE vasiliy_sushko_lab01_rt ADD COLUMN isDeleted UInt8;
