@@ -23,7 +23,7 @@ args = {
 }
 
 dag = DAG(
-    dag_id="vasiliy_sushko_lab01",
+    dag_id="my_dag",
     default_args=args,
     schedule_interval="0 * * * *",
     dagrun_timeout=timedelta(minutes=60),
