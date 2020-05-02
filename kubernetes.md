@@ -1,3 +1,7 @@
+### Installation
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+
 ### Definitions
 #### Pod
 *Pods* are the smallest deployable units of computing that can be created and managed in Kubernetes
