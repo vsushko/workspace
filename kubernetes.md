@@ -9,3 +9,21 @@ A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at 
 
 Основной метод управления репликами Pod и их жизненным циклом. 
 Обеспечивает необходимое количество запущенных реплик.
+
+replicas: требуемое количество экземпляров Pod
+selector: определяет все Pod-ы, управляемые этим ReplicaSet
+
+#### Deployment
+A *Deployment* provides declarative updates for Pods and ReplicaSets.
+
+You describe a *desired state* in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
+
+Основной контроллер для управления Pods
+Управляет ReplicaSet
+Предоставляют возможность управления обновлениями и функциональность rollback-a
+
+* strategy: описывает метод обновления Pods на основе type
+* recreate: все существующие Pods убиваются до запуска новых
+* rollingUpdate: циклическое обновление Pods на основе maxSurge и maxUnavailable
+* maxSurge: определяет количество дополнительных реплик
+* maxUnavailable: количество возможно недоступных реплик
