@@ -13,7 +13,11 @@ brew services start elasticsearch-full
 ```
 check Elasticsearch cluster health:
 ```
-curl localhost:9200/_cat/health
+curl -XGET localhost:9200/_cat/health
+```
+or:
+```
+curl -XGET 'localhost:9200/_cluster/health?pretty'
 ```
 
 java rest client getting started:
