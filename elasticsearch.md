@@ -13,7 +13,7 @@ brew services start elasticsearch-full
 ```
 check Elasticsearch cluster health:
 ```
-curl -XGET localhost:9200/_cat/health
+curl localhost:9200/_cat/health
 ```
 or:
 ```
