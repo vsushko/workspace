@@ -1,3 +1,12 @@
+#### Installation on macOS
+via brew:
+```
+brew tap elastic/tap
+```
+```
+brew install elastic/tap/elasticsearch-full
+```
+
 java rest client getting started:
 ```
 https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-getting-started-maven.html
