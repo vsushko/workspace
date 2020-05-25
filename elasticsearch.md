@@ -9,7 +9,7 @@ brew install elastic/tap/elasticsearch-full
 then check and run:
 ```
 brew services list
-brew services start elasticsearch
+brew services start elasticsearch-full
 ```
 
 java rest client getting started:
