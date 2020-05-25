@@ -6,6 +6,11 @@ brew tap elastic/tap
 ```
 brew install elastic/tap/elasticsearch-full
 ```
+then check and run:
+```
+brew services list
+brew services start elasticsearch
+```
 
 java rest client getting started:
 ```
