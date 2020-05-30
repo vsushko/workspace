@@ -12,3 +12,11 @@ Shows basic information about single node:
 ```
 GET /_cat/nodes?v
 ```
+creates an index:
+```
+PUT /pages
+```
+returns shards:
+```
+GET /_cat/shards
+```
