@@ -2,15 +2,15 @@ shows indecies:
 ```
 GET /_cat/indices?v
 ```
-detetes index:
+shows shards:
 ```
-DELETE <index_name>
+GET /_cat/shards?v
 ```
-Cluster health:
+cluster health:
 ```
 GET /_cluster/health
 ```
-Shows basic information about single node:
+shows basic information about single node:
 ```
 GET /_cat/nodes?v
 ```
@@ -18,7 +18,7 @@ creates an index:
 ```
 PUT /pages
 ```
-returns shards:
+detetes index:
 ```
-GET /_cat/shards
+DELETE <index_name>
 ```
