@@ -57,3 +57,7 @@ beautify json responses:
 ```
 apk update && apk add jq
 ```
+Simple query:
+```
+curl -XGET "http://localhost:9200/.kibana/_search" -H 'Content-Type: application/json' -d '{"query": {"match_all":{}}}'
+```
