@@ -1,5 +1,7 @@
+shows indecies:
+```
 GET /_cat/indices?v
-
+```
 detetes index:
 ```
 DELETE <index_name>
