@@ -19,7 +19,10 @@ or:
 ```
 curl -XGET 'localhost:9200/_cluster/health?pretty'
 ```
-
+start up elasticsearch, overwriting the following settings at the command line (not best practice):
+```
+bin/elasticsearch -Enode.name=node-3 -Epath.data=./node-3/data -Epath.logs=./node-3/logs
+```
 java rest client getting started:
 ```
 https://www.elastic.co/guide/en/elasticsearch/client/java-rest/current/java-rest-high-getting-started-maven.html
