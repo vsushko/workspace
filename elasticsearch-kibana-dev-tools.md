@@ -94,6 +94,12 @@ POST /users/_update/<index>
     """
   }
 }
+# update with primary_term and seq_no
+POST /users/_update/<index>?if_primary_term=1&if_seq_no=22
+{
+  "doc": {
+    "age": 123
+}
 ```
 upsert op:
 ```
