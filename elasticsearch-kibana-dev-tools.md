@@ -14,6 +14,10 @@ shows basic information about single node:
 ```
 GET /_cat/nodes?v
 ```
+returns specified index:
+```
+GET /users/_doc/<_id>
+```
 creates an index:
 ```
 PUT /pages
