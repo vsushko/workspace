@@ -14,7 +14,7 @@ shows basic information about single node:
 ```
 GET /_cat/nodes?v
 ```
-returns specified index:
+returns specified index by id:
 ```
 GET /users/_doc/<_id>
 ```
