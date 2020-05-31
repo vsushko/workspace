@@ -18,6 +18,15 @@ creates an index:
 ```
 PUT /pages
 ```
+adds document:
+```
+POST /users/_doc
+{
+  "name": "John",
+  "surnamee": Doe,
+  "age": 21
+}
+```
 detetes index:
 ```
 DELETE <index_name>
