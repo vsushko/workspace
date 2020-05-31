@@ -114,6 +114,28 @@ POST /users/_update/<index>
   }
 }
 ```
+update by query:
+```
+POST /users/_update_by_query
+{
+  "conflicts": "proceed",
+  "script": {
+    "source": "ctx._source.age++" 
+  },
+  "query": {
+    "match_all": {}
+  }
+}
+```
+delete by query:
+```
+POST /users/_delete_by_query
+{
+  "query": {
+    "match_all": {}
+  }
+}
+```
 detetes index:
 ```
 DELETE <index_name>
