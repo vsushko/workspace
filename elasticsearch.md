@@ -70,5 +70,5 @@ curl -XGET -u elastic:<password> "http://localhost:9200/.kibana/_search" -H 'Con
 ```
 import data from file:
 ```
-curl -H "Content-Type: application/x-ndjson" -XPOST http//:localhost:9200/products/_bulk --data-binary "@file-name.json"
+curl -H "Content-Type: application/x-ndjson" -XPOST http://localhost:9200/products/_bulk --data-binary "@file-name.json"
 ```
