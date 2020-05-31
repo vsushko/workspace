@@ -68,3 +68,7 @@ simple query with authorization:
 ```
 curl -XGET -u elastic:<password> "http://localhost:9200/.kibana/_search" -H 'Content-Type: application/json' -d '{"query": {"match_all":{}}}'
 ```
+import data from file:
+```
+curl -H "Content-Type: application/x-ndjson" -XPOST http//:localhost:9200/products/_bulk --data-binary "@file-name.json"
+```
