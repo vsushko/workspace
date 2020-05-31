@@ -136,6 +136,21 @@ POST /users/_delete_by_query
   }
 }
 ```
+makes bulk request:
+```
+POST /_bulk
+{ "index": { "_index": "users", "_id": 200 } }
+{ "name": "Bob", "age": 19, "popular": false }
+{ "create": { "_index": "users", "_id": 149 } }
+{ "name": "Alice", "age": 19, "popular": true }
+
+# with specifying index:
+POST /users/_bulk
+{ "update": { "_id": 200 } }
+{ "doc": { "age": 20 } }
+{ "delete": { "_id": 149 } }
+```
+
 detetes index:
 ```
 DELETE <index_name>
