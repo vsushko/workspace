@@ -75,6 +75,7 @@ curl -H "Content-Type: application/x-ndjson" -XPOST http://localhost:9200/produc
 
 ### Troubleshooting
 ##### low disk watermark [85%] exceeded on replicas will not be assigned to this node
+https://stackoverflow.com/questions/33369955/low-disk-watermark-exceeded-on
 mac via brew:
 ```
 curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_cluster/settings -d '{ "transient": { "cluster.routing.allocation.disk.threshold_enabled": false } }'
