@@ -72,3 +72,12 @@ import data from file:
 ```
 curl -H "Content-Type: application/x-ndjson" -XPOST http://localhost:9200/products/_bulk --data-binary "@file-name.json"
 ```
+
+### Troubleshooting
+##### low disk watermark [85%] exceeded on replicas will not be assigned to this node
+mac via brew:
+```
+curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_cluster/settings -d '{ "transient": { "cluster.routing.allocation.disk.threshold_enabled": false } }'
+
+curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
+```
