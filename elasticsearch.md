@@ -82,3 +82,13 @@ curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_cluster/se
 
 curl -XPUT -H "Content-Type: application/json" http://localhost:9200/_all/_settings -d '{"index.blocks.read_only_allow_delete": null}'
 ```
+
+update field with primary term and sequence number:
+```
+POST /myindex/_update/<docId>/?if_primary_term=1&if_seq_no=10
+{
+  "doc": {
+    "field": "fieldValue"
+  }
+}
+```
