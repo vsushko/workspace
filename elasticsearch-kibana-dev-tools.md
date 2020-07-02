@@ -220,3 +220,15 @@ PUT /reviews_with_dot_notation
   }
 }
 ```
+reindex API:
+```
+POST /_reindex
+{
+  "source": {
+    "index": "source_index"
+  },
+  "dest": {
+    "index": "destination_index"
+  }
+}
+```
