@@ -220,7 +220,7 @@ PUT /reviews_with_dot_notation
   }
 }
 ```
-reindex API:
+reindex API with script section:
 ```
 POST /_reindex
 {
@@ -229,6 +229,13 @@ POST /_reindex
   },
   "dest": {
     "index": "destination_index"
+  },
+  "script": {
+    "source": """
+      if (ctx._source.comment_id != null) {
+        ctx._source.comment_id = ctx._source.comment_id.toString();
+      }
+    """
   }
 }
 ```
