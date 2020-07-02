@@ -229,7 +229,7 @@ POST /_reindex
     "query": {
       "match_all": {}
     },
-    // for removing fields
+    # for removing fields
     "_source": ["content", "created_at", "rating"]
   },
   "dest": {
@@ -240,6 +240,8 @@ POST /_reindex
       if (ctx._source.comment_id != null) {
         ctx._source.comment_id = ctx._source.comment_id.toString();
       }
+      # rename "content" field to "comment"
+      ctx._source.comment = ctx._source.remove("content");
     """
   }
 }
