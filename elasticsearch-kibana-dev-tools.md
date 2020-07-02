@@ -250,3 +250,33 @@ POST /_reindex
   }
 }
 ```
+aliases for renaming document field:
+```
+PUT /reviews/_mapping
+{
+  "properties": {
+    "comment": {
+      "type": "alias",
+      "path": "content"
+    }
+  }
+}
+
+GET /reviews/_search
+{
+  "query": {
+    "match": {
+      "content": "outstanding"
+    }
+  }
+}
+
+GET /reviews/_search
+{
+  "query": {
+    "match": {
+      "comment": "outstanding"
+    }
+  }
+}
+```
