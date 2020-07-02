@@ -242,6 +242,10 @@ POST /_reindex
       }
       # rename "content" field to "comment"
       ctx._source.comment = ctx._source.remove("content");
+      if (ctx._source.rating < 4.0) {
+        # can also be set to "delete"
+        ctx.op = "noop";
+      }
     """
   }
 }
