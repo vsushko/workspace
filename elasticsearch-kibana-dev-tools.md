@@ -220,12 +220,15 @@ PUT /reviews_with_dot_notation
   }
 }
 ```
-reindex API with script section:
+reindex API with script section and query:
 ```
 POST /_reindex
 {
   "source": {
-    "index": "source_index"
+    "index": "source_index",
+    "query": {
+      "match_all": {}
+    }
   },
   "dest": {
     "index": "destination_index"
