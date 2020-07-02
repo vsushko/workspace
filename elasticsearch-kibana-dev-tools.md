@@ -155,3 +155,68 @@ detetes index:
 ```
 DELETE <index_name>
 ```
+optimistic concurrency control:
+```
+POST /books/_update/100/?if_primary_term=X&if_seq_no=X
+{
+  "doc": {
+    "price": 30
+  }
+}
+```
+adds mapping:
+```
+PUT /reviews
+{
+  "mappings": {
+    "properties": {
+      "rating": { "type": "float" },
+      "comment": { "type": "text" },
+      "author": {
+        "properties": {
+          "first_name": { "type": "text" },
+          "last_name": { "type": "text" },
+          "email": { "type": "keyword" }
+        }
+      }
+    }
+  }
+}
+```
+check mapping
+```
+PUT /reviews/_doc/1
+{
+  "rating": 5.0,
+  "comment": "hilarious and touching. fun for the whole family.",
+  "author": {
+    "first_name": "Nick",
+    "last_name": "Black",
+    "email": "nick@black.com"
+  }
+}
+```
+```
+GET /reviews/_mapping
+```
+check fields mapping:
+```
+GET /reviews/_mapping/field/rating
+GET /reviews/_mapping/field/comment
+GET /reviews/_mapping/field/author.email
+```
+mapping with dot notation:
+```
+PUT /reviews_with_dot_notation
+{
+  "mappings": {
+    "properties": {
+      "rating": { "type": "float" },
+      "comment": { "type": "text" },
+      "author.first_name": { "type": "text" },
+      "author.last_name": { "type": "text" },
+      "author.email": { "type": "keyword" }
+    }
+  }
+}
+```
