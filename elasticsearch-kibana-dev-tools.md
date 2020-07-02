@@ -228,7 +228,9 @@ POST /_reindex
     "index": "source_index",
     "query": {
       "match_all": {}
-    }
+    },
+    // for removing fields
+    "_source": ["content", "created_at", "rating"]
   },
   "dest": {
     "index": "destination_index"
