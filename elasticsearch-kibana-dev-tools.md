@@ -330,11 +330,14 @@ POST /_analyze
   "text": "I&apos;m in a <em>good</em> mood&nbsp;-&nbsp;and i <strong>love</strong> asdf!"
 }
 
-
 POST /analyzer_test/_analyze
 {
   "analyzer": "my_custom_analyzer", 
   "text": "I&apos;m in a <em>good</em> mood&nbsp;-&nbsp;and i <strong>love</strong> asdf!"
 }
-
+```
+Close/Open index:
+```
+POST /index/_close
+POST /index/_open
 ```
