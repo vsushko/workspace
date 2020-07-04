@@ -302,3 +302,39 @@ GET /logs-2020-01-01
 DELETE /_template/logs
 
 ```
+custom analyzers:
+```
+PUT /analyzer_test
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "my_custom_analyzer": {
+          "type": "custom",
+          "char_filter": ["html_strip"],
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "stop",
+            "asciifolding"
+            ]
+        }
+      }
+    }
+  }
+}
+
+POST /_analyze
+{
+  "char_filter": ["html_strip"],
+  "text": "I&apos;m in a <em>good</em> mood&nbsp;-&nbsp;and i <strong>love</strong> asdf!"
+}
+
+
+POST /analyzer_test/_analyze
+{
+  "analyzer": "my_custom_analyzer", 
+  "text": "I&apos;m in a <em>good</em> mood&nbsp;-&nbsp;and i <strong>love</strong> asdf!"
+}
+
+```
