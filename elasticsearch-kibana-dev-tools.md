@@ -280,3 +280,25 @@ GET /reviews/_search
   }
 }
 ```
+index templates
+```
+PUT /_template/<name_of_index_template_to_create>
+{
+    "index_patterns": ["logs-*"],
+    "settings": {
+        "index.mapping.coerce": false
+    },
+    "mappings": {
+        "properties": {
+            "@timestamp": {
+                "type": "date"
+            }
+        }
+    }
+}
+
+PUT /logs-2020-01-01
+GET /logs-2020-01-01
+DELETE /_template/logs
+
+```
