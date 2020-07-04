@@ -341,3 +341,31 @@ Close/Open index:
 POST /index/_close
 POST /index/_open
 ```
+Explains search query:
+```
+GET /books/_search
+{
+  "query": {
+    "match": {
+      "author": "Jane Austen"
+    }
+  },
+  "explain": true
+}
+```
+URI search:
+```
+GET /books/_search?q=author:Jane Austen
+# q - query string
+GET /books/_search?q=*
+```
+DSL search:
+```
+GET /books/_search
+{
+  "query": {
+    "match_all": {
+    }
+  }
+}
+```
