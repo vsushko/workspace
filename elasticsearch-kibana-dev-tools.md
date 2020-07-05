@@ -369,3 +369,32 @@ GET /books/_search
   }
 }
 ```
+term level queries and full text queries:
+```
+GET /books/_search
+{
+  "query": {
+    "term": {
+      "author": "jane"
+    }
+  }
+}
+
+GET /books/_search
+{
+  "query": {
+    "term": {
+      "name": "Jane"
+    }
+  }
+}
+
+GET /books/_search
+{
+  "query": {
+    "match": {
+      "author": "Jane"
+    }
+  }
+}
+```
