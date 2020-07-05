@@ -398,3 +398,184 @@ GET /books/_search
   }
 }
 ```
+full text search queries:
+```
+# full text queries
+GET /books/_mapping
+
+# добавит документ с указанным id
+POST /books/_doc/102
+{
+  "title": "Pride and Prejudice cut version",
+  "author": "Jane Austen",
+  "price": 5,
+  "in_stock": 5
+}
+
+# match query
+GET /books/_search
+{
+  "query": {
+    "match": {
+      "title": {
+        "query": "Prejudice cut version",
+        "operator": "or"
+      }
+    }
+  }
+}
+
+# matching phrases
+GET /books/_search
+{
+  "query": {
+    "match_phrase": {
+      "title": "Pride and"
+    }
+  }
+}
+
+# searching multiplee fields
+GET /books/_search
+{
+  "query": {
+    "multi_match": {
+      "query": "Pride", 
+      "fields": ["title", "author"]
+    }
+  }
+}
+
+# compound queries
+GET /books/_search
+{
+  "query": {
+    "bool": {
+      "must": 
+      [
+        {
+          "match": {
+            "author": "Jane Austen"
+          }
+        },
+        {
+          "range": {
+            "price": {
+              "gte": 10
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+# with filtering
+GET /books/_search
+{
+  "query": {
+    "bool": {
+      "must": 
+      [
+        {
+          "match": {
+            "author": "Jane Austen"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "range": {
+            "price": {
+              "gte": 10
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+# must_not, should
+GET /books/_search
+{
+  "query": {
+    "bool": {
+      "must": 
+      [
+        {
+          "match": {
+            "author": "Jane Austen"
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "match": {
+            "author": "Harper Lee"
+          }
+        }
+      ],
+      "should": [
+        {
+          "match": {
+            "author": "Harper Lee"
+          }
+        }
+      ], 
+      "filter": [
+        {
+          "range": {
+            "price": {
+              "gte": 10
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+
+# match 
+GET /books/_search
+{
+  "query": {
+    "match": {
+      "title": "Pride and Prejudice"
+    }
+  }
+}
+
+# the same query
+GET /books/_search
+{
+  "query": {
+    "bool": {
+      "should": 
+      [
+        {
+          "term": {
+            "title": {
+              "value": "Pride"
+            }
+          }
+        },
+        {
+          "term": {
+            "title": {
+              "value": "and"
+            }
+          }
+        },
+        {
+          "term": {
+            "title": {
+              "value": "Prejudice"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
