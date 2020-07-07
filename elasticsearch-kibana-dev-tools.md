@@ -1,4 +1,4 @@
-shows indecies:
+ shows indecies:
 ```
 GET /_cat/indices?v
 ```
