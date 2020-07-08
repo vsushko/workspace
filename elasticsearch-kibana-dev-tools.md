@@ -623,7 +623,7 @@ GET /department/_search
 }
 ```
 
-## Specifying the result format
+### Specifying the result format
 
 Returning results as YAML:
 ```
@@ -660,6 +660,46 @@ GET /books/_search
   "_source": "price",
   "query": {
     "match": { "author": "Jane" }
+  }
+}
+```
+### Specifying the result size
+Using a query parameter
+```
+GET /books/_search?size=1
+{
+  "_source": false,
+  "query": {
+    "match": {
+      "author": "Jane"
+    }
+  }
+}
+```
+Using a parameter within the request body
+```
+GET /books/_search
+{
+  "_source": false,
+  "size": 2,
+  "query": {
+    "match": {
+      "author": "Jane"
+    }
+  }
+}
+```
+Specifying an offset with the from parameter
+```
+GET /books/_search
+{
+  "_source": false,
+  "size": 2,
+  "from": 0,
+  "query": {
+    "match": {
+      "author": "Jane"
+    }
   }
 }
 ```
