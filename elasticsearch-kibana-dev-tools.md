@@ -622,3 +622,34 @@ GET /department/_search
   }
 }
 ```
+
+## Specifying the result format
+
+Returning results as YAML:
+```
+GET /books/_search?format=yaml
+{
+    "query": {
+      "match": { "author": "Jane" }
+    }
+}
+```
+Returning pretty JSON:
+```
+GET /books/_search?pretty
+{
+    "query": {
+      "match": { "author": "Jane" }
+    }
+}
+```
+Excluding the _source field altogether
+```
+GET /books/_search
+{
+  "_source": false,
+  "query": {
+    "match": { "author": "Jane" }
+  }
+}
+```
