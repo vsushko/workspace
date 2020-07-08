@@ -653,3 +653,13 @@ GET /books/_search
   }
 }
 ```
+Only returning the price field
+```
+GET /books/_search
+{
+  "_source": "price",
+  "query": {
+    "match": { "author": "Jane" }
+  }
+}
+```
