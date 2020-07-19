@@ -876,3 +876,84 @@ GET /order/_search
   }
 }
 ```
+
+has_parent and has_child:
+```
+PUT /books
+{
+  "mappings": {
+    "properties" : {
+      "join_field" : {
+        "type" : "join",
+        "relations": {
+          "books": "author"
+        }
+      }
+    }
+  }
+}
+
+PUT /books/_doc/1
+{
+  "author": "Harper Lee",
+  "join_field": "books"
+}
+
+PUT /books/_doc/2
+{
+  "author": "Jane Austen",
+  "join_field": "books"
+}
+
+PUT /books/_doc/3?routing=1
+{
+  "title": "To Kill a Mockingbird",
+  "price": 20,
+  "in_stock": 5,
+  "join_field": {
+    "name": "author",
+    "parent": 1
+  }
+}
+
+PUT /books/_doc/4?routing=2
+{
+  "title": "Pride and Prejudice",
+  "price": 20,
+  "in_stock": 5,
+  "join_field": {
+    "name": "author",
+    "parent": 2
+  }
+}
+
+# has parent
+GET /books/_search
+{
+  "query": {
+    "has_parent": {
+      "parent_type": "books",
+      "query": {
+        "term": {
+          "author.keyword": "Jane Austen"
+        }
+      }
+    }
+  }
+}
+
+# has child
+GET /books/_search
+{
+  "query": {
+    "has_child": {
+      "type": "author",
+      "query": {
+        "bool": {
+          "should": [ { "term": { "title.keyword": "To Kill a Mockingbird" } } ]
+        }
+      }
+    }
+  }
+}
+```
