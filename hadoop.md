@@ -70,3 +70,7 @@ hadoop fsck /logins/logins-2012-10-12.txt -files -blocks -locations
 
 Pail - a thin abstraction over files and folders from the dfs-datastores library (http://
 github.com/nathanmarz/dfs-datastores)
+
+## TROUBLESHOOTING
+connect to host localhost port 22: Connection refused
+https://stackoverflow.com/questions/17335728/connect-to-host-localhost-port-22-connection-refused
