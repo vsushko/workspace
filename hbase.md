@@ -14,6 +14,31 @@ bin/hbase shell
 list tables:
 ``` list ```
 
+sample config:
+```xml
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href=”configuration.xsl"?>
+<configuration>
+    <property>
+        <name>hbase.rootdir</name>
+        <value>file:///tmp</value>
+    </property>
+    <property>
+        <name>hbase.zookeeper.property.dataDir</name>
+        <value>/tmp/zookeeper</value>
+    </property>
+    <property>
+        <name>hbase.cluster.distributed</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>hbase.unsafe.stream.capability.enforce</name>
+        <value>false</value>
+    </property>
+</configuration>
+```
+
+
 
 
 ## TROUBLE SHOOTING
