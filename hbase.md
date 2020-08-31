@@ -38,7 +38,16 @@ sample config:
 </configuration>
 ```
 
+### SHELL
 
+creates simple table with single column family:
+```
+create 'people', 'd'
+```
+describes table:
+```
+describe 'people'
+```
 
 
 ## TROUBLE SHOOTING
