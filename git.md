@@ -48,6 +48,9 @@ revert specified file:
 ```
 git checkout @ -- myfile.ext
 ```
+```
+git checkout -- myfile.ext
+```
 to undo a merge that was already pushed:
 ```
 git revert -m 1 commit_hash
