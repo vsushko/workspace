@@ -44,6 +44,10 @@ will get you back 1 commit:
 ```
 git reset --hard HEAD~1
 ```
+revert specified file:
+```
+git checkout @ -- myfile.ext
+```
 to undo a merge that was already pushed:
 ```
 git revert -m 1 commit_hash
