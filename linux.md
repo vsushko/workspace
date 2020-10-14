@@ -15,6 +15,16 @@ tar -xvzf ~/Downloads/kafka.tgz --strip 1
 # The -J is the flag that specifically deals with .xz files.
 tar -xJf file.pkg.tar.xz
 ```
+ssh to remote server with pem:
+```
+ssh -i <pem-path>file.pem user@ip
+```
+
+Load key «~/.ssh/id_rsa»: bad permissions:
+```
+chmod 400 ~/.ssh/id_rsa
+```
+
 prints existing ssh keys:
 ```
 ls -al ~/.ssh
