@@ -45,6 +45,12 @@ shows bash history:
 ```
 ~/.bash_history
 ```
+change hostname (without reboot):
+```
+hostname -f
+sudo vim /etc/hosts
+127.0.1.1 new-host-name
+```
 unset var i.e. http_proxy from export:
 ```
 unset http_proxy
