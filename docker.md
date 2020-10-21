@@ -1,5 +1,9 @@
 
+add user your to docker group:
+```
+sudo usermod -aG docker your-user
 
+```
 run container sh:
 
 `docker exec -it <container-id> 'sh'`
