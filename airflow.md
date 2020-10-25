@@ -41,3 +41,7 @@ step0 = DummyOperator(
 
 start >> step0
 ```
+grep airflow processes:
+```
+ps aux | grep airflow | grep -v grep
+```
