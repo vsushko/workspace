@@ -28,3 +28,10 @@ Save all the packages in the file:
 ```
 pip freeze > requirements.txt
 ```
+
+convert date long to date:
+```python
+from datetime import datetime
+>>> datetime.utcfromtimestamp(1605139199)
+datetime.datetime(2020, 11, 11, 23, 59, 59)
+```
