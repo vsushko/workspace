@@ -23,6 +23,12 @@ ls /brokers/ids
 get /brokers/ids/1002
 get /brokers/ids/1001
 ```
+remove kafka topics:
+```
+get /brokers/topics/<topic_name> // search topic
+rmr /brokers/topics/<topic_name> // delete topic
+get /brokers/topics/<topic_name> // check deletion
+```
 
 sample output:
 ```json
