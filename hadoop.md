@@ -74,3 +74,12 @@ github.com/nathanmarz/dfs-datastores)
 ## TROUBLESHOOTING
 connect to host localhost port 22: Connection refused
 https://stackoverflow.com/questions/17335728/connect-to-host-localhost-port-22-connection-refused
+
+Re: Permission denied: user=root, access=WRITE, inode="/user":hdfs:supergroup:dr
+
+```
+The /user/ directory is owned by "hdfs" with 755 permissions. As a result only hdfs can write to that directory. Unlike unix/linux, hdfs is the superuser and not root. So you would need to do this:
+
+sudo -u hdfs hadoop fs -mkdir /user/,,myfile,,
+sudo -u hdfs hadoop fs -put myfile.txt /user/,,/,,
+```
