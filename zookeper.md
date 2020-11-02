@@ -2,7 +2,7 @@
 
 start zookeeper:
 ```
-sudo bin/zkServer.sh start
+bin/zkServer.sh start
 ```
 indicates that the ZooKeeper server process did not start:
 ```
