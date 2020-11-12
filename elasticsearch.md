@@ -11,6 +11,10 @@ then check and run:
 brew services list
 brew services start elasticsearch-full
 ```
+remove:
+```
+brew uninstall <service_name> --force
+```
 check Elasticsearch cluster health:
 ```
 curl localhost:9200/_cat/health
