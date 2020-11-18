@@ -35,3 +35,8 @@ from datetime import datetime
 >>> datetime.utcfromtimestamp(1605139199)
 datetime.datetime(2020, 11, 11, 23, 59, 59)
 ```
+get long value:
+```
+import datetime, time
+>>> time.mktime(datetime.datetime(2020, 11, 19, 10, 00, 00).timetuple())
+```
