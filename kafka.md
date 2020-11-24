@@ -7,9 +7,15 @@ zookeeper shell:
 ```
 ./zookeeper-shell.sh localhost:2181
 ```
-starts kafka as a daemon:
+starts kafka and zookeeper as a daemon:
 ```
 sh bin/zookeeper-server-start.sh -daemon config/zookeeper.properties 
+sh bin/kafka-server-start.sh -daemon config/server.properties 
+```
+or
+```
+~/kafka/bin/zookeeper-server-start.sh -daemon ~/kafka/config/zookeeper.properties 
+~/kafka/bin/kafka-server-start.sh -daemon ~/kafka/config/server.properties
 ```
 starts kafka:
 ```
