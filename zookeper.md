@@ -8,10 +8,14 @@ indicates that the ZooKeeper server process did not start:
 ```
 ps uxww | grep zookeeper
 ```
-
 ```
 echo ruok | nc localhost 2181
 ```
+run zookeeper as a daemon:
+```
+~/kafka/bin/zookeeper-server-start.sh -daemon ~/kafka/config/zookeeper.properties
+```
+
 ## ZooKeeper CLI
 ```
 ./zkCli.sh
