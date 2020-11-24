@@ -134,6 +134,11 @@ mate-screenshot -w (Key Bindings w)
 mate-screenshot -a (Key Bindings a)
 ```
 
+create symbolic link:
+```
+ln -s kafka_2.13-2.6.0 kafka
+```
+
 Add alias for ssh:
 ```
 vim ~/.ssh/config
