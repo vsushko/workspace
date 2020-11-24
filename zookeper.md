@@ -15,6 +15,10 @@ run zookeeper as a daemon:
 ```
 ~/kafka/bin/zookeeper-server-start.sh -daemon ~/kafka/config/zookeeper.properties
 ```
+check zookeeper logs:
+```
+tail -n 5 ~/kafka/logs/zookeeper.out
+```
 
 ## ZooKeeper CLI
 ```
