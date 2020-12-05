@@ -37,6 +37,38 @@ vim config/server.properties
 log.dirs=/Users/myuser/apps/kafka_2.12-2.1.0/data/kafka
 ```
 export KAFKA_HEAP_OPTS='-Xmx256M -Xms128M"
+
+systemd file for kafka:
+```
+[Unit]
+Description=Apache Kafka server (broker)
+Documentation=http://kafka.apache.org/documentation.html
+Requires=zookeeper.service
+
+[Service]
+Type=simple
+ExecStart=/home/ubuntu/kafka/bin/kafka-server-start.sh /home/ubuntu/kafka/config/server.properties
+ExecStop=/home/ubuntu/kafka/bin/kafka-server-stop.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+enable service:
+```
+sudo systemctl enable kafka
+```
+check:
+```
+sudo systemctl status kafka
+```
+start:
+```
+sudo systemctl start kafka
+```
+check journalctl:
+```
+sudo journalctl -u kafka
+```
  ## Kafka cli
 ### kafka-topics
 creates kafka topic with name "first_topic" (one running broker and zookeeper is required):
