@@ -35,6 +35,22 @@ ExecStop=/home/ubuntu/kafka/bin/zookeeper-server-stop.sh
 [Install]
 WantedBy=multi-user.target
 ```
+enable service:
+```
+sudo systemctl enable zookeeper
+```
+check:
+```
+sudo systemctl status zookeeper
+```
+start:
+```
+sudo systemctl start zookeeper
+```
+check journalctl:
+```
+sudo journalctl -u zookeeper
+```
 ## ZooKeeper CLI
 ```
 ./zkCli.sh
