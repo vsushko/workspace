@@ -44,3 +44,6 @@ files:
 `cert-signed` - signed broker certificate needs to be imported later on kafka server keystore
 `kafka.server.keystore.jks` - here we should import cert-signed
 `kafka.server.truststore.jks` - this is needed because various componeents of kafka broker itself needs to communicate with each other and therefore kafka serever needs to trust to ca certificate as well
+
+shouldn't be distributed `ca-key` and `kafka.server.keystore.jks` files 
+`ca-cert` and `cert-signed` could be publically distributed to all clients to be able establissh successful ssl communication
