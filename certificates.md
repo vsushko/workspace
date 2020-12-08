@@ -36,3 +36,11 @@ Import CA and the signed server certificate into the keystore:
 keytool -keystore kafka.server.keystore.jks -alias CARoot -import -file ca-cert -storepass $SRVPASS -keypass $SRVPASS -noprompt
 keytool -keystore kafka.server.keystore.jks -import -file cert-signed -storepass $SRVPASS -keypass $SRVPASS -noprompt
 ```
+files:
+`ca-cert` - server sertificate authority
+`ca-key`  - server sertificate authority
+`ca-cert.srl` - related to signing certificate - can be deleted
+`cert-file`   - signing certificate of our kafka broker certificate - can be deleted
+`cert-signed` - signed broker certificate needs to be imported later on kafka server keystore
+`kafka.server.keystore.jks` - here we should import cert-signed
+`kafka.server.truststore.jks` - this is needed because various componeents of kafka broker itself needs to communicate with each other and therefore kafka serever needs to trust to ca certificate as well
