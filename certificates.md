@@ -47,3 +47,28 @@ files:<br>
 
 shouldn't be distributed `ca-key` and `kafka.server.keystore.jks` files<br>
 `ca-cert` and `cert-signed` could be publically distributed to all clients to be able establissh successful ssl communication
+
+on the client side:
+grab CA certificate from remote server and add it to local CLIENT truststore:
+```
+scp -i ~/kafka-security.pem ubuntu@amazonaws.com:/home/ubuntu/ssl/ca-cert .
+keytool -keystore kafka.client.truststore.jks -alias CARoot -import -file ca-cert  -storepass $CLIPASS -keypass $CLIPASS -noprompt
+
+keytool -list -v -keystore kafka.client.truststore.jks
+```
+create client.properties and configure SSL parameters:
+```
+security.protocol=SSL
+ssl.truststore.location=location.jks
+ssl.truststore.password=pwd
+```
+producer:
+```
+~/kafka/bin/kafka-console-producer.sh --broker-list amazonaws.com:9093 --topic kafka-security-topic --producer.config ~/ssl/client.properties
+~/kafka/bin/kafka-console-producer.sh --broker-list amazonaws.com:9093 --topic kafka-security-topic
+
+```
+consumer:
+```
+~/kafka/bin/kafka-console-consumer.sh --bootstrap-server amazonaws.com:9093 --topic kafka-security-topic --consumer.config ~/ssl/client.properties
+```
