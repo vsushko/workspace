@@ -72,3 +72,38 @@ consumer:
 ```
 ~/kafka/bin/kafka-console-consumer.sh --bootstrap-server amazonaws.com:9093 --topic kafka-security-topic --consumer.config ~/ssl/client.properties
 ```
+create a CLIENT certificate:
+```
+keytool -genkey -keystore kafka.client.keystore.jks -validity 365 -storepass $CLIPASS -keypass $CLIPASS  -dname "CN=mylaptop" -alias my-local-pc -storetype pkcs12
+```
+check:
+```
+keytool -list -v -keystore kafka.client.keystore.jks
+```
+create a certification request file:
+```
+keytool -keystore kafka.client.keystore.jks -certreq -file client-cert-sign-request -alias my-local-pc -storepass $CLIPASS -keypass $CLIPASS
+```
+sign the server certificate => output: file "cert-signed":
+```
+openssl x509 -req -CA ca-cert -CAkey ca-key -in /tmp/client-cert-sign-request -out /tmp/client-cert-signed -days 365 -CAcreateserial -passin pass:$SRVPASS
+```
+import to keystore on local computer:
+```
+keytool -keystore kafka.client.keystore.jks -alias CARoot -import -file ca-cert -storepass $CLIPASS -keypass $CLIPASS -noprompt
+keytool -keystore kafka.client.keystore.jks -import -file client-cert-signed -alias my-local-pc -storepass $CLIPASS -keypass $CLIPASS -noprompt
+```
+
+add changes to enable ssl auth in server.properties
+```
+ssl.client.auth=required
+```
+create client-ssl-auth.properties file and configure kafka:
+```
+security.protocol=SSL
+ssl.truststore.location=/home/gerd/ssl/kafka.client.truststore.jks
+ssl.truststore.password=clientpass
+ssl.keystore.location=/home/gerd/ssl/kafka.client.keystore.jks
+ssl.keystore.password=clientpass
+ssl.key.password=clientpass
+```
