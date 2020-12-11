@@ -67,6 +67,10 @@ curl –no-check-certificate option like wget command
 ```
 curl -k url
 ```
+vim deletes all file content:
+```
+ggdG
+```
 generates 1GB file:
 ```
 openssl rand -out sample.txt -base64 $(( 2**30 * 3/4 ))^C
