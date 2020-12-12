@@ -429,3 +429,12 @@ mvn archetype:generate \
     -DpackageName=com.github.jcustenborder.kafka.connect.test \
     -Dversion=1.0-SNAPSHOT
 ```
+
+## Kafka security:
+```
+https://kafka.apache.org/documentation/#security_authz
+https://docs.confluent.io/4.0.0/kafka/authorization.html
+https://github.com/simplesteph/kafka-security-manager
+
+https://github.com/steveloughran/kerberos_and_hadoop/blob/master/sections/errors.md
+```
