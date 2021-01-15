@@ -29,5 +29,20 @@ insert into videos(video_id, added_date, title) values(3452f7de-14bd-11e5-855e-8
 insert into videos(video_id, added_date, title) values(4845ed97-14bd-11e5-8a40-8338255b7e33, '2013-10-16', 'DataStax DevCenter') ;
 insert into videos(video_id, added_date, title) values(5645f8bd-14bd-11e5-af1a-8638355b8e3a, '2013-04-16', 'What is DataStax Enterprise?') ;
 
+select * from videos;
+
+truncate videos;
+
+docker cp ~/dse-resources/videos.csv 2bb3451ecf7e:/
+
+copy videos(video_id, added_date, title) from '/videos.csv' with header=true;
+
+select * from videos;
+
+select count(*) from videos;
+
+quit
 ```
+
+
 
