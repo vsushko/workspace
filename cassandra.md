@@ -109,6 +109,18 @@ CREATE TABLE killrvideo.videos_by_tag (
     AND read_repair_chance = 0.0
     AND speculative_retry = '99PERCENTILE';
 
+create table videos_by_tag (tag text, video_id timeuuid, added_date timestamp, title text, primary key ((tag), added_date, video_id)) with clustering order by (added_date DESC); 
+
+COPY videos_by_tag(tag, video_id, added_date, title) FROM '/videos-by-tag.csv' with header = true;
+
+select * from videos_by_tag;
+
+describe videos_by_tag;
+
+select * from videos_by_tag where tag = 'cassandra' order by added_date ASC;
+
+select * from videos_by_tag where tag = 'cassandra' and added_date >= '2013-1-1' order by added_date ASC;
+
 ```
 
 
