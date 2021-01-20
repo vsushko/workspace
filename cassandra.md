@@ -121,6 +121,32 @@ select * from videos_by_tag where tag = 'cassandra' order by added_date ASC;
 
 select * from videos_by_tag where tag = 'cassandra' and added_date >= '2013-1-1' order by added_date ASC;
 
+dsetool status
+nodetool info
+nodetool describecluster
+nodetool getlogginglevels
+nodetool setlogginglevel org.apache.cassandra TRACE
+nodetool settraceprobability 0.1
+nodetool drain
+nodetool stopdaemon
+dse cassandra
+
+We will now stress the node using a simple tool called Apache Cassandra(TM) Stress. Once
+your node has restarted, navigate to the
+/home/ubuntu/node/resources/cassandra/tools/bin directory in the terminal. Run
+cassandra-stress to populate the cluster with 50,000 partitions using 1 client thread and
+without any warmup using:
+
+cassandra-stress write n=50000 no-warmup -rate threads=1
+
+nodetool flush
+nodetool status
+DESCRIBE KEYSPACES;
+USE keyspace1;
+DESCRIBE TABLES;
+SELECT * FROM standard1 LIMIT 5;
+
+
 ```
 
 
