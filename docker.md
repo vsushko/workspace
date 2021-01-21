@@ -1,3 +1,5 @@
+Editing files in a docker container:
+https://blog.softwaremill.com/editing-files-in-a-docker-container-f36d76b9613c
 
 add user your to docker group:
 ```
