@@ -163,6 +163,16 @@ USE keyspace1;
 DESCRIBE TABLES;
 SELECT * FROM standard1 LIMIT 5;
 
+# determinte which nodes own which partitions in the videos_by_tag table
+SELECT token(tag), tag FROM videos_by_tag;
+
+# refresh your memory as to which nodes own which token ranges:
+nodetool ring
+
+# returns the ip addresses of the nodes(s) whichi store the partitions with the respective partition key yvaluee
+./nodetool getendpoints killrvideo videos_by_tag 'cassandra'
+./nodetool getendpoints killrvideo videos_by_tag 'datastax'
+
 
 ```
 
