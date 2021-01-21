@@ -2,7 +2,22 @@
 
 https://hector-client.github.io/hector/build/html/index.html
 
+create network:
+```
+docker network create cassandra-network
+```
+Start cassandra:
+```
+docker run --name vsushko-cassandra --network cassandra-network -d cassandra:latest
+```
 
+start another node:
+```
+docker run --name vsushko-cassandra2 -d --network cassandra-network -e CASSANDRA_SEEDS=vsushko-cassandra cassandra:latest
+```
+```
+docker exec -it vsushko-cassandra bash
+```
 https://hub.docker.com/_/cassandra
 
 
