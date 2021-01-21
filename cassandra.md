@@ -58,6 +58,8 @@ select count(*) from videos;
 
 quit
 
+drop table videos;
+
 describe table videos;
 
 CREATE TABLE killrvideo.videos (
