@@ -129,6 +129,7 @@ CREATE TABLE killrvideo.videos_by_tag (
 create table videos_by_tag (tag text, video_id timeuuid, added_date timestamp, title text, primary key ((tag), added_date, video_id)) with clustering order by (added_date DESC); 
 
 COPY videos_by_tag(tag, video_id, added_date, title) FROM '/videos-by-tag.csv' with header = true;
+INSERT INTO killrvideo.videos_by_tag (tag, added_date, video_id, title) VALUES ('cassandra', '2016-2-8', uuid(), 'Me Lava Cassandra');
 
 select * from videos_by_tag;
 
@@ -212,6 +213,32 @@ WITH replication = {
  'west-side': 1
 };
 
+
+# consistency 
+CONSISTENCY;
+Current consistency level is ONE.
+
+only one node must acknowledge a write on a
+write request, and only one node must return a result set to satisfy a read request.
+
+#update:
+CONSISTENCY TWO; 
+
+TWO is the same as ALL because our current replication settings store
+one replica per data center, and we have two data centers.
+
+# commit log
+
+watch -n 1 -d "ls -lh /home/ubuntu/node/data/commit-log"
+
+/opt/cassandra/tools/bin# ./cassandra-stress write no-warmup n=250000 -port native=9041 -rate threads=1
+
+# `cfstats` gives you column family stats
+nodetool cfstats keyspace1.standard1
+nodetool cfstats 
+
+#Execute the following nodetool command which will flush the memtable contents to disk.
+/home/ubuntu/node/resources/cassandra/bin/nodetool flush
 
 
 ```
