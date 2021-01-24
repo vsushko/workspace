@@ -203,6 +203,14 @@ A snitch determines which datacenters and racks nodes belong to. They inform Cas
 cassandra.yaml
 endpoint_snitch: com.datastax.bdp.snitch.DseSimpleSnitch
 
+# Replication
+
+CREATE KEYSPACE killrvideo
+WITH replication = {
+ 'class': 'NetworkTopologyStrategy',
+ 'east-side': 1,
+ 'west-side': 1
+};
 
 
 
