@@ -57,7 +57,7 @@ select * from videos;
 select count(*) from videos;
 
 quit
-
+DROP KEYSPACE IF EXISTS killrvideo;
 drop table videos;
 
 describe table videos;
