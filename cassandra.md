@@ -191,6 +191,21 @@ UN 127.0.0.2 111.38 KiB 128 ? 574dbde2-62db-48b8-9abb-d3e4bd2e1c0f rack1
 
 ./nodetool gossipinfo
 
+# system.peers which stores some gossip data about a node's peers:
+SELECT peer, data_center, host_id, preferred_ip, rack, release_version, rpc_address, schema_version FROM system.peers;
+
+peer       | data_center | host_id                              | preferred_ip | rack  | release_version | rpc_address | schema_version
+------------+-------------+--------------------------------------+--------------+-------+-----------------+-------------+--------------------------------------
+172.25.0.3 | datacenter1 | db464a77-ce04-4148-ad69-38ebb958c89f |         null | rack1 |          3.11.9 |  172.25.0.3 | e84b6a60-24cf-30ca-9b58-452d92911703
+
+A snitch determines which datacenters and racks nodes belong to. They inform Cassandra about the network topology so that requests are routed efficiently and allows Cassandra to distribute replicas by grouping machines into datacenters and racks.
+
+cassandra.yaml
+endpoint_snitch: com.datastax.bdp.snitch.DseSimpleSnitch
+
+
+
+
 ```
 
 
