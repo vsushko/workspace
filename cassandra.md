@@ -173,6 +173,23 @@ nodetool ring
 ./nodetool getendpoints killrvideo videos_by_tag 'cassandra'
 ./nodetool getendpoints killrvideo videos_by_tag 'datastax'
 
+vnodes:
+Edit cassandra.yaml. Uncomment num_tokens if necessary and set it to 128.
+Comment out initial_token. Do this for both node1 and node2.
+Restart /home/ubuntu/node1/bin/dse cassandra
+./nodetool status
+
+Datacenter: Cassandra
+=====================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+-- Address Load Tokens Owns Host ID Rack
+UN 127.0.0.1 138.6 KiB 128 ? 30cdb721-74e2-4335-af61-74d8b9fb445f rack1
+UN 127.0.0.2 111.38 KiB 128 ? 574dbde2-62db-48b8-9abb-d3e4bd2e1c0f rack1
+./nodetool ring
+
+
+./nodetool gossipinfo
 
 ```
 
