@@ -237,8 +237,67 @@ watch -n 1 -d "ls -lh /home/ubuntu/node/data/commit-log"
 nodetool cfstats keyspace1.standard1
 nodetool cfstats 
 
-#Execute the following nodetool command which will flush the memtable contents to disk.
-/home/ubuntu/node/resources/cassandra/bin/nodetool flush
+# Execute the following nodetool command which will flush the memtable contents to disk.
+# /home/ubuntu/node/resources/cassandra/bin/nodetool flush
+
+# Execute the following command to view the current bloom filter settings:
+
+DESCRIBE keyspace keyspace1;
+cqlsh> DESCRIBE keyspace keyspace1;
+CREATE KEYSPACE keyspace1 WITH replication = {'class':
+'SimpleStrategy', 'replication_factor': '1'} AND durable_writes
+= true;
+CREATE TABLE keyspace1.counter1 (
+ key blob,
+ column1 text,
+ "C0" counter static,
+ "C1" counter static,
+ "C2" counter static,
+ "C3" counter static,
+ "C4" counter static,
+ value counter,
+ PRIMARY KEY (key, column1)
+) WITH COMPACT STORAGE
+ AND CLUSTERING ORDER BY (column1 ASC)
+ AND bloom_filter_fp_chance = 0.01
+ ...
+ AND speculative_retry = '99PERCENTILE';
+CREATE TABLE keyspace1.standard1 (
+ key blob PRIMARY KEY,
+ "C0" blob,
+ "C1" blob,
+ "C2" blob,
+ "C3" blob,
+ "C4" blob
+) WITH COMPACT STORAGE
+ AND bloom_filter_fp_chance = 0.01
+ ...
+ AND speculative_retry = '99PERCENTILE';
+
+# Note the bloom_filter_fp_chance is 0.01, meaning a 1% chance of a false positive.
+# That's pretty good, but if we want an even smaller chance, we can trade space for it.
+
+ALTER TABLE keyspace1.standard1 WITH bloom_filter_fp_chance = 0.0001;
+# Now that we have changed the bloom_filter_fp_chance, we must update our
+# SSTables and associated bloom filter files
+
+/home/ubuntu/node/resources/cassandra/bin/nodetool upgradesstables --include-all-sstables
+
+# nodetool upgradesstables rebuilds SSTables for a specified keyspace and table.
+# We are doing this here to rebuild the Bloom Filters also. Normally this command will
+# only upgrade sstables if the sstables are not at the most recent SSTable version; the --
+# include-all-sstables flag forces the rebuild to occur. Normally you would need to
+# run nodetool upgradesstables on each node. For the purposes of this exercise, we
+# only have one node.
+
+# Now examine the new size of your bloom filter files.
+ubuntu@ds201-node1:/home/ubuntu/node/data/data/keyspace1/standard1-
+9b3cd4711f7111e79d8a7b0e72657334$ ls -lh *Filter.db
+-rw-rw-r-- 1 ubuntu ubuntu 1.4K Apr 16 23:43 aa-16-bti-Filter.db
+-rw-rw-r-- 1 ubuntu ubuntu 487K Apr 16 23:43 aa-17-bti-Filter.db
+-rw-rw-r-- 1 ubuntu ubuntu 616K Apr 16 23:43 aa-18-bti-Filter.db
+
+# Notice the size of these filesis larger. We traded space for a smaller chance of a false positive.
 
 
 ```
