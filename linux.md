@@ -75,6 +75,10 @@ generates 1GB file:
 ```
 openssl rand -out sample.txt -base64 $(( 2**30 * 3/4 ))^C
 ```
+mv to cur dir:
+```
+mv <path> .
+```
 ps wlax:
 ```
 ps wlax | grep ssh
