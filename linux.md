@@ -142,7 +142,14 @@ mate-screenshot (Key Bindings p)
 mate-screenshot -w (Key Bindings w)
 mate-screenshot -a (Key Bindings a)
 ```
-
+lsblk - lists information about all available or the specified block devices:
+```
+lsblk
+```
+df displays the amount of disk space available on the file system containing each file name argument (-h --human-readable)
+```
+df -h 
+```
 create symbolic link:
 ```
 ln -s kafka_2.13-2.6.0 kafka
