@@ -23,6 +23,7 @@ ssh -i <pem-path>file.pem user@ip
 Load key «~/.ssh/id_rsa»: bad permissions:
 ```
 chmod 400 ~/.ssh/id_rsa
+chmod 0400 ~/.ssh/id_rsa
 ```
 
 prints existing ssh keys:
