@@ -17,3 +17,9 @@ Mockito tries to do injection during to find Mocks:
 1) Constructor base injection
 2) Setter baseed injection
 3) Field based injection
+
+InjectMock doesn't work with:
+1) inner classes
+2) static classes
+3) interfaces 
+4) final static fields
