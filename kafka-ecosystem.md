@@ -28,7 +28,7 @@ run command:
 ```
 docker-compose -f docker-file-path.yaml up
 ```
-
+http://localhost:9000/clusters/KafkaCluster/topics
 
 ## Kafka Manager: UI to explore Kafka Metadata and perform basic administration tasks
 https://github.com/yahoo/CMAK
@@ -51,4 +51,6 @@ services:
 
 ## Kafka Monitor: UI that runs a producer/consumer and ensures Kafka is available and working
 https://github.com/linkedin/kafka-monitor
+https://github.com/linkedin/kafka-monitor/pull/220
+
 
