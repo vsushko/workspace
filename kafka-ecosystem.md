@@ -97,4 +97,5 @@ https://github.com/prometheus/jmx_exporter/tree/master/example_configs
 https://grafana.com/grafana/dashboards/721
 
 
-
+### Dashboard from Confluent in Grafana:
+https://github.com/confluentinc/cp-helm-charts/tree/master/grafana-dashboard
