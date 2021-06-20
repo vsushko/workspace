@@ -91,4 +91,8 @@ sudo systemctl start kafka-monitor
 #### JMX Exporter
 https://github.com/prometheus/jmx_exporter
 
+configs:
+https://github.com/prometheus/jmx_exporter/tree/master/example_configs
+
+
 
