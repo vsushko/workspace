@@ -438,3 +438,7 @@ https://github.com/simplesteph/kafka-security-manager
 
 https://github.com/steveloughran/kerberos_and_hadoop/blob/master/sections/errors.md
 ```
+allow-pricinal:
+```
+./kafka-acls --add --allow-principal "User:certificate" --operation Write --topic 'topica_name' --authorizer-properties zookeeper.connect=`hostname -f`:2181
+```
