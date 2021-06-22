@@ -99,3 +99,15 @@ https://grafana.com/grafana/dashboards/721
 
 ### Dashboard from Confluent in Grafana:
 https://github.com/confluentinc/cp-helm-charts/tree/master/grafana-dashboard
+
+### Jolokia
+Jolokia (https://jolokia.org/) is remote JMX with JSON over HTTP.
+It is fast, simple, polyglot and has unique features. It's JMX on Capsaicin.
+
+### Yelp kafka utils
+https://github.com/Yelp/kafka-utils
+
+updating kafkaf configurations:
+kafka.apache.org/documentation/#brokerconfigs
+
+
