@@ -108,6 +108,6 @@ It is fast, simple, polyglot and has unique features. It's JMX on Capsaicin.
 https://github.com/Yelp/kafka-utils
 
 updating kafkaf configurations:
-kafka.apache.org/documentation/#brokerconfigs
+https://kafka.apache.org/documentation/#brokerconfigs
 
 
