@@ -110,4 +110,5 @@ https://github.com/Yelp/kafka-utils
 updating kafkaf configurations:
 https://kafka.apache.org/documentation/#brokerconfigs
 
-
+download kafka binaries:
+https://archive.apache.org/dist/kafka/1.1.1/kafka_2.12-1.1.1.tgz
