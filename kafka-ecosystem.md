@@ -121,3 +121,6 @@ https://github.com/linkedin/kafka-tools/wiki/Kafka-Assigner
 
 Module: Balance
 https://github.com/linkedin/kafka-tools/wiki/module-balance
+
+Module: Set Replication Factor
+https://github.com/linkedin/kafka-tools/wiki/module-set-replication-factor
