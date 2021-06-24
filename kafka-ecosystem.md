@@ -112,3 +112,12 @@ https://kafka.apache.org/documentation/#brokerconfigs
 
 download kafka binaries:
 https://archive.apache.org/dist/kafka/1.1.1/kafka_2.12-1.1.1.tgz
+
+linkedin kafka tools:
+https://github.com/linkedin/kafka-tools#kafka-tools
+
+Kafka Assigner:
+https://github.com/linkedin/kafka-tools/wiki/Kafka-Assigner
+
+Module: Balance
+https://github.com/linkedin/kafka-tools/wiki/module-balance
