@@ -124,3 +124,6 @@ https://github.com/linkedin/kafka-tools/wiki/module-balance
 
 Module: Set Replication Factor
 https://github.com/linkedin/kafka-tools/wiki/module-set-replication-factor
+
+Module: Remove
+https://github.com/linkedin/kafka-tools/wiki/module-remove
