@@ -442,3 +442,10 @@ allow-pricinal:
 ```
 ./kafka-acls --add --allow-principal "User:certificate" --operation Write --topic 'topica_name' --authorizer-properties zookeeper.connect=`hostname -f`:2181
 ```
+
+remove kafka data:
+```
+cd /data/kafka
+rm -r -f /data/kafka/*
+du -sh /data/kafka
+```
