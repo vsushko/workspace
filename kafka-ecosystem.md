@@ -127,3 +127,12 @@ https://github.com/linkedin/kafka-tools/wiki/module-set-replication-factor
 
 Module: Remove
 https://github.com/linkedin/kafka-tools/wiki/module-remove
+
+Kafka upgrade:
+https://kafka.apache.org/documentation/#upgrade
+
+Efficient data transfer through zero copy:
+https://developer.ibm.com/articles/j-zerocopy/
+
+KIP-283:
+https://cwiki.apache.org/confluence/display/KAFKA/KIP-283%3A+Efficient+Memory+Usage+for+Down-Conversion
