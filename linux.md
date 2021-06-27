@@ -80,6 +80,10 @@ mv to cur dir:
 ```
 mv <path> .
 ```
+check directory's folders size:
+```
+du -sh *
+```
 ps wlax:
 ```
 ps wlax | grep ssh
