@@ -445,6 +445,7 @@ allow-pricinal:
 
 remove kafka data:
 ```
+ls /data/kafka
 cd /data/kafka
 rm -r -f /data/kafka/*
 du -sh /data/kafka
