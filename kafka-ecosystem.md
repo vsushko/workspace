@@ -136,3 +136,9 @@ https://developer.ibm.com/articles/j-zerocopy/
 
 KIP-283:
 https://cwiki.apache.org/confluence/display/KAFKA/KIP-283%3A+Efficient+Memory+Usage+for+Down-Conversion
+
+ports:
+grafana: 3000
+prometheus: 9090
+kafka manager: 9000
+zookeeper ui: 7070
