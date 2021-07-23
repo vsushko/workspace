@@ -64,6 +64,10 @@ sudo fuser -k 2181/tcp
 ```
 sudo lsof -i | grep 8080
 ```
+kill process by listening port:
+```
+lsof -i :8080 | awk {'print $2'} | tail -1 | xargs kill -9
+```
 curl –no-check-certificate option like wget command
 ```
 curl -k url
