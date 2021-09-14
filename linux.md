@@ -150,6 +150,14 @@ tail logs:
 ```
 sudo tail -f -n 30 /var/log/app/mylog.log
 ```
+make script executable:
+```
+chmod +x myscript.sh
+```
+add rights for executing:
+```
+chmod u+x filename
+```
 ubuntu screenshot utils:
 ```
 sudo apt install mate-utils
