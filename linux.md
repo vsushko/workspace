@@ -146,6 +146,10 @@ do ps -ef in infinite loop:
 ```
 while (true); do ps -ef | grep zookeeper; sleep 1; done
 ```
+tail logs:
+```
+sudo tail -f -n 30 /var/log/app/mylog.log
+```
 ubuntu screenshot utils:
 ```
 sudo apt install mate-utils
