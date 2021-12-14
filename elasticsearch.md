@@ -96,3 +96,42 @@ POST /myindex/_update/<docId>/?if_primary_term=1&if_seq_no=10
   }
 }
 ```
+### Security:
+1.
+```
+xpack.security.enabled: true
+```
+2.
+```
+curl http://localhost:9200
+```
+```
+{"error":{"root_cause":[{"type":"security_exception","reason":"missing authentication credentials for REST request [/]","header":{"WWW-Authenticate":"Basic realm=\"security\" charset=\"UTF-8\""}}],"type":"security_exception","reason":"missing authentication credentials for REST request [/]","header":{"WWW-Authenticate":"Basic realm=\"security\" charset=\"UTF-8\""}},"status":401}
+```
+3.
+```
+bin/elasticsearch-setup-passwords auto
+```
+
+```
+Changed password for user apm_system
+PASSWORD apm_system = *
+
+Changed password for user kibana_system
+PASSWORD kibana_system = *
+
+Changed password for user kibana
+PASSWORD kibana = *
+
+Changed password for user logstash_system
+PASSWORD logstash_system = *
+
+Changed password for user beats_system
+PASSWORD beats_system = *
+
+Changed password for user remote_monitoring_user
+PASSWORD remote_monitoring_user = *
+
+Changed password for user elastic
+PASSWORD elastic = *
+```
