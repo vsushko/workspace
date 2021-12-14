@@ -144,4 +144,7 @@ cd /usr/local/var/homebrew/linked/kibana-full
 elasticsearch.username: "kibana_system"
 elasticsearch.password: "***"
 ```
-
+go to kibana 
+```
+elastic:password
+```
