@@ -97,7 +97,7 @@ POST /myindex/_update/<docId>/?if_primary_term=1&if_seq_no=10
 }
 ```
 ### Security:
-1.
+1. edit elasticsearch.yml
 ```
 xpack.security.enabled: true
 ```
@@ -135,3 +135,13 @@ PASSWORD remote_monitoring_user = *
 Changed password for user elastic
 PASSWORD elastic = *
 ```
+4.
+```
+cd /usr/local/var/homebrew/linked/kibana-full
+```
+5.
+```
+elasticsearch.username: "kibana_system"
+elasticsearch.password: "***"
+```
+
