@@ -148,3 +148,9 @@ go to kibana
 ```
 elastic:password
 ```
+
+### Spaces
+Sharing saved-objects in multiple spaces
+```
+https://github.com/elastic/kibana/issues/27004
+```
