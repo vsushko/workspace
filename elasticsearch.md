@@ -154,3 +154,8 @@ Sharing saved-objects in multiple spaces
 ```
 https://github.com/elastic/kibana/issues/27004
 ```
+
+Importing data into local cluster:
+```
+curl -H "Content-Type: application/x-ndjson" -XPOST http://localhost:9200/_bulk --data-binary "@nginx-access-logs-2020-01.bulk.ndjson"
+```
