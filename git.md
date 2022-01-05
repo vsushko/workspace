@@ -69,3 +69,8 @@ sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install git
 ```
+restore deleted but not commited file:
+```
+git ls-files --deleted
+git checkout -- <file>
+```
