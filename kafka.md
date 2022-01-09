@@ -450,3 +450,83 @@ cd /data/kafka
 rm -r -f /data/kafka/*
 du -sh /data/kafka
 ```
+https://stackoverflow.com/questions/47345967/why-doesnt-future-get-kill-the-thread
+
+### Kafka Streams
+Course repo:
+```
+https://github.com/simplesteph/kafka-streams-course/tree/2.1.0
+```
+
+All the joins explained - Blog Post:
+```
+https://www.confluent.io/blog/crossing-streams-joins-apache-kafka/
+```
+test Kafka Streams:
+```
+https://kafka.apache.org/11/documentation/streams/developer-guide/testing.html
+```
+Confluent Documentation:
+```
+https://docs.confluent.io/home/overview.html
+```
+Confluent github examples:
+```
+https://github.com/confluentinc/examples
+```
+bbejeck/kafka-streams:
+```
+https://github.com/bbejeck/kafka-streams
+```
+gwenshap/kafka-examples:
+```
+https://github.com/gwenshap/kafka-examples
+```
+gwenshap/kafka-streams-stockstats:
+```
+https://github.com/gwenshap/kafka-streams-stockstats
+```
+KAFKA STREAMS API:
+```
+https://kafka.apache.org/0110/documentation/streams/
+```
+What are the differences and similarities between Kafka and Spark Streaming?:
+```
+https://www.quora.com/What-are-the-differences-and-similarities-between-Kafka-and-Spark-Streaming
+```
+Stateful transformations:
+```
+https://docs.confluent.io/platform/current/streams/developer-guide/dsl-api.html#stateful-transformations
+```
+Low-Level Processor API:
+```
+https://kafka.apache.org/0110/documentation/streams/developer-guide#streams_processor
+```
+Confluent achieves Holy Grail of ‘exactly once’ delivery on Kafka messaging service:
+```
+https://techcrunch.com/2017/06/30/confluent-achieves-holy-grail-of-exactly-once-delivery-on-kafka-messaging-service/
+```
+Exactly-once Support in Apache Kafka:
+```
+https://medium.com/@jaykreps/exactly-once-support-in-apache-kafka-55e1fdd0a35f
+```
+Exactly-Once Semantics Are Possible: Here’s How Kafka Does It:
+```
+https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/
+```
+Introducing Exactly Once Semantics in Apache Kafka with Matthias J. Sax:
+```
+https://www.youtube.com/watch?v=Wo9jlaz8h0k&t=1s
+```
+Kafka End to End Udemy (Medium Blog)
+```
+https://www.youtube.com/watch?v=h5i94umfzMM
+```
+
+
+
+
+
+
+
+
