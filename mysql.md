@@ -41,3 +41,18 @@ mysql -h localhost:3306 -u user -p
 ## Tutorials
 #### Accessing data with MySQL
 https://spring.io/guides/gs/accessing-data-mysql/
+
+Add the following line to your .bash_profile or .zshrc file
+```
+export PATH=${PATH}:/usr/local/mysql/bin/ 
+```
+Then run:
+```
+Mysql -u root -p 
+```
+And enter the password you received when you initially installed.
+
+Finally, create a new password for the root user by running:
+```
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'yournewpassword' 
+```
