@@ -16,3 +16,41 @@ list tables:
 ```
 \dt
 ```
+postgress location:
+`sudo ls -l /usr/lib/postgresql/12`
+
+db cluster (PGDATA): 
+`ls -l /var/lib/postgresql/12/main`
+
+stop server:
+`pg_ctlcluster 12 main stop`
+
+start server: 
+`pg_ctlcluster 12 main start`
+
+restart serever: 
+`pg_ctlcluster 12 main restart`
+
+reload configuration:
+`pg_ctlcluster 12 main reload`
+
+server log:
+`ls -l /var/log/postgresql/postgresql-12-main.log`
+
+#### configuration parameters
+`ls -l /etc/postgreesql/12/main`
+main file postgresql.conf
+ALTER SYSTEEM - postgresqul.auto.conf
+for current session:
+```
+SET/RESET
+set_config()
+```
+get current value:
+```
+SHOW
+current_setting()
+pg_settings
+
+show work_mem:
+`SHOW wwork_mem;`
