@@ -7,8 +7,11 @@ hostnamectl
 ```
 2. Type the following command to find Linux kernel version:
 `uname -r`
-
-extract tar to the specified directory
+run command by specifyed user:
+`sudo -u myuser <command>`
+change user:
+`sudo su - user`
+extract tar to the specified directory:
 ```
 mkdir ~/kafka && cd ~/kafka
 tar -xvzf ~/Downloads/kafka.tgz --strip 1
