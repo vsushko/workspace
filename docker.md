@@ -291,3 +291,8 @@ apt-get install -y
 curl
 USER 1001
 ```
+create a swarm (https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/):
+```
+   docker swarm init --advertise-addr <MANAGER-IP>
+```
+  
