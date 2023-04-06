@@ -1,3 +1,8 @@
+```
+echo export "JAVA_HOME=\$(/usr/libexec/java_home)" >> ~/.bash_profile
+echo export "JAVA_HOME=\$(/usr/libexec/java_home)" >> ~/.zshrc
+```
+
 install java via webupd8team:
 ```
 https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/
