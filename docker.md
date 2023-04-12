@@ -292,11 +292,13 @@ curl
 USER 1001
 ```
 create a swarm (https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/):
-`docker swarm init --advertise-addr <MANAGER-IP>`
-
+```
+docker swarm init --advertise-addr <MANAGER-IP>
+```
 show .NetworkSettings.Networks:
-`docker inspect mongo-container -f "{{ json .NetworkSettings.Networks }}"`
-
+```
+docker inspect mongo-container -f "{{ json .NetworkSettings.Networks }}"
+```
 run created docker container:
 ```
 docker run -d -p port:port --name <service-name> --network <network-name> -e "SPRING_PROFILES_ACTIVE=docker" --restart always <container-name>
@@ -314,7 +316,7 @@ docker push <dockerhubusername>/<dockerhubrepo>:<container-name>
 
 deploy stack:
 ```
-docker stack deploy --compose-file docker-compose
+docker stack deploy --compose-file docker-compose-stack.yml <stackname>
 ```
 list services:
 ```
@@ -322,5 +324,5 @@ docker service ls
 ```
 remove stack:
 ```
-docker stack rm <stack-name>
+docker stack rm <stackname>
 ```
