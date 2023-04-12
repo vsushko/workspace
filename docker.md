@@ -304,4 +304,11 @@ tag created container:
 `docker tag user-oauth2 <dockerhubusername>/<dockerhubrepo>:<container-name>`
 
 push image to docker hub:
-`docker push <dockerhubusername>/<dockerhubrepo>:<container-name>`
+```
+docker push <dockerhubusername>/<dockerhubrepo>:<container-name>
+```
+
+deploy stack:
+```
+docker stack deploy --compose-file docker-compose
+```
