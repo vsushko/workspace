@@ -165,6 +165,7 @@ load image from a file:
 build and install a Docker image using the Dockerfile (-t provide place to install image):
 
 `docker build -t [REGISTRYHOST/][USERNAME/]NAME[:TAG] <docker-file-name>`
+`docker build -t <container-name> .`
 
 show a list which includes every installed intermediate image or layer:
 
@@ -295,4 +296,7 @@ create a swarm (https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm
 ```
    docker swarm init --advertise-addr <MANAGER-IP>
 ```
-  
+show .NetworkSettings.Networks:
+```
+   docker inspect mongo-container -f "{{ json .NetworkSettings.Networks }}"
+```
