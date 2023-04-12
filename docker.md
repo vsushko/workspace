@@ -293,12 +293,15 @@ USER 1001
 ```
 create a swarm (https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/):
 `docker swarm init --advertise-addr <MANAGER-IP>`
+
 show .NetworkSettings.Networks:
 `docker inspect mongo-container -f "{{ json .NetworkSettings.Networks }}"`
 
 run created docker container:
 `docker run -d -p port:port --name <service-name> --network <network-name> -e "SPRING_PROFILES_ACTIVE=docker" --restart always <container-name>`
+
 tag created container:
 `docker tag user-oauth2 <dockerhubusername>/<dockerhubrepo>:<container-name>`
+
 push image to docker hub:
 `docker push <dockerhubusername>/<dockerhubrepo>:<container-name>`
