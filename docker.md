@@ -301,7 +301,9 @@ run created docker container:
 `docker run -d -p port:port --name <service-name> --network <network-name> -e "SPRING_PROFILES_ACTIVE=docker" --restart always <container-name>`
 
 tag created container:
-`docker tag user-oauth2 <dockerhubusername>/<dockerhubrepo>:<container-name>`
+```
+docker tag user-oauth2 <dockerhubusername>/<dockerhubrepo>:<container-name>
+```
 
 push image to docker hub:
 ```
@@ -311,4 +313,8 @@ docker push <dockerhubusername>/<dockerhubrepo>:<container-name>
 deploy stack:
 ```
 docker stack deploy --compose-file docker-compose
+```
+list services:
+```
+docker service ls
 ```
