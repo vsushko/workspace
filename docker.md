@@ -298,7 +298,9 @@ show .NetworkSettings.Networks:
 `docker inspect mongo-container -f "{{ json .NetworkSettings.Networks }}"`
 
 run created docker container:
-`docker run -d -p port:port --name <service-name> --network <network-name> -e "SPRING_PROFILES_ACTIVE=docker" --restart always <container-name>`
+```
+docker run -d -p port:port --name <service-name> --network <network-name> -e "SPRING_PROFILES_ACTIVE=docker" --restart always <container-name>
+```
 
 tag created container:
 ```
@@ -317,4 +319,8 @@ docker stack deploy --compose-file docker-compose
 list services:
 ```
 docker service ls
+```
+remove stack:
+```
+docker stack rm <stack-name>
 ```
