@@ -6,6 +6,13 @@ rbook:
 ```
 https://rbook.could
 ```
+Local installation:
+```
+brew tap redis-stack/redis-stack
+brew install redis-stack
+redis-stack-server
+```
+To connect to your local Redis server and execute commands, run redis-cli
 
 Design considerations:
 ```
