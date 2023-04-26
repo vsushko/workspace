@@ -22,3 +22,14 @@ Design considerations:
 4. What will the key naming policy be for this data?
 5. Any business-logic concerns?
 ```
+
+Reasons to Store as Hash:
+- The record has many attributes
+- A collections of these records have to be stored many different ways
+- Often need to access a single record at a time
+
+Don’t use Hashes when…:
+- The record is only for counting or enforcing uniqueness
+- Record stores only one or two attributes
+- Used only for creating relations between different records
+- The record is only used for time series data
