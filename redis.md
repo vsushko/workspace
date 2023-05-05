@@ -39,3 +39,7 @@ Set Use Cases
 - creating a relationship between different records
 - finding common attributes between different things
 - general list of elements where order doesn't matter
+
+Sorted Set Use Cases:
+- tabulating 'the most' or 'the least' of a collection of hasshes
+- creating relationships between records, sorted byy some criteria
