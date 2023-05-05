@@ -33,3 +33,9 @@ Don’t use Hashes when…:
 - Record stores only one or two attributes
 - Used only for creating relations between different records
 - The record is only used for time series data
+
+Set Use Cases
+- enforcing uniqueness of any value
+- creating a relationship between different records
+- finding common attributes between different things
+- general list of elements where order doesn't matter
