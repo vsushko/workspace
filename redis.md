@@ -64,4 +64,12 @@ Not to use Lists:
 - you need to apply some filtering criteria
 - your data is sorted by some attribute
 
+Options for Handling Concurrency
+- use an atomic update command (like HINCRBY or HSETNX)
+- use a transaction with the 'WATCH' command
+- use a lock
+- use a custom LUA update script
+
+
+
 
