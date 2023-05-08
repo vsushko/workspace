@@ -58,3 +58,10 @@ Lists Use Cases:
 - append-only or prepend-only data (temperature readings, stsock values)
 - when you only need the last/first N values of something
 - your data has no sort order besides the order it was inserted
+
+Not to use Lists:
+- if you have many items
+- you need to apply some filtering criteria
+- your data is sorted by some attribute
+
+
