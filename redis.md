@@ -70,6 +70,17 @@ Options for Handling Concurrency
 - use a lock
 - use a custom LUA update script
 
+When to use Lua scripts:
+- limiting the amount of data exchanged between sserver + redis
+- solving some concurrency issues
+- minimizing the number of round trips between server + redis
+
+Scripts down sides:
+- keys must be known ahead of time
+- tough to test scripts
+- loss of language features (e.g. type checking with typescripts)
+- another language to deal with (Lua)
+
 
 
 
