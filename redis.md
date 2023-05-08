@@ -43,3 +43,13 @@ Set Use Cases
 Sorted Set Use Cases:
 - tabulating 'the most' or 'the least' of a collection of hasshes
 - creating relationships between records, sorted byy some criteria
+
+HyperLogsLogs:
+- algorithm for approximately counting the number of unique values
+- similar to a set, but doesn't store the elements
+
+Lists:
+- store an ordered list of stirngs
+- not an array
+- implemented as doubly-linked list
+- often used for time-series data
