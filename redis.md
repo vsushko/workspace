@@ -53,3 +53,8 @@ Lists:
 - not an array
 - implemented as doubly-linked list
 - often used for time-series data
+
+Lists Use Cases:
+- append-only or prepend-only data (temperature readings, stsock values)
+- when you only need the last/first N values of something
+- your data has no sort order besides the order it was inserted
