@@ -1,3 +1,11 @@
+Redis stack:
+```
+https://redis.io/docs/stack/
+```
+Distributed Locks with Redis:
+```
+https://redis.io/docs/manual/patterns/distributed-locks/
+```
 Commands:
 ```
 https://redis.io/commands
