@@ -89,6 +89,20 @@ Scripts down sides:
 - loss of language features (e.g. type checking with typescripts)
 - another language to deal with (Lua)
 
+Creating and Using an Index:
+```
+HSET cars#a1 name 'fast car' color red year 1960 
+HSET cars#b1 name 'car' color red year 1960 
+HSET cars#c1 name 'old car' color blue year 1960 
+HSET cars#d1 name 'new car' color red year 1960 
+
+FT.CREATE idx:cars on hash prefix 1 cars#
+        schema name text year numeric color tag
+
+FT.SEARCH idx:cars '@name:(fast car)'
+FT.SEARCH idx:cars '@color:{blue}'
+FT.SEARCH idx:cars '@year:[1960 1980]'
+```
 
 
 
