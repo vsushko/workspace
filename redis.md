@@ -107,3 +107,7 @@ Queries with EXPLAIN:
 ```
 FT.EXPLAINCLI idx:items 'chair'
 ```
+Query performance with PROFILE:
+```
+FT.PROFILE idx:items SEARCH QUERY 'chairs' LIMIT 0 0
+```
