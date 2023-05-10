@@ -103,6 +103,7 @@ FT.SEARCH idx:cars '@name:(fast car)'
 FT.SEARCH idx:cars '@color:{blue}'
 FT.SEARCH idx:cars '@year:[1960 1980]'
 ```
-
-
-
+Queries with EXPLAIN:
+```
+FT.EXPLAINCLI idx:items 'chair'
+```
