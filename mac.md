@@ -1,4 +1,4 @@
-install hobebrew on mac:
+install homebrew on mac:
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
@@ -31,4 +31,12 @@ brew cask install java8
 alias for ll:
 ```
 alias ll='ls -lG'
+```
+### installing java:
+```
+brew install openjdk@17
+```
+create a link:
+```
+sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 ```
