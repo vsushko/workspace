@@ -11,7 +11,7 @@ brew uninstall mongodb
 brew tap mongodb/brew
 brew install mongodb-community
 ```
-How to restart MongoDB in your local machine.
+How to restart MongoDB in your local machine:
 ```
 brew services restart mongodb-community
 ```
