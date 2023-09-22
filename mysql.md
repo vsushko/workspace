@@ -56,3 +56,10 @@ Finally, create a new password for the root user by running:
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'yournewpassword' 
 ```
+Mysql in docker:
+```
+docker exec -it <container-id> bash
+mysql -u root -p
+show databases;
+```
+
