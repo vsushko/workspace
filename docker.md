@@ -273,7 +273,7 @@ check the work:
 verify image is discoverable with label filter (-f means that filter output based on conditions provided):
 
 `docker images -f "label=dia_excercise=ch9_registry_bound"`
-
+`docker ps --filter status=exited`
 
 increase ram for docker machine
 ```
