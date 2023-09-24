@@ -94,6 +94,10 @@ VARIABLE3_CID=$(docker create --link $VARIABLE1_CID:<name1> --link $VARIABLE1_CI
 docker start VARIABLE2_CID
 docker start VARIABLE1_CID
 ```
+link docker containres
+```
+docker run -it --link "container1:tag" container2 /bin/bash
+```
 start container in read-only state:
 
 `docker run -d --name <name> --read-only <image>`
