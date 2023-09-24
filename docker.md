@@ -135,12 +135,13 @@ kill program inside the container:
 `docker exec <container-name> kill <PID>`
 
 remove container (-f if state is running or use docker kill with docker ps <container-name>):
-
 `docker rm <container-name>`
 
 quick cleanup command:
-
 `docker rm -vf $(docker ps -a -q)`
+
+remove all exited containres:
+`dokcer rm $(docker ps --filter status=exited -q)`
 
 download/remove another image in alternative registry (for example quay.io/dockerinaction/ch3_hello_registry:latest):
 
@@ -273,9 +274,11 @@ check the work:
 verify image is discoverable with label filter (-f means that filter output based on conditions provided):
 
 `docker images -f "label=dia_excercise=ch9_registry_bound"`
+docker ps filering:
 `docker ps --filter status=exited`
+`docker ps --filter status=exited -q`
 
-increase ram for docker machine
+increase ram for docker machine:
 ```
 docker-machine stop
 VBoxManage modifyvm default --cpus 2
