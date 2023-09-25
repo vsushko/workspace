@@ -30,6 +30,9 @@ To make docker the default driver:
 ```
 minikube config set driver docker
 ```
+print docker environment:
+`minikube docker-env`
+
 ### Definitions
 #### Pod
 *Pods* are the smallest deployable units of computing that can be created and managed in Kubernetes
