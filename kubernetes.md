@@ -1,7 +1,35 @@
 ### Installation
 https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
-
+install kubectl on macOS:
+```
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/arm64/kubectl"
+```
+Make the kubectl binary executable.
+`chmod +x ./kubectl`
+Move the kubectl binary to a file location on your system `PATH`.
+```
+sudo mv ./kubectl /usr/local/bin/kubectl
+sudo chown root: /usr/local/bin/kubectl
+```
+Test to ensure the version you installed is up-to-date:
+`kubectl version --client`
+install minikube:
+`brew install minikube`
+remove old minikube:
+```
+brew unlink minikube
+brew link minikube
+```
+for troubleshooting:
+`minikube delete`
+and execute the command to install kubernetes into an existing docker install:
+`minikube start --driver=docker`
+To make docker the default driver:
+```
+minikube config set driver docker
+```
 ### Definitions
 #### Pod
 *Pods* are the smallest deployable units of computing that can be created and managed in Kubernetes
