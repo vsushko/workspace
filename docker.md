@@ -376,3 +376,30 @@ Secrets and configs are mounted files inside a container of a swarm service atru
 * * configs default to /<config-name>
 * encryption
 * * secrets are encryypted, and then decrypted within the container.
+`docker swarm ca`
+`docker swarm ca | docker secret create swarm_ca -`
+`docker swarm ca > swarm_ca.crt`
+`docker config create swarm_ca ./swarm_ca.crt`
+`docker secret ls`
+`docker config ls`
+`cat /run/secrets/swarm.crt`
+
+in docker .yml file: 
+```yml
+configs:
+ - source: swarm.crt
+   target: /run/secret.crt
+secrets:
+ - source: swarm.crt
+   target: /run/secret.crt
+#...
+configs:
+  swarm.crt:
+    file: ./swarm_ca.crt
+secrets:
+  swarm.crt:
+    file: ./swarm_ca.crt
+```
+deploy:
+`docker stack deploy -c docker-compose.yml conf_secret`
+
