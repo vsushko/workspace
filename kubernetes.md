@@ -32,6 +32,26 @@ minikube config set driver docker
 ```
 print docker environment:
 `minikube docker-env`
+get minikube's status:
+`minikube status`
+shows what we have in cluster:
+`kubectl get all`
+create pod from file(first-pod.yaml):
+```yaml
+apiVersion: v1
+
+kind: Pod
+
+metadata:
+  name: webapp
+spec:
+  containers:
+  - name: webapp
+    image: container-name:tag
+```
+run the pod: 
+`run kubectl apply -f first-pod.yaml`
+
 
 ### Definitions
 #### Pod
