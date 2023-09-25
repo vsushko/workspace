@@ -302,6 +302,15 @@ create a swarm (https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm
 ```
 docker swarm init --advertise-addr <MANAGER-IP>
 ```
+leave docker swarm:
+`docker swarm leave`
+add more replicas to docker swarm container:
+`docker service update --replicas 6 <container-name>`
+add or updated port:
+`docker service update --publish-add 80:80 <container-name>`
+change node role:
+`docker service update --constraint-add "node.role==manager" <node-name>`
+
 show .NetworkSettings.Networks:
 ```
 docker inspect mongo-container -f "{{ json .NetworkSettings.Networks }}"
@@ -360,7 +369,10 @@ Receive real time events from containers:
 docker events
 
 ```
-
-
-
-
+Docker sercrets & Configs:
+Secrets and configs are mounted files inside a container of a swarm service atruntime
+* location
+* * secrets can only be mounted to /run/secrets/<secret-name>
+* * configs default to /<config-name>
+* encryption
+* * secrets are encryypted, and then decrypted within the container.
