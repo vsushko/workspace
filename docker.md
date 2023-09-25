@@ -320,7 +320,18 @@ push image to docker hub:
 ```
 docker push <dockerhubusername>/<dockerhubrepo>:<container-name>
 ```
-
+remove all unused networks:
+```
+docker network prune
+```
+connect container to network:
+```
+docker network connect <network> <container>
+```
+inspect:
+```
+docker network inspect <network>
+```
 deploy stack:
 ```
 docker stack deploy --compose-file docker-compose-stack.yml <stackname>
@@ -333,3 +344,23 @@ remove stack:
 ```
 docker stack rm <stackname>
 ```
+scale service via docker compose:
+```
+docker-compose up -d --scale <container-name>=2
+```
+restart all unhealthy containers:
+```
+docker restart $(docker ps -f health=unhealthy -q)
+```
+autoheal:
+`https://hub.docker.com/r/willfarrell/autoheal`
+
+Receive real time events from containers:
+```
+docker events
+
+```
+
+
+
+
