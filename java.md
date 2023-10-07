@@ -94,13 +94,13 @@ https://start.spring.io/
 https://www.baeldung.com/spring-profiles
 
 unpacking jar:
-`jar -xf config-server-1.0.0.jar`
+```jar -xf config-server-1.0.0.jar```
 
 spring boot jarmode layered list
-`java -jar -Djarmode=layertools config-server-1.0.0.jar list`
+```java -jar -Djarmode=layertools config-server-1.0.0.jar list```
 
 spring boot jarmode layered extract
-`java -jar -Djarmode=layertools config-server-1.0.0.jar extract`
+```java -jar -Djarmode=layertools config-server-1.0.0.jar extract```
 
 ### JUnit 5
 https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-running-unit-tests-with-maven/
