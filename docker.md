@@ -267,6 +267,7 @@ git commit -m "first commit"
 git push -u origin master
 ```
 
+
 check the work:
 
 `docker search vsushko/hell-dockerfile`
@@ -286,6 +287,11 @@ VBoxManage modifyvm default --memory 4096
 docker-machine start
 ```
 for more information: https://stackoverflow.com/questions/32834082/how-to-increase-docker-machine-memory-mac 
+
+Get container ip:
+```
+-f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container-name-or-id>
+```
 
 ## Troubleshooting
 List directory /var/lib/apt/lists/partial is missing. - Acquire (13: Permission denied)
