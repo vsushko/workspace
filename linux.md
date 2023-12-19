@@ -206,3 +206,8 @@ sudo timedatectl set-ntp no
 ```
 “insufficient memory for the Java Runtime Environment ”
 https://stackoverflow.com/questions/22805552/insufficient-memory-for-the-java-runtime-environment-message-in-eclipse
+
+send 100 concurrent requests to server:
+```
+ab -n 100 -c 100 http://localhost:9091/mvc
+```
