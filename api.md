@@ -1,4 +1,4 @@
-API to thinkg about:
+gRPC API to thinkg about:
 - payload size
 - latency
 - scalability
@@ -7,3 +7,8 @@ API to thinkg about:
 - auth, monitoring, log
 
   save a log of bandwidth, storage space
+
+efficiency over JSON:
+- less CPU intensive
+- faster
+- mobile and microcontrollers
