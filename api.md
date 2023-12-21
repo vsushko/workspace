@@ -12,3 +12,7 @@ efficiency over JSON:
 - less CPU intensive
 - faster
 - mobile and microcontrollers
+
+scalabilityy in gRPC: 
+server: Async
+Client: Async or Blocking
