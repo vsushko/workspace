@@ -40,3 +40,8 @@ create a link:
 ```
 sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 ```
+remove .DS_Store files:
+```sh
+find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
+```
+
