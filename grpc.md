@@ -13,3 +13,9 @@ API:
 ```
 https://grpc.github.io/grpc-java/javadoc/
 ```
+
+Enable server reflection:
+```
+https://github.com/grpc/grpc-java/blob/master/documentation/server-reflection-tutorial.md
+
+```
