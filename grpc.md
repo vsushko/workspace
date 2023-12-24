@@ -59,3 +59,7 @@ show message
 +---------------+
 call <rpc_endpoint_name>
 ```
+mongo db driver:
+```
+https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync
+```
