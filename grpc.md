@@ -19,9 +19,16 @@ Enable server reflection:
 https://github.com/grpc/grpc-java/blob/master/documentation/server-reflection-tutorial.md
 
 ```
-evans:
+install evans on mac:
+```
+sudo port install evans
+```
+run envas cli:
 ```
 evans --host localhost --port 50052 --reflection repl
+```
+evans commands:
+```
 show package
 +-------------------------+
 |         PACKAGE         |
