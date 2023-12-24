@@ -44,4 +44,9 @@ remove .DS_Store files:
 ```sh
 find . -name .DS_Store -print0 | xargs -0 git rm -f --ignore-unmatch
 ```
+install ports:
+```
+https://www.macports.org/install.php
+```
+
 
