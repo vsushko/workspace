@@ -72,7 +72,38 @@ Advanced Just in Time Compiler (JIT) Overview
 - Best starting point for existing applications and classic workloads
 - Provides performance improvements with minimized risk when compared to Ahead of Time Compilation (AOT)
 
+Pros of Ahead Time Compilation (AOT)
+- Lower CPU usage
+- Lower Memory footprint
+- Faster Startup Times
+- More Consistent Response Times
+- Instant Peak Performance
+- Smaller Application Image
+- Great for Microservices
+- Great for Docker Images and Kubernetes
+- Great for Auto-Scaling because of startup times
 
+Cons of Ahead of Time Compilation (AOT)
+Limitations
+- Limited support for Reflection - requires special handling
+- Limited support for Dynamic Proxies, Resources, JNI, ...
+- Dynamic Class Loading is Unsupported
+- JVM Agents are Unsupported (Profilers, Tracers, ...)
+- JMX is Unsupported
+- Security Manager Unsupported
+- Some differences in behavior when compared to
+- HotspotVM
+- - Static init runs at build time
+- - finalize() does not work
+- May produce problems with common frameworks
+- - Hibernate ORM
+- Building a native image is a complex process involving
+not only Java Toolset but also C++ Toolset
+- Building a native image is slower than a regular
+compilation
+- May go against Dev/prod parity
+(https://12factor.net/dev-prod-parity)
+- Less mature than regular JVM 
 
 
 
