@@ -23,3 +23,9 @@ To see the complete list of JVMs available to the java_home command:
 ```
 /usr/libexec/java_home -v21 -V
 ```
+
+“graalvm” is damaged and can’t be opened:
+```
+xattr -d com.apple.quarantine <PATH TO GRAALVM INSTALLATION>
+```
+
