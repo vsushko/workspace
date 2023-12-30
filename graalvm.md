@@ -158,3 +158,7 @@ build native docker image:
 ```
 mvn spring-boot:build-image
 ```
+run:
+```
+docker run --rm -p 8080:8080 product-service:0.0.1-SNAPSHOT
+```
