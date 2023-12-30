@@ -162,3 +162,11 @@ run:
 ```
 docker run --rm -p 8080:8080 product-service:0.0.1-SNAPSHOT
 ```
+run AOT on the JRE:
+```
+mvn clean compile spring-boot:process-aot package
+```
+and then run:
+```
+java -Dspring.aot.enabled=true -jar target/product-service-0.0.1-SNAPSHOT.jar
+```
