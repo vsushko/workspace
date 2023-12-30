@@ -15,6 +15,11 @@ sudo chown root: /usr/local/bin/kubectl
 ```
 Test to ensure the version you installed is up-to-date:
 `kubectl version --client`
+Install Kubernetes Dashboard:
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
+```
+
 install minikube:
 `brew install minikube`
 remove old minikube:
@@ -59,9 +64,6 @@ run container sh:
 `kubectl -it exec webapp sh`
 list all services:
 `minikube service list`
-
-
-
 
 
 
