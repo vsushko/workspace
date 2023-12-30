@@ -153,3 +153,8 @@ java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/
 ```
 https://www.graalvm.org/22.0/reference-manual/native-image/Agent/
 ```
+
+build native docker image:
+```
+mvn spring-boot:build-image
+```
