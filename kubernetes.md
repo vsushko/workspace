@@ -14,7 +14,9 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 sudo chown root: /usr/local/bin/kubectl
 ```
 Test to ensure the version you installed is up-to-date:
-`kubectl version --client`
+```
+kubectl version --client
+```
 Install Kubernetes Dashboard:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
@@ -25,28 +27,39 @@ Access the k8s dashboard:
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
-
 install minikube:
-`brew install minikube`
+```
+brew install minikube
+```
 remove old minikube:
 ```
 brew unlink minikube
 brew link minikube
 ```
 for troubleshooting:
-`minikube delete`
+```
+minikube delete
+```
 and execute the command to install kubernetes into an existing docker install:
-`minikube start --driver=docker`
+```
+minikube start --driver=docker
+```
 To make docker the default driver:
 ```
 minikube config set driver docker
 ```
 print docker environment:
-`minikube docker-env`
+```
+minikube docker-env
+```
 get minikube's status:
-`minikube status`
+```
+minikube status
+```
 shows what we have in cluster:
-`kubectl get all`
+```
+kubectl get all
+```
 create pod from file(first-pod.yaml):
 ```yaml
 apiVersion: v1
@@ -61,24 +74,29 @@ spec:
     image: container-name:tag
 ```
 run the pod: 
-`run kubectl apply -f first-pod.yaml`
+```
+run kubectl apply -f first-pod.yaml
+```
 get information about pod:
-`kubectl describe pod webapp`
+```
+kubectl describe pod webapp
+```
 list root of the container:
-`kubectl exec webapp ls`
+```
+kubectl exec webapp ls
+```
 run container sh:
-`kubectl -it exec webapp sh`
+```
+kubectl -it exec webapp sh
+```
 list all services:
-`minikube service list`
-
-Kubernetes dashboard:
+```
+minikube service list
+```
+Kubernetes dashboard sign in:
 ```
 https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
 ```
-
-
-
-
 
 #### ReplicaSet
 A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
