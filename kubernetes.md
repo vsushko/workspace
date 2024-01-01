@@ -27,6 +27,10 @@ Access the k8s dashboard:
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
+create token for k8s dashboard:
+```
+kubectl -n kubernetes-dashboard create token admin-user
+```
 install minikube:
 ```
 brew install minikube
