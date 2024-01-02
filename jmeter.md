@@ -4,5 +4,5 @@ brew install jmeter
 ```
 run:
 ```
-open /usr/local/bin/jmeter
+open /opt/homebrew/bin/jmeter
 ```
