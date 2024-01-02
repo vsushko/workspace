@@ -22,6 +22,10 @@ visual vm download:
 ```
 https://visualvm.github.io/download.html
 ```
+run JMeter using CLI:
+```
+jmeter -n -t trip-reserve.jmx -l platforrm-trip-reserve.jtl
+```
 
 Best Practices:
 - Run the test using CLI. Never use GUI.
@@ -31,3 +35,4 @@ Best Practices:
   - JIT/ class loading ...etc
   - After server start, the first few iterations will be slow.
   - So, run a warm up test for few minutes. Ignore the results.
+
