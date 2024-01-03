@@ -12,3 +12,7 @@ Events that trigger workflows:
 ```
 https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 ```
+GA marketplace:
+```
+https://github.com/marketplace/actions/
+```
