@@ -8,3 +8,7 @@ Runners:
 ```
 https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners
 ```
+Events that trigger workflows:
+```
+https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+```
