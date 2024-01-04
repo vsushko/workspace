@@ -20,3 +20,19 @@ Contexts:
 ```
 https://docs.github.com/en/actions/learn-github-actions/contexts
 ```
+Skipping workflow runs:
+```
+https://docs.github.com/en/actions/managing-workflow-runs/skipping-workflow-runs
+```
+@actions/upload-artifact:
+```
+https://github.com/actions/upload-artifact
+```
+@actions/download-artifact:
+```
+https://github.com/actions/download-artifact
+```
+Cache action:
+```
+https://github.com/actions/cache
+```
