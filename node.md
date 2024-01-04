@@ -8,3 +8,12 @@ brew install node
 brew link --overwrite node 
 npm -v
 ```
+
+show outdated dependencies:
+```
+npm outdate
+```
+update dependencies
+```
+npm update
+```
