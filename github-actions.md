@@ -40,3 +40,7 @@ Default environment variables:
 ```
 https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
 ```
+Expressions:
+```
+https://docs.github.com/en/actions/learn-github-actions/expressions
+```
