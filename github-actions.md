@@ -36,3 +36,7 @@ Cache action:
 ```
 https://github.com/actions/cache
 ```
+Default environment variables:
+```
+https://docs.github.com/en/actions/learn-github-actions/variables#default-environment-variables
+```
