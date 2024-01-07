@@ -9,6 +9,7 @@ API Management:
 - Collect & analyze usage statistic
 - Peerformance reporting
 - Gateway
+
 Functionalities:
 - Basic auth
 - Hit rate limit
