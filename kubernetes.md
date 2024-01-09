@@ -17,6 +17,22 @@ Test to ensure the version you installed is up-to-date:
 ```
 kubectl version --client
 ```
+Kind Quick start:
+```
+https://kind.sigs.k8s.io/docs/user/quick-start/
+```
+creates cluster:
+```
+kind create cluster
+```
+Installation via brew:
+```
+brew install kind
+```
+check kind version:
+```
+kind version
+```
 Install Kubernetes Dashboard:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
