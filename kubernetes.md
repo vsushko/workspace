@@ -16,14 +16,38 @@ sudo chown root: /usr/local/bin/kubectl
 Test to ensure the version you installed is up-to-date:
 ```
 kubectl version --client
+kubectl version --output=yaml
 ```
+get nodes:
+```
+kubectl get nodes
+```
+go inside node:
+```
+docker exec -it 4ed2802b3308 bash
+cd /etc/kubernetes/manifests/
+ls -l
+-rw------- 1 root root 2419 Jan  9 18:56 etcd.yaml
+-rw------- 1 root root 3896 Jan  9 18:56 kube-apiserver.yaml
+-rw------- 1 root root 3435 Jan  9 18:56 kube-controller-manager.yaml
+-rw------- 1 root root 1463 Jan  9 18:56 kube-scheduler.yaml
+```
+delete cluster:
+```
+kind delete cluster --name dev-cluster
+cat ~/.kube/config
+apiVersion: v1
+kind: Config
+preferences: {}
+```
+docker exec -it 
 Kind Quick start:
 ```
 https://kind.sigs.k8s.io/docs/user/quick-start/
 ```
 creates cluster:
 ```
-kind create cluster
+kind create cluster --config conig.yaml
 ```
 Installation via brew:
 ```
