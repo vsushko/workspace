@@ -339,6 +339,10 @@ remove all unused networks:
 ```
 docker network prune
 ```
+clean everything:
+```
+docker system prune -f
+```
 connect container to network:
 ```
 docker network connect <network> <container>
