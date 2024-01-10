@@ -48,5 +48,9 @@ install ports:
 ```
 https://www.macports.org/install.php
 ```
+Install watch:
+```
+brew install watch
+```
 
 
