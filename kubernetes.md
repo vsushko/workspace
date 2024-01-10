@@ -18,6 +18,23 @@ Test to ensure the version you installed is up-to-date:
 kubectl version --client
 kubectl version --output=yaml
 ```
+##### Kind
+Kind Quick start:
+```
+https://kind.sigs.k8s.io/docs/user/quick-start/
+```
+Installation via brew (kind):
+```
+brew install kind
+```
+check kind version:
+```
+kind version
+```
+creates cluster:
+```
+kind create cluster --config conig.yaml
+```
 get nodes:
 ```
 kubectl get nodes
@@ -40,23 +57,6 @@ apiVersion: v1
 kind: Config
 preferences: {}
 ```
-docker exec -it 
-Kind Quick start:
-```
-https://kind.sigs.k8s.io/docs/user/quick-start/
-```
-creates cluster:
-```
-kind create cluster --config conig.yaml
-```
-Installation via brew:
-```
-brew install kind
-```
-check kind version:
-```
-kind version
-```
 Install Kubernetes Dashboard:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
@@ -71,6 +71,7 @@ create token for k8s dashboard:
 ```
 kubectl -n kubernetes-dashboard create token admin-user
 ```
+##### Minikube
 install minikube:
 ```
 brew install minikube
@@ -107,9 +108,7 @@ kubectl get all
 create pod from file(first-pod.yaml):
 ```yaml
 apiVersion: v1
-
 kind: Pod
-
 metadata:
   name: webapp
 spec:
@@ -141,7 +140,60 @@ Kubernetes dashboard sign in:
 ```
 https://stackoverflow.com/questions/46664104/how-to-sign-in-kubernetes-dashboard
 ```
+Kubernetess Cluster:
+* master / control-plane (1 or more)
+  * api-server
+  * etcd
+  * scheeduler
+  * controllere-manager
+* node / worker (1 or more)
+  * container runtime
+  * kubelet
+  * kube-proxy
+ 
+Kubectl - a CLI tool to talk to api-server
+Kind - a tool to create kubernetes cluster for learning
 
+##### Pod
+Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
+```
+https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/
+```
+Workload is an application running on your k8s cluster
+Pod is the basic building block to create workload
+* Pod can run one or more containers
+  * Only one of the containers is your app container
+  * other containers a helpers
+* Pod represents a VM and containers represeent the proces
+
+Kubernetes Resource Yaml format:
+```
+apiVersion: [api version]
+kind: [Kubernetes workload type]
+metadata:
+ [name for your resource, additional labels]
+spec:
+ [this will change depends on the workload type]
+ [refer to the documentation]
+```
+Watch pods creation:
+```
+watch -t -x kubectl get pod
+```
+Creates Pod:
+```
+kubectl create -f pod.yaml
+kubectl apply -f pod.yaml (for updating pod)
+```
+Delete resource:
+```
+kubectl delete -f pod.yaml
+```
+Describe pod:
+```
+kubectl describe pod
+```
+ 
 #### ReplicaSet
 A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
 
