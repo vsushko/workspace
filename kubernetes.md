@@ -71,7 +71,7 @@ create token for k8s dashboard:
 ```
 kubectl -n kubernetes-dashboard create token admin-user
 ```
-##### Minikube
+### Minikube
 install minikube:
 ```
 brew install minikube
@@ -154,7 +154,7 @@ Kubernetess Cluster:
 Kubectl - a CLI tool to talk to api-server
 Kind - a tool to create kubernetes cluster for learning
 
-##### Pod
+### Pod
 Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
 ```
 https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/
@@ -193,8 +193,17 @@ Describe pod:
 ```
 kubectl describe pod
 ```
+Pod Status:
+Pending - node is yet to be assigned
+Container Creating - Kubelet is working on creating container
+Running - Kubelet started the container
+ErrImagePull/ImagePullBackOff - Failed pulling image. Kubelet will retry with some delay
+Completed - Container exited successfully
+Error - Container exited with error
+CrashLoopBackOff - There is a problem is running the container. Kubelet is retrying with delay (no issues in puulling the image)
+Terminating - Pod is getting deleted
  
-#### ReplicaSet
+### ReplicaSet
 A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
 
 Основной метод управления репликами Pod и их жизненным циклом. 
@@ -202,7 +211,7 @@ A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at 
 
 replicas: требуемое количество экземпляров Pod
 selector: определяет все Pod-ы, управляемые этим ReplicaSet
-#### Deployment
+### Deployment
 A *Deployment* provides declarative updates for Pods and ReplicaSets.
 
 You describe a *desired state* in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
