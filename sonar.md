@@ -4,3 +4,8 @@
 ```
 
 https://medium.com/@HoussemDellai/setup-sonarqube-in-a-docker-container-3c3908b624df
+
+Login and Password:
+```
+When installing SonarQube, a default user with Administer System permission is created automatically: Login: admin. Password: admin.
+```
