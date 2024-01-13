@@ -74,3 +74,7 @@ restore deleted but not commited file:
 git ls-files --deleted
 git checkout -- <file>
 ```
+make file executable:
+```
+git update-index --chmod=+x filename
+```
