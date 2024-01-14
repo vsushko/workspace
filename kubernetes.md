@@ -18,6 +18,31 @@ Test to ensure the version you installed is up-to-date:
 kubectl version --client
 kubectl version --output=yaml
 ```
+List all the pods in all namespaces of a Kubernetes cluster:
+```
+kubectl get po -A
+```
+creates deployment on cluster:
+```
+kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
+```
+check deployment on cluster:
+```
+kubectl get deployment
+```
+expose deployment using serrvicee on cluster:
+```
+kubectl expose deployment hello-node --type=NodePort --port=8080
+```
+check service on cluster using kubectl:
+```
+kubectl get svc
+```
+test:
+```
+curl -v <CLUSTER-IP>:<PORT>
+```
+
 ##### Kind
 Kind Quick start:
 ```
