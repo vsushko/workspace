@@ -211,3 +211,7 @@ send 100 concurrent requests to server:
 ```
 ab -n 100 -c 100 http://localhost:9091/mvc
 ```
+expose local web server:
+```
+nc -v <IP_ADDRESS> 3000
+```
