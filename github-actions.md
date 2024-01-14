@@ -69,3 +69,7 @@ Security Hardening with OpenID Connect:
 ```
 https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/about-security-hardening-with-openid-connect
 ```
+Publishing Java packages with Gradle:
+```
+https://docs.github.com/en/actions/publishing-packages/publishing-java-packages-with-gradle
+```
