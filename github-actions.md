@@ -73,3 +73,13 @@ Publishing Java packages with Gradle:
 ```
 https://docs.github.com/en/actions/publishing-packages/publishing-java-packages-with-gradle
 ```
+Docker + dockerhub + GitHub repo:
+```
+https://github.com/docker/login-action
+https://github.com/docker/metadata-action
+https://github.com/docker/build-push-action
+```
+GitHub Container Registry:
+```
+https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
+```
