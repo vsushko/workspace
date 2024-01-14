@@ -215,3 +215,7 @@ expose local web server:
 ```
 nc -v <IP_ADDRESS> 3000
 ```
+How to Install Minikube on Ubuntu 22.04 LTS:
+```
+https://www.fosstechnix.com/how-to-install-minikube-on-ubuntu-22-04-lts/
+```
