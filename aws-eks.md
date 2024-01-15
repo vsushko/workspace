@@ -16,9 +16,13 @@ sudo installer -pkg AWSCLIV2.pkg -target /
 which aws
 aws --version
 ```
-Create Create EKS Cluster in AWS using eksctl:
+Create EKS Cluster:
 ```
 eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.21 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
+```
+Delete EKS Cluster:
+```
+eksctl delete cluster --name=demo-vsushko-ekscluster
 ```
 Check nodes in EKS cluster:
 ```
