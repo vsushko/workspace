@@ -83,3 +83,7 @@ GitHub Container Registry:
 ```
 https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry
 ```
+Minikube action:
+```
+https://minikube.sigs.k8s.io/docs/tutorials/setup_minikube_in_github_actions/
+```
