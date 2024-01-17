@@ -20,7 +20,27 @@ kubectl version --output=yaml
 ```
 List all the pods in all namespaces of a Kubernetes cluster:
 ```
-kubectl get po -A
+kubectl get pod -A
+```
+Get pod:
+```
+kubectl get pod <POD_NAME>
+```
+Kubectl describe pod:
+```
+kubectl describe pod <POD_NAME>
+```
+List pods with labels labels:
+```
+kubectl get pod --show-labels
+```
+Get pod labels:
+```
+kubectl get pod --show-labels
+```
+Get pods with label:
+```
+kubectl get pod -l <LABE>=<LABEL_VALUE> (!= could be used as condition, separation with using comma)
 ```
 creates deployment on cluster:
 ```
