@@ -24,6 +24,9 @@ vim values.yaml
 service:
   type: ClusterIP -> LoadBalancer
 helm upgrade vsushko-chart .
+(vim templates/deployment.yml
+http port -> targetPort containerPort: {{ .Values.service.targetPort }}
+)
 ```
 get domain name:
 ```
