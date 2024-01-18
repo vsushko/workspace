@@ -42,6 +42,14 @@ Get pods with label:
 ```
 kubectl get pod -l <LABE>=<LABEL_VALUE> (!= could be used as condition, separation with using comma)
 ```
+Get more information about pod:
+```
+kubectl get pod -o wide
+```
+Get information in yml format:
+```
+kubectl get pod pod1 -o yaml
+```
 creates deployment on cluster:
 ```
 kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
