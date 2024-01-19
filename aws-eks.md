@@ -20,6 +20,10 @@ Create EKS Cluster:
 ```
 eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.21 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
 ```
+List the node groups in your cluster:
+```
+aws eks list-nodegroups --cluster-name my-cluster
+```
 Delete EKS Cluster:
 ```
 eksctl delete cluster --name=demo-vsushko-ekscluster
