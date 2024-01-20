@@ -58,6 +58,10 @@ Get information in yml format:
 ```
 kubectl get pod pod1 -o yaml
 ```
+Port forwarding:
+```
+kubectl port-forward my-pod 8080:80
+```
 creates deployment on cluster:
 ```
 kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
