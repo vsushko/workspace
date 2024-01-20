@@ -164,7 +164,7 @@ Kubernetess Cluster:
 Kubectl - a CLI tool to talk to api-server
 Kind - a tool to create kubernetes cluster for learning
 
-### Pod
+## Pod
 Pod is a collection of containers that can run on a host. This resource is created by clients and scheduled onto hosts.
 ```
 https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/
@@ -274,6 +274,11 @@ Change restart policy:
 ```
 kubectl get pod -o yaml | grep restartPolicy
 restartPolicy: Always
+```
+Exploring Pod Container:
+```
+kubectl exec -it my-pod bash (deprecated)
+kubectl exec -it my-pod -- bash
 ```
 
 Pod Status:
