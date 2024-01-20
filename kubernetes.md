@@ -18,9 +18,17 @@ Test to ensure the version you installed is up-to-date:
 kubectl version --client
 kubectl version --output=yaml
 ```
+List all namespaces:
+```
+kubectl get deploy -A
+```
 List all the pods in all namespaces of a Kubernetes cluster:
 ```
 kubectl get pod -A
+```
+Get pod with specified namespace:
+```
+kubectl get pod -n kube-system 
 ```
 Get pod:
 ```
