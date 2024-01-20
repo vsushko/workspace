@@ -62,6 +62,11 @@ Port forwarding:
 ```
 kubectl port-forward my-pod 8080:80
 ```
+Change restart policy:
+```
+kubectl get pod -o yaml | grep restartPolicy
+restartPolicy: Always
+```
 creates deployment on cluster:
 ```
 kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
