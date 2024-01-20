@@ -16,6 +16,11 @@ sudo installer -pkg AWSCLIV2.pkg -target /
 which aws
 aws --version
 ```
+Remove AWS CLI:
+```
+pkgutil --pkgs | grep aws
+https://github.com/iamrToday/pkg-remove
+```
 Create EKS Cluster:
 ```
 eksctl create cluster --name demo-ekscluster --region ap-south-1 --version 1.21 --nodegroup-name linux-nodes --node-type t2.micro --nodes 2
