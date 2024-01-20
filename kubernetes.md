@@ -22,51 +22,6 @@ List all namespaces:
 ```
 kubectl get deploy -A
 ```
-List all the pods in all namespaces of a Kubernetes cluster:
-```
-kubectl get pod -A
-```
-Get pod with specified namespace:
-```
-kubectl get pod -n kube-system 
-```
-Get pod:
-```
-kubectl get pod <POD_NAME>
-```
-Kubectl describe pod:
-```
-kubectl describe pod <POD_NAME>
-```
-List pods with labels labels:
-```
-kubectl get pod --show-labels
-```
-Get pod labels:
-```
-kubectl get pod --show-labels
-```
-Get pods with label:
-```
-kubectl get pod -l <LABE>=<LABEL_VALUE> (!= could be used as condition, separation with using comma)
-```
-Get more information about pod:
-```
-kubectl get pod -o wide
-```
-Get information in yml format:
-```
-kubectl get pod pod1 -o yaml
-```
-Port forwarding:
-```
-kubectl port-forward my-pod 8080:80
-```
-Change restart policy:
-```
-kubectl get pod -o yaml | grep restartPolicy
-restartPolicy: Always
-```
 creates deployment on cluster:
 ```
 kubectl create deployment hello-node --image=k8s.gcr.io/echoserver:1.4
@@ -179,25 +134,6 @@ shows what we have in cluster:
 ```
 kubectl get all
 ```
-create pod from file(first-pod.yaml):
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: webapp
-spec:
-  containers:
-  - name: webapp
-    image: container-name:tag
-```
-run the pod: 
-```
-run kubectl apply -f first-pod.yaml
-```
-get information about pod:
-```
-kubectl describe pod webapp
-```
 list root of the container:
 ```
 kubectl exec webapp ls
@@ -259,6 +195,25 @@ Creates Pod:
 kubectl create -f pod.yaml
 kubectl apply -f pod.yaml (for updating pod)
 ```
+create pod from file(first-pod.yaml):
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webapp
+spec:
+  containers:
+  - name: webapp
+    image: container-name:tag
+```
+run the pod: 
+```
+run kubectl apply -f first-pod.yaml
+```
+get information about pod:
+```
+kubectl describe pod webapp
+```
 Delete resource:
 ```
 kubectl delete -f pod.yaml
@@ -267,6 +222,60 @@ Describe pod:
 ```
 kubectl describe pod
 ```
+Pod Container Logs:
+```
+kubectl logs my-pod
+```
+List all the pods in all namespaces of a Kubernetes cluster:
+```
+kubectl get pod -A
+```
+Get pod with specified namespace:
+```
+kubectl get pod -n kube-system 
+```
+Get pod:
+```
+kubectl get pod <POD_NAME>
+```
+Kubectl describe pod:
+```
+kubectl describe pod <POD_NAME>
+```
+List pods with labels labels:
+```
+kubectl get pod --show-labels
+```
+Get pod labels:
+```
+kubectl get pod --show-labels
+```
+Get pods with label:
+```
+kubectl get pod -l <LABE>=<LABEL_VALUE> (!= could be used as condition, separation with using comma)
+```
+Get more information about pod:
+```
+kubectl get pod -o wide
+```
+Get information in yml format:
+```
+kubectl get pod pod1 -o yaml
+```
+Port forwarding:
+```
+kubectl port-forward my-pod 8080:80
+```
+Delete pod:
+```
+kubectl delete pod pod1
+```
+Change restart policy:
+```
+kubectl get pod -o yaml | grep restartPolicy
+restartPolicy: Always
+```
+
 Pod Status:
 Pending - node is yet to be assigned
 Container Creating - Kubelet is working on creating container
@@ -298,3 +307,7 @@ You describe a *desired state* in a Deployment, and the Deployment Controller ch
 * rollingUpdate: циклическое обновление Pods на основе maxSurge и maxUnavailable
 * maxSurge: определяет количество дополнительных реплик
 * maxUnavailable: количество возможно недоступных реплик
+
+|docker|Kubernetes|
+|ENTRYPOINT|command|
+|CMD|args|
