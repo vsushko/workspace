@@ -96,6 +96,10 @@ creates cluster:
 ```
 kind create cluster --config conig.yaml
 ```
+kind get kubeconfig gives unclear error:
+```
+https://github.com/kubernetes-sigs/kind/issues/2205
+```
 get nodes:
 ```
 kubectl get nodes
