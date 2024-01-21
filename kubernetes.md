@@ -317,6 +317,6 @@ You describe a *desired state* in a Deployment, and the Deployment Controller ch
 * maxSurge: определяет количество дополнительных реплик
 * maxUnavailable: количество возможно недоступных реплик
 
-|docker|Kubernetes|
+||docker|Kubernetes||
 |ENTRYPOINT|command|
 |CMD|args|
