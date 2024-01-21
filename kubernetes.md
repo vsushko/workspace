@@ -226,6 +226,10 @@ Pod Container Logs:
 ```
 kubectl logs my-pod
 ```
+Get logs for pod's container:
+```
+kubectl logs my-pod -c <MY_CONTAINER>
+```
 List all the pods in all namespaces of a Kubernetes cluster:
 ```
 kubectl get pod -A
