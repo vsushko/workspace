@@ -226,10 +226,11 @@ Pod Container Logs:
 ```
 kubectl logs my-pod
 ```
-Get logs for pod's container:
+Check the specific container log for a pod:
 ```
 kubectl logs my-pod -c <MY_CONTAINER>
 ```
+
 List all the pods in all namespaces of a Kubernetes cluster:
 ```
 kubectl get pod -A
@@ -274,6 +275,10 @@ Delete pod:
 ```
 kubectl delete pod pod1
 ```
+Delete all pods:
+```
+kubectl delete pod --all
+```
 Change restart policy:
 ```
 kubectl get pod -o yaml | grep restartPolicy
@@ -283,6 +288,7 @@ Exploring Pod Container:
 ```
 kubectl exec -it my-pod bash (deprecated)
 kubectl exec -it my-pod -- bash
+kubectl exec -it my-pod -c my-container -- bash
 ```
 
 Pod Status:
@@ -297,12 +303,10 @@ Terminating - Pod is getting deleted
  
 ### ReplicaSet
 A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods.
+- Manages Pod
+- It ensures that our desired replicas for the given pod spec are running
+- ReplicaSet -> restartPolicy:Always
 
-Основной метод управления репликами Pod и их жизненным циклом. 
-Обеспечивает необходимое количество запущенных реплик.
-
-replicas: требуемое количество экземпляров Pod
-selector: определяет все Pod-ы, управляемые этим ReplicaSet
 ### Deployment
 A *Deployment* provides declarative updates for Pods and ReplicaSets.
 
