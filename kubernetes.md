@@ -306,14 +306,38 @@ A ReplicaSet’s purpose is to maintain a stable set of replica Pods running at 
 - Manages Pod
 - It ensures that our desired replicas for the given pod spec are running
 - ReplicaSet -> restartPolicy:Always
+```
+https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
+```
+Get ReplicaSet:
+```
+kubectl get rs
+```
+Describe ReplicaSet:
+```
+kubectl describe rs/my-rs-1
+```
+ReplicaSet Match Expressions:
+```
+spec:
+  selector:
+    matchExpessions:
+    - key: "team"
+      operator: In
+      values: [ "team-a", "team-b" ]
+```
 
 ### Deployment
 A *Deployment* provides declarative updates for Pods and ReplicaSets.
 
 You describe a *desired state* in a Deployment, and the Deployment Controller changes the actual state to the desired state at a controlled rate. You can define Deployments to create new ReplicaSets, or to remove existing Deployments and adopt all their resources with new Deployments.
 
+- Manages ReplicaSet
+- 1 Deployment - 1 Microservice
+- Deployment List<ReplicaSet> -> List<Pod>
+
 Основной контроллер для управления Pods
-Управляет ReplicaSet
+
 Предоставляют возможность управления обновлениями и функциональность rollback-a
 * strategy: описывает метод обновления Pods на основе type
 * recreate: все существующие Pods убиваются до запуска новых
