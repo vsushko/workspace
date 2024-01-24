@@ -160,8 +160,23 @@ Kubernetess Cluster:
   * container runtime
   * kubelet
   * kube-proxy
- 
+
+## Kubectl
 Kubectl - a CLI tool to talk to api-server
+
+Kubectl create:
+```
+kubectl create -f <file_name>
+kubectl create -f .
+kubectl create -f http://mywebkube.com/k8s.yaml
+```
+Kubectl apply (create/update idempotent):
+```
+kubectl create -f <file_name>
+kubectl create -f .
+kubectl create -f http://mywebkube.com/k8s.yaml
+```
+
 Kind - a tool to create kubernetes cluster for learning
 
 ## Pod
@@ -336,6 +351,26 @@ You describe a *desired state* in a Deployment, and the Deployment Controller ch
 - 1 Deployment - 1 Microservice
 - Deployment List<ReplicaSet> -> List<Pod>
 
+Get deployment:
+```
+kubectl get deploy
+```
+Describe Deploy:
+```
+kubectl describe deploy
+```
+Get deploy logs:
+```
+kubectl logs deploy/my-deploy
+```
+Go to deploy's pod:
+```
+kubectl exec -it deploy/my-deploy -- bash
+```
+Port forwarding to 8080:
+```
+kubectl port-forward deploy/my-deploy 8080:80
+```
 Основной контроллер для управления Pods
 
 Предоставляют возможность управления обновлениями и функциональность rollback-a
