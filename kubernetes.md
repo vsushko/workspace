@@ -402,6 +402,7 @@ kubectl rollout history deploy --revision=5
 ### Deployment Strategy
 
 **reacreate** - terminate the old pods and create the new pods
+
 **rolling update** - gradually roll out the changes. We can have a mix of old and new pods temporarily.
 - maxSurge - max number of additional pods that can be created
 - maxUnavailable - max number of pods that can be terminated
