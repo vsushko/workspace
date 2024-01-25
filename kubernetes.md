@@ -407,6 +407,12 @@ kubectl rollout history deploy --revision=5
 - maxSurge - max number of additional pods that can be created
 - maxUnavailable - max number of pods that can be terminated
 
+## Service
+- Logical abstractiion for a set of Pods
+- A single reliable network endpoint to access Pods
+  - stable IP address
+  - DNS name
+
 
 
 
