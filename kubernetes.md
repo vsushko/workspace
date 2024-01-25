@@ -371,7 +371,27 @@ Port forwarding to 8080:
 ```
 kubectl port-forward deploy/my-deploy 8080:80
 ```
-Основной контроллер для управления Pods
+Delete deploy:
+```
+kubectl delete deploy/my-deploy
+```
+Port forward of deployment:
+```
+kubectl port-forward deploy/order-service-deploy 8080:80
+```
+Get deployment rollout history:
+```
+kubectl rollout history deploy
+```
+Rolling out the deployment:
+```
+kubectl rollout undo deploy/order-service-deploy
+```
+Rolling out the deployment to proper version:
+```
+kubectl rollout undo deploy/order-service-deploy
+```
+
 
 Предоставляют возможность управления обновлениями и функциональность rollback-a
 * strategy: описывает метод обновления Pods на основе type
