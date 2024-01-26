@@ -52,7 +52,7 @@ Installation via brew (kind):
 ```
 brew install kind
 ```
-check kind version:
+Check kind version:
 ```
 kind version
 ```
@@ -64,11 +64,11 @@ kind get kubeconfig gives unclear error:
 ```
 https://github.com/kubernetes-sigs/kind/issues/2205
 ```
-get nodes:
+Get nodes:
 ```
 kubectl get nodes
 ```
-go inside node:
+Go inside node:
 ```
 docker exec -it 4ed2802b3308 bash
 cd /etc/kubernetes/manifests/
