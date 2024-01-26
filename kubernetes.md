@@ -436,14 +436,21 @@ This is the default option if we do not specify. Mostly this is what we use.
 - To be used in the cloud provider
 - To receive external traffiic and foward to pods
 
+Send curl request 1000 times and grep string:
+```sh
+for i in {1..1000}; do curl -s http://my-app | grep -o "<title>[^<]*" | tail -c+8; done
+```
+
+## Namespace
+Virtual cluster / Partitioning within a cluster
+- Isolating a group of resources within a cluster
+
+Use Cases
+- Dev / QA environments
+- Isolating separate team resources
 
 
-Предоставляют возможность управления обновлениями и функциональность rollback-a
-* strategy: описывает метод обновления Pods на основе type
-* recreate: все существующие Pods убиваются до запуска новых
-* rollingUpdate: циклическое обновление Pods на основе maxSurge и maxUnavailable
-* maxSurge: определяет количество дополнительных реплик
-* maxUnavailable: количество возможно недоступных реплик
+
 
 |docker|Kubernetes|
 | --- | --- |
