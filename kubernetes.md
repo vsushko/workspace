@@ -78,7 +78,7 @@ ls -l
 -rw------- 1 root root 3435 Jan  9 18:56 kube-controller-manager.yaml
 -rw------- 1 root root 1463 Jan  9 18:56 kube-scheduler.yaml
 ```
-delete cluster:
+Delete cluster:
 ```
 kind delete cluster --name dev-cluster
 cat ~/.kube/config
@@ -413,6 +413,28 @@ kubectl rollout history deploy --revision=5
   - stable IP address
   - DNS name
 
+Describe service:
+```
+kubectl describe svc <service-name>
+```
+### Service / kube-proxy
+- A simple proxy
+- k8s resource Service does not consume CPU/memory
+- Not round robin LB. It is random
+- Do not expect URL rewriting / path based routing .. etc.. (It is Ingress in k8s)
+
+### Service types
+**ClusterIP** - for communication within the k8s cluster. Can not be accessed from outside the cluster (AWS/GCP cloud - private subnet communication).
+This is the default option if we do not specify. Mostly this is what we use.
+
+**NodePort** - Can be accessed from outsiide via k8s master/nodes via Specific port (can be used for testing)
+- Allowed node port ranges are 30000-32767
+- Each node is set to listen on specific port
+- any request to one of the nodes on the port is forwarded to the pod
+
+**LoadBalancer** - To be used AWS/ GCP / Azure .. cloud providers. Can be used to receive traffic from outside.
+- To be used in the cloud provider
+- To receive external traffiic and foward to pods
 
 
 
