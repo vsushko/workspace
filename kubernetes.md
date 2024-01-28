@@ -42,6 +42,10 @@ test:
 ```
 curl -v <CLUSTER-IP>:<PORT>
 ```
+|docker|Kubernetes|
+| --- | --- |
+|ENTRYPOINT|command|
+|CMD|args|
 
 ##### Kind
 Kind Quick start:
@@ -449,10 +453,51 @@ Use Cases
 - Dev / QA environments
 - Isolating separate team resources
 
+Get namespaces:
+```
+kubectl get namespace
+# or
+kubectl get ns
+```
+Create namespace:
+```
+kubectl create ns dev
+```
+Get running pod in specific namespace:
+```
+kubectl get pod -n dev
+```
+Delete namespace:
+```
+kubectl delete ns dev
+```
+Create services with specifying namespace:
+```
+kubectl apply -f my-file.yaml -n my-namespace
+```
+Get all within namespace:
+```
+kubectl get all -n qa
+```
+Port forwarding with ns:
+```
+kubectl port-forward svc/my-app 8080:80 -n qa
+```
+Specify namespece via metadata:
+```
+metadata
+  namespace: my-ns
+```
 
+## Probes
+Problem:
+- Pods are considered to be live & ready as soon as the containers are started
+- if the Pod is ready,
+  - the Service will send the requests to the pod
+  - rolling update will terminate old pods
+- We should ensuree that our Pods are live and ready to avoid surprises!
 
-
-|docker|Kubernetes|
-| --- | --- |
-|ENTRYPOINT|command|
-|CMD|args|
+Probes are tools/utilitiies to measure the health of the pod.
+- Has it started?
+- Is it alive?
+- Is it ready to serve requests?
