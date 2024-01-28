@@ -506,7 +506,7 @@ Terms:
 - Live -> Is the Pod alive?
 - Ready -> can the Pod serve the request?
 
-Probe Types:
+#### Probe Types:
 |Probes|Description|Action If Fails|
 |---|---|---|
 |startupProbe|To check if the application inside the container has started|restart|
@@ -525,7 +525,7 @@ Probe Types:
 |httpGet|To invoke a http endpoint. for ex: /health|
 |tcpSocket|To check if the app started listening on specific port|
 
-Probe Properties:
+#### Probe Properties:
 |Options|Description|
 |---|---|
 |initialDelaySeconds|0|
@@ -533,3 +533,21 @@ Probe Properties:
 |timeoutSeconds|1|
 |successThreshold|1|
 |failureThreshold|3|
+
+## ConfigMap & Secret
+To keep the configuration data separately from the application
+- ConfigMap
+- Secret
+
+ConfigMap -> non-sensitive data
+- application.properties
+Secret -> sensitive data
+- credentials
+
+### ConfigMap
+- Properites as Key/Value
+- Properties as file
+- Store any binary file
+- Max size 1MB
+
+  
