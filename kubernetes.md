@@ -506,3 +506,30 @@ Terms:
 - Live -> Is the Pod alive?
 - Ready -> can the Pod serve the request?
 
+Probe Types:
+|Probes|Description|Action If Fails|
+|---|---|---|
+|startupProbe|To check if the application inside the container has started|restart|
+|livenessProbe|To check if the application is still alive|restart|
+|readinessProbe|To check if the application is ready to take the requests from service|remove from service|
+
+|Probes|Phase|
+|---|---|
+|startupProbe|It starts as soon as container started<br/>If the check passes, startupProbe stops|
+|livenessProbe|It starts once startupProbe completes<br/>It is executed throught the pod lifecycle|
+|readinessProbe|It starts once startupProbe completes<br/>It is executed throught the pod lifecycle|
+
+|Options|Description|
+|---|---|
+|exec|Execute any command to check. for ex: cat /tmp/app.log|
+|httpGet|To invoke a http endpoint. for ex: /health|
+|tcpSocket|To check if the app started listening on specific port|
+
+Probe Properties:
+|Options|Description|
+|---|---|
+|initialDelaySeconds|0|
+|perioSeconds|10|
+|timeoutSeconds|1|
+|successThreshold|1|
+|failureThreshold|3|
