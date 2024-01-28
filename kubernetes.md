@@ -501,3 +501,8 @@ Probes are tools/utilitiies to measure the health of the pod.
 - Has it started?
 - Is it alive?
 - Is it ready to serve requests?
+
+Terms:
+- Live -> Is the Pod alive?
+- Ready -> can the Pod serve the request?
+
