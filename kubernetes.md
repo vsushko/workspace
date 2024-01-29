@@ -550,4 +550,49 @@ Secret -> sensitive data
 - Store any binary file
 - Max size 1MB
 
-  
+Get ConfigMap:
+```
+kubectl get cm
+```
+Describe ConfigMap:
+```
+kubectl describe cm <cm-name>
+```
+Get kube-root-ca.crt:
+```
+kubectl get cm kube-root-ca.crt -o yaml
+```
+
+### Secret
+- Same as ConfigMap - but for sensitive data
+- Value is base64 encoded
+- Use Cases:
+  - ssh key files
+  - basic credentials
+  - servicee accounts
+
+Get secret:
+```
+kubectl get secret
+```
+Create secret via command line:
+```
+kubectl create secret generic my-secret --from-literal=username=vsushko --from
+-literal=password=admin
+```
+Get secret:
+```
+kubectl get secret -o yaml
+```
+Base64 string:
+```
+echo vsushko | base64
+```
+Mount filed to docker container:
+```
+docker run -it -v $PWD:/ws ubuntu
+cd ws
+cat 01-simple-configuration.yaml | base64
+```
+
+
