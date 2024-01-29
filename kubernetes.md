@@ -595,4 +595,20 @@ cd ws
 cat 01-simple-configuration.yaml | base64
 ```
 
+## Persistent Volume, Claim & Stateful Set
 
+#### Cluster
+Workload requires
+- Compute instances
+- Storage
+  - Life cycle of storage should be separated from Pod life cycle
+
+#### Persistent Volumes
+- Storage abstraction / Volume plugins
+- Provides storage - Similar to node in the cluster which provides CPU/Memory
+
+|Term|Description|Example|
+|---|---|---|
+|Storage class|Type of storage|AWS EBS SSD - super fast<br/>AWS EBS disk based - slow <br/>GCP-PD standard<br/>GCP-PD ssd<br/>GCP-PD extreme|
+|Persistent Volume Claim|Request to create PV. Resource which links PV and Pod|Request to create 5GB of GCP PD sdd for the application|
+|Persistent Volume|Actual storage created for a specific storage class|5GB of GCP PD ssd<br/>100GB of GCP PD example|
