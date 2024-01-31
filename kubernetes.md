@@ -658,4 +658,4 @@ kubectl delete pvc --all
 - DNS entries would be created for <pod-name>.<svc-name>
 
 
-  
+
