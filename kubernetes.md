@@ -612,3 +612,50 @@ Workload requires
 |Storage class|Type of storage|AWS EBS SSD - super fast<br/>AWS EBS disk based - slow <br/>GCP-PD standard<br/>GCP-PD ssd<br/>GCP-PD extreme|
 |Persistent Volume Claim|Request to create PV. Resource which links PV and Pod|Request to create 5GB of GCP PD sdd for the application|
 |Persistent Volume|Actual storage created for a specific storage class|5GB of GCP PD ssd<br/>100GB of GCP PD example|
+
+A **StorageClass** provides a way for administrators to describe the classes of storage they offer.
+
+List all Storage Classes (SCs):
+```
+kubectl get sc
+```
+
+#### Access Modes
+- ReadWriteOnce (per node)
+- ReadWriteOncePod (per pod)
+- ReadOnlyMany
+- ReadWriteMany
+
+List all Persistent Volumes (PVs):
+```
+kubectl get pv
+```
+Describe Persistent Volumes (PVs):
+```
+kubectl describe pv
+```
+Describe PersistentVolumeClaim (PVC):
+```
+kubectl describe pvc
+```
+Delete Persistent Volumes (PVs):
+```
+kubectl delete -f <file.yaml>
+# pv will be deleted automatically
+```
+Delete all PersistentVolumeClaim (PVCs):
+```
+kubectl delete pvc --all
+```
+#### StatefulSet
+- Same as Deployment - but for a Stateful workload
+- Each pod will have unique / stable hostname
+- StatefulSet is NOT just for databases. Instead, it is for any workload which wants sticky identity
+- Does not have any ReplicaSet
+
+#### Headless Service
+- Service will not have any IP & Kube-proxy does NOT do any load balancing
+- DNS entries would be created for <pod-name>.<svc-name>
+
+
+  
