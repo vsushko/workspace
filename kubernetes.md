@@ -657,5 +657,26 @@ kubectl delete pvc --all
 - Service will not have any IP & Kube-proxy does NOT do any load balancing
 - DNS entries would be created for <pod-name>.<svc-name>
 
+## Cluster
+Resources
+- CPU
+- Memory
+Range
+- min -> request
+- max -> limit
 
+#### Resource Units
+||Resource|Units||
+|---|---|
+|Memory| 1M, 50M, 1G, 1Mi, 50Mi, 1Gi|
+|CPU|1, 100m, 500m|
+Consequences of Exceeding Limit
+||Resource|Action||
+|---|---|
+|Memory|Kubelet will kill the containere and restart|
+|CPU|Container will NOT be killed. Throttled|
 
+Display CPU and memory usage:
+```
+kubectl top
+```
