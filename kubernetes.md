@@ -657,7 +657,9 @@ kubectl delete pvc --all
 - Service will not have any IP & Kube-proxy does NOT do any load balancing
 - DNS entries would be created for <pod-name>.<svc-name>
 
-## Cluster
+## Auto Scaling
+
+#### Cluster
 Resources
 - CPU
 - Memory
@@ -679,4 +681,44 @@ Consequences of Exceeding Limit
 Display CPU and memory usage:
 ```
 kubectl top
+```
+Install Metrics Server:
+```
+kubectl apply -f resources/metrics-server.yaml
+```
+List all Horizontal Pod Autoscalers (HPAs):
+```
+kubectl get hpa
+```
+Test nginx:
+```
+ab -n 20000 -c -5 http://nginx/
+```
+
+## Ingress
+An API object that manages external access to the services in a cluster, typically HTTP and HTTPS. It may provide load balancing, SSL, teermination and name-based virtual hosting.
+
+- Smart Router/Proxy to bring traffic into the cluster
+- Contains a set of routing rules
+- We need Ingress Controller to manage Ingress
+
+#### Key concepts:
+**Ingress Controller**
+- Manages Ingress resources (like Deployment Controller)
+- Implements the Ingress Rules
+- There aree multiple implementations (AWS, GCP, ...)
+ 
+**Ingress Resource**
+Contains rules to route external HTTP(S) traffic to internal services.
+
+**Path-Based Routing**
+Different paths can be routed to different services
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+
+**Host-Based Routing**
+Different subdomains can be routed to different services
+
+Nginx Ingress Controller:
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 ```
