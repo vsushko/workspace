@@ -673,7 +673,7 @@ Range
 | Memory | 1M, 50M, 1G, 1Mi, 50Mi, 1Gi |
 | CPU | 1, 100m, 500m |
 
-Consequences of Exceeding Limit
+#### Consequences of Exceeding Limit
 | Resource | Action |
 | --- | --- |
 | Memory | Kubelet will kill the container and restart |
