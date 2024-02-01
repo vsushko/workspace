@@ -668,15 +668,16 @@ Range
 - max -> limit
 
 #### Resource Units
-||Resource|Units||
-|---|---|
-|Memory| 1M, 50M, 1G, 1Mi, 50Mi, 1Gi|
-|CPU|1, 100m, 500m|
+| Resource | Units |
+| --- | --- |
+| Memory | 1M, 50M, 1G, 1Mi, 50Mi, 1Gi |
+| CPU | 1, 100m, 500m |
+
 Consequences of Exceeding Limit
-||Resource|Action||
-|---|---|
-|Memory|Kubelet will kill the containere and restart|
-|CPU|Container will NOT be killed. Throttled|
+| Resource | Action |
+| --- | --- |
+| Memory | Kubelet will kill the container and restart |
+| CPU | Container will NOT be killed. Throttled |
 
 Display CPU and memory usage:
 ```
@@ -703,19 +704,19 @@ An API object that manages external access to the services in a cluster, typical
 - We need Ingress Controller to manage Ingress
 
 #### Key concepts:
-**Ingress Controller**
+#### **Ingress Controller**
 - Manages Ingress resources (like Deployment Controller)
 - Implements the Ingress Rules
 - There aree multiple implementations (AWS, GCP, ...)
  
-**Ingress Resource**
+#### **Ingress Resource**
 Contains rules to route external HTTP(S) traffic to internal services.
 
-**Path-Based Routing**
+#### **Path-Based Routing**
 Different paths can be routed to different services
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 
-**Host-Based Routing**
+
+#### **Host-Based Routing**
 Different subdomains can be routed to different services
 
 Nginx Ingress Controller:
