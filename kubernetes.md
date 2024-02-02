@@ -708,13 +708,13 @@ An API object that manages external access to the services in a cluster, typical
 - Manages Ingress resources (like Deployment Controller)
 - Implements the Ingress Rules
 - There aree multiple implementations (AWS, GCP, ...)
+- Routes traffic to the services withint the namespace
  
 #### **Ingress Resource**
 Contains rules to route external HTTP(S) traffic to internal services.
 
 #### **Path-Based Routing**
 Different paths can be routed to different services
-
 
 #### **Host-Based Routing**
 Different subdomains can be routed to different services
@@ -723,3 +723,22 @@ Nginx Ingress Controller:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
 ```
+Check ingress on cluster:
+```
+kubectl get ns
+```
+List all Ingress resources:
+```
+kubectl get ing
+```
+Check ingress on cluster with specifying namespace:
+```
+kubectl get ns -n <my-namespace>
+```
+
+#### Host
+|OS|Host File Path|
+|---|---|
+|Mac/Linux|/etc/hots|
+|Windows|c:\Winows\System32\Drivers\etc\hosts|
+
