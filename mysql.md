@@ -76,3 +76,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION;
 show databases;
 CREATE DATABASE dbname;
 ```
+Mysql Connecto Java:
+```
+https://dev.mysql.com/downloads/connector/j/
+```
