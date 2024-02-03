@@ -65,3 +65,13 @@ show databases;
 ```
 mysqld --verbose --help | grep bind-address
 ```
+
+```
+docker container run -it --detach -p 3306:3306 --name mysql-server --env MYSQL_RANDOM_ROOT_PASSWORD=yes mysql:latest
+```
+```
+CREATE USER 'user'@'localhost' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION;
+show databases;
+CREATE DATABASE dbname;
+```
