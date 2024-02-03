@@ -62,4 +62,6 @@ docker exec -it <container-id> bash
 mysql -u root -p
 show databases;
 ```
-
+```
+mysqld --verbose --help | grep bind-address
+```
