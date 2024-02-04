@@ -28,9 +28,30 @@ Rollback changes made to the database based on the specific date:
 liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db/changelog/db.changelog-master.yaml --searchPath="<path>" --url="jdbc:mysql://localhost:3306/db" --username=username --password=<pwd> rollback-to-date 2024-02-04 15:44:58
 ```
 
-
+Generate the SQL to deploy changes in the changelog which have not been deployed:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db/changelog/db.changelog-master.yaml --searchPath="<path>" --url="jdbc:mysql://localhost:3306/db" --username=username --password=<pwd> --output-file=update.sql update-sql
+```
+Generate the raw SQL needed to rollback undeployed changes:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db/changelog/db.changelog-master.yaml --searchPath="<path>" --url="jdbc:mysql://localhost:3306/db" --username=username --password=<pwd> --output-file=update.sql future-rollback-sql
+```
+Updates database, then rolls back changes before updating again. Useful for testing rollback support:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db/changelog/db.changelog-master.yaml --searchPath="<path>" --url="jdbc:mysql://localhost:3306/db" --username=username --password=<pwd> --output-file=update.sql update-testing-rollback
+```
 To unlock liquibase:
 ```
 UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null where ID=1;
+```
+### Existing Projects Migration:
+- Ignore the history
+- Create historical changesets
+- Generate historical changesets
+
+### Legacy Project
+Initiate Liquibase:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db.changelog-master.yaml --url="jdbc:mysql://localhost:3306/employees" --username=<user> --password=<password> --output-file=rollback.sql update
 ```
 
