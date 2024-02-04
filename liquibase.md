@@ -46,7 +46,7 @@ UPDATE DATABASECHANGELOGLOCK SET LOCKED=FALSE, LOCKGRANTED=null, LOCKEDBY=null w
 ```
 ### Existing Projects Migration:
 - Ignore the history
-- Create historical changesets
+- Create historical changesets with <sql> tag
 - Generate historical changesets
 
 ### Legacy Project
@@ -54,4 +54,28 @@ Initiate Liquibase:
 ```
 liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db.changelog-master.yaml --url="jdbc:mysql://localhost:3306/employees" --username=<user> --password=<password> --output-file=rollback.sql update
 ```
+Marks all changes as executed in the database:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db.changelog-master.yaml --url="jdbc:mysql://localhost:3306/employees" --username=<user> --password=<password> changelog-sync
+```
+Generate a changelog:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db.changelog-master.yaml --url="jdbc:mysql://localhost:3306/employees" --username=<user> --password=<password>  generate-changelog
+```
+Marks all changes as executed in the database:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db.changelog-master.yaml --url="jdbc:mysql://localhost:3306/employees" --username=<user> --password=<password>  changelog-sync
+```
+#### Liquibase Community changelog example does not include generating:
+- package
+- packagebody
+- function
+- stored procedure
+- trigger
+- view
 
+#### Changest hash
+Drop all database objects:
+```
+liquibase --driver=com.mysql.cj.jdbc.Driver --classpath="/Users/vsushko/workspace/lb/mysql-connector-j-8.3.0/mysql-connector-j-8.3.0.jar" --changeLogFile=db.changelog-master.yaml --url="jdbc:mysql://localhost:3306/employees" --username=<user> --password=<password>  drop-all
+```
