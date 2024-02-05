@@ -70,10 +70,10 @@ https://github.com/kubernetes-sigs/kind/issues/2205
 ```
 ### Nodes
 Kubernetes runs your workload by placing containers into Pods to run on Nodes. 
-A node may be a virtual or physical machine, depending on the cluster. 
-Each node is managed by the control plane and contains the services necessary to run Pods.
+A **node** is a worker machine and it may be either a physical machine or virtual, depending on the cluster. 
+Each node contains the services necessary to run Pods.
 
-Get nodes:
+List all nodes:
 ```
 kubectl get nodes
 ```
