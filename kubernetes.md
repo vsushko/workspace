@@ -123,9 +123,21 @@ for troubleshooting:
 ```
 minikube delete
 ```
-and execute the command to install kubernetes into an existing docker install:
+Execute the command to install kubernetes into an existing docker install:
 ```
 minikube start --driver=docker
+```
+Start a Minikube Kubernetes cluster with a specified amount of memory:
+```
+minikube start --memory 6144
+```
+Stop a running Minikube cluster:
+```
+minikube stop
+```
+Delete a Minikube cluster:
+```
+minikube delete
 ```
 To make docker the default driver:
 ```
@@ -138,6 +150,10 @@ minikube docker-env
 get minikube's status:
 ```
 minikube status
+```
+Retrieve the IP address of the running Minikube instance:
+```
+minikube ip
 ```
 shows what we have in cluster:
 ```
