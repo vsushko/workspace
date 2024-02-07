@@ -14,9 +14,10 @@ A Service Mesh (an appliciation network for services) can provide the above. Kub
 ## Istio Architecture
 Istio components:
 - Istio Pilot (Config Data to Envoys)
-- Envoy Pilot 
-- Istio Mixer (Policy Checks, Telemetry)
-- Istio Citadel
+- Envoy Pilot. Handles configuration and programming of the proxy sidecars.
+- Istio Mixer (Policy Checks, Telemetry). Handles policy decisions for your traffic and gathers telemetry.
+- Istio Citadel - the Certificate Authority
+- IngressGateway - Handles incoming requests from outside your cluster.
 
 #### Istio Pilot
 - Control plane for distributed Envoy instances
@@ -119,3 +120,46 @@ Istio adapters seamlessly integrate a number of tools:
 - AZ-aware load balancing w/ automatic failover
 - Control connection pool size and request load
 - Systematic fault injection
+
+## Installation
+Get Istio and extract:
+```
+curl -sL https://istio.io/downloadIstioctl | sh -
+```
+```
+sudo cp istio-1.0.0/bin/istioctl /usr/local/bin/
+```
+Get version:
+```
+istioctl version
+```
+For google cloud:
+```
+kubectl create clusterrolebinding cluster-admin-binding \
+  --clusterrole=cluster-admin \
+  --user=$(gcloud config get-value core/account)
+```
+Install Istio via Helm:
+```
+https://istio.io/latest/docs/setup/install/helm/
+```
+
+```
+for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done
+kubectl apply -f install/kubernetes/istio-demo-auth.yaml
+kubectl get svc -n istio-system
+kubectl get pods -n istio-system
+kubectl delete -f install/kubernetes/istio-demo-auth.yaml
+for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl delete -f $i; done
+```
+
+Install the Istio CRDs:
+```
+istioctl install --set profile=demo -y
+```
+
+## Troubleshooting
+Install go:
+```
+brew install go
+```
