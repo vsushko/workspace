@@ -70,4 +70,52 @@ Citadel is needed for mutual TLS to work correctly
 
 Suggested best practice is to run Citadel in a dedicated namespace to restrict acceess to the cluster to only adminis.
 
+#### Istio Traffic Management
+Istio 1.0 comes with a new traffic management API (v1alpha3)
+Not backward compatible, requires manual upgrade.
 
+Four major components/services:
+- Gateway
+- VirtualService (replaces RouteRule)
+- DestinationRule (replaces DestinationPolicy)
+- ServiceEntry (replaces EgressRule)
+
+#### Mutual TLS
+- Available by default, but not required
+- When enabled, provides automatic service-to-service encryption
+- Istio has build in CA that watches for k8s service accounts and creates certificate keypair secrets in k8s
+- Secrets are automatically mounted when pod is created
+- Pilot generates appropriate Envoy config and deploys it
+- End-to-end mTLS session generated for each connection.
+
+#### Ingress/Egress
+- Istio assumes that all traffic entering/exiting the service mesh transits through Envoy proxies.
+- Deploying the Envoy proxy in front of services, operators can conduct A/B testing, deploy canary services, etc. for user-facing services.
+- Routing traffic to external web services (e.g. video service API) via the sidecar Envoy allows operators to add failure recovery features (e.g timeouts, retries, circuuit breakers, etc.) and obtain detailed metrics on the connections to these services.
+
+#### Service Observability/Visibility
+Monitoring and tracing should not be an afterthought
+Ideally a monitoring/tracing system should provide:
+- Metrics without instrumenting apps
+- Consistent metrics across fleet
+- Trace flow of requests across services
+- Portable across metric backend providers
+
+Istio adapters seamlessly integrate a number of tools:
+- Prometheus - gathers metrics from Istio Mixer
+- Grafana - produces dashboards from Prometheus metrics
+- Service Graph - generates visualizations of dependencies between services
+- Zipkin - distributed tracing
+
+#### Applicatiton/service REsiliencee with Istio
+- As the number of microservices, failuree is expected (inevitable?)
+- Fault-tolerance in applications is (should be) a requirement
+- Istio provides fault tolerance/resilience with no impact on application code
+- Istio provides multiple, build-in features to provide fauult tolerance:
+  - Timeouts
+  - Retries with timeout budget
+  - Circuit breakers
+  - Health checks
+- AZ-aware load balancing w/ automatic failover
+- Control connection pool size and request load
+- Systematic fault injection
