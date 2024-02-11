@@ -37,3 +37,7 @@ Executes the 'clean' task for the 'web' module, removing all build artifacts in 
 ```
 gradle :web:clean
 ```
+Show depencencies:
+```
+gradle web:dependencies
+```
