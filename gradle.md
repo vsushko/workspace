@@ -21,7 +21,7 @@ The `--daemon` flag enables the Gradle Daemon, a background process that improve
 ```
 gradle build --daemon
 ```
-The --no-daemon flag instructs Gradle to execute the build without using the Gradle Daemon, a background process for caching build data.
+The `--no-daemon` flag instructs Gradle to execute the build without using the Gradle Daemon, a background process for caching build data.
 ```
 gradle build --no-daemon
 ```
