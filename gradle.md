@@ -25,3 +25,11 @@ The `--no-daemon` flag instructs Gradle to execute the build without using the G
 ```
 gradle build --no-daemon
 ```
+Gradle project interface:
+```
+https://docs.gradle.org/current/javadoc/org/gradle/api/Project.html
+```
+Gradle project properties:
+```
+https://docs.gradle.org/current/userguide/project_properties.html
+```
