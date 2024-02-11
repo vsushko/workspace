@@ -33,3 +33,7 @@ Gradle project properties:
 ```
 https://docs.gradle.org/current/userguide/project_properties.html
 ```
+Executes the 'clean' task for the 'web' module, removing all build artifacts in a Gradle project:
+```
+gradle :web:clean
+```
