@@ -11,3 +11,13 @@ Execute task:
 gradle taskName
 gradle tN
 ```
+
+### Gradle phases:
+- **Initialization**: In this phase, Gradle determines which projects are going to be included in the build process. It creates a Project instance for each project that's going to be built.
+- **Configuration**: During this phase, Gradle interprets the build scripts of all the projects that were determined in the initialization phase. It configures the Project instances created in the initialization phase.
+- **Execution**: In this phase, Gradle executes the tasks that were configured in the configuration phase. The tasks are executed in the order that they were declared in the build script.
+
+The `--daemon` flag enables the Gradle Daemon, a background process that improves build speed by reusing computations and keeping build data in memory.
+```
+gradle build --daemon
+```
