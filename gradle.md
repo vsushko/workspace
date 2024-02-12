@@ -41,3 +41,7 @@ Show depencencies:
 ```
 gradle web:dependencies
 ```
+Initializes a new Gradle project with a basic set of project files and settings:
+```
+gradle init
+```
