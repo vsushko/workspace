@@ -31,7 +31,9 @@ kc.sh start-dev
 ```
 
 **Realm** - is a logical domain which groups together users, roles, clients, and other configurations.
+
 **Client** is an entity that can request Keycloak to authenticate a user. A client can represent applications, services, or devices that have registered with Keycloak and are capable of interacting with the Keycloak server.
+
 **Client Scopes** are a way to limit the claims and roles that are included in access tokens. They allow you to define a set of default client-level roles, protocol mappers, and other configurations that can be shared between multiple clients. This helps in reducing duplication and provides a centralized place to manage common settings.
 
 
