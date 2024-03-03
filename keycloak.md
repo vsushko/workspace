@@ -197,3 +197,17 @@ https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication
 - `given_name`: The user's given name.
 - `family_name`: The user's family name.
 - `email`: The user's email address.
+
+#### Spring Security OAuth 2 Documentation
+Spring Security OAuth 2 - Summary of Client Features:
+```
+https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html#oauth2-client
+```
+Spring Security OAuth 2 - Support for Login:
+```
+https://docs.spring.io/spring-security/reference/servlet/oauth2/login/core.html
+```
+Spring Security OAuth 2 - Support for Client:
+```
+https://docs.spring.io/spring-security/reference/servlet/oauth2/client/index.html
+```
