@@ -211,3 +211,11 @@ Spring Security OAuth 2 - Support for Client:
 ```
 https://docs.spring.io/spring-security/reference/servlet/oauth2/client/index.html
 ```
+Gitlab OpenID configuration (gitlab .well-known/openid-configuration):
+```
+https://docs.gitlab.com/ee/integration/openid_connect_provider.html
+```
+Gitlab OpenID configuration link:
+```
+https://gitlab.com/.well-known/openid-configuration
+```
