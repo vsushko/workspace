@@ -10,7 +10,7 @@ list all users:
 ```
 \du
 ```
-change password of the porstgres user
+change password of the porstgres user:
 ```
 \password postgres
 ```
