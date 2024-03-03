@@ -129,3 +129,71 @@ OpenID Connect Core - Client Authentication:
 ```
 https://openid.net/specs/openid-connect-core-1_0.html#ClientAuthentication
 ```
+
+#### Access Token Example
+```json
+{
+    "exp" : 1709477365,
+    "iat" : 1709477065,
+    "auth_time" : 1709477065,
+    "jti" : "56eb8e03-a501-4d71-b38c-099fe0a714f9",
+    "iss" : "http://127.0.0.1:9090/realms/oauthrealm",
+    "aud" : "account",
+    "sub" : "9b319159-6761-4a1f-9907-b02d263580ad",
+    "typ" : "Bearer",
+    "azp" : "bugtracker",
+    "nonce" : "TKuQExkchYh_B0uK3WnX56CbyogvD3rgyt_1RmH7Fjg",
+    "session_state" : "d8a0aed6-b7c1-4f37-869c-da5892b542db",
+    "acr" : "1",
+    "allowed-origins" : [
+        "http://localhost:8080"
+    ],
+    "realm_access" : {
+        "roles" : [
+            "default-roles-oauthrealm",
+            "offline_access",
+            "uma_authorization"
+        ]
+    },
+    "resource_access" : {
+        "account" : {
+            "roles" : [
+                "manage-account",
+                "manage-account-links",
+                "view-profile"
+            ]
+        }
+    },
+    "scope" : "openid bugtracker email profile",
+    "sid" : "d8a0aed6-b7c1-4f37-869c-da5892b542db",
+    "email_verified" : false,
+    "name" : "John Doe",
+    "preferred_username" : "johndoe",
+    "given_name" : "John",
+    "family_name" : "Doe",
+    "email" : "johndoe@company.com"
+}
+```
+- `exp`: Expiration time of the token in Unix time. The client should treat the token as invalid after this time.
+- `iat`: Issued at time. The time the token was issued at, in Unix time.
+- `auth_time`: The time the user authentication occurred.
+- `jti`: JWT ID. A unique identifier for the token, can be used to prevent the JWT from being replayed.
+- `iss`: Issuer. The server that issued the token.
+- `aud`: Audience. The intended recipient of the token. The client should verify that it is an intended audience for the token.
+- `sub`: Subject. The subject of the token, usually a machine-readable identifier of the user who authorized the token.
+- `typ`: Type of the token.
+- `azp`: Authorized party. The client ID of the application the token was issued for.
+- `nonce`: A string value provided by the application to prevent token replay attacks.
+- `session_state`: Session state. An opaque string representing the session state.
+- `acr`: Authentication Context Class Reference. The class of authentication methods used.
+- `allowed-origins`: A list of allowed origins for the token.
+- `realm_access`: Roles that the user has in the realm.
+- `resource_access`: Roles that the user has in each client application.
+- `scope`: Scopes that the client has been granted access to.
+- `sid`: Session ID. An opaque string representing the user's session.
+- `email_verified`: A boolean indicating whether the user's email address has been verified.
+- `name`: The user's full name.
+- `preferred_username`: The user's preferred username.
+- `given_name`: The user's given name.
+- `family_name`: The user's family name.
+- `email`: The user's email address.
