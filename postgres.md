@@ -1,6 +1,19 @@
-\du
-\password postgres
+# PostgreSQL
 
+#### Download page:
+```
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+```
+
+### Commands
+list all users:
+```
+\du
+```
+change password of the porstgres user
+```
+\password postgres
+```
 ### Troubleshooting
 role "postgres" does not exist
 ```
