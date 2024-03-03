@@ -219,3 +219,14 @@ Gitlab OpenID configuration link:
 ```
 https://gitlab.com/.well-known/openid-configuration
 ```
+#### Problems with Multiple Identity Providers
+- need to handle multiple Identity Providers
+- need to translate claims in code
+- users are not consolidated into one place
+- architecture problem
+  - SPA
+  - microservices problem
+
+#### OpenID Connect and Microservices
+
+
