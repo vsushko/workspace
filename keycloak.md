@@ -11,6 +11,10 @@ https://www.keycloak.org/docs/latest/server_admin/index.html
 ```
 https://www.okta.com/
 ```
+JWT Debugger:
+```
+https://jwt.io/
+```
 
 #### Keycloak Features
 - Single Sign-On
