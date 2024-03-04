@@ -223,6 +223,11 @@ Gitlab OpenID configuration link:
 ```
 https://gitlab.com/.well-known/openid-configuration
 ```
+Spring Security Resource Server Documentation:
+```
+https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html#oauth2-resource-server
+```
+
 #### Problems with Multiple Identity Providers
 - need to handle multiple Identity Providers
 - need to translate claims in code
