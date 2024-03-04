@@ -238,6 +238,14 @@ https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html#oauth
   - SPA
   - microservices problem
 
-#### OpenID Connect and Microservices
+#### SAML
+**SAML (Security Assertion Markup Language)** is a standard protocol for web browser Single Sign-On (SSO) using secure tokens. Keycloak, as an Identity Provider (IdP), supports SAML 2.0.
+
+With SAML, Keycloak can be used to provide authentication and authorization services to web applications (SAML Service Providers) in a secure way. It allows users to authenticate once with Keycloak, and then gain access to multiple applications without needing to authenticate with each individual application.
+
+Keycloak handles the exchange of SAML messages (in XML format) between the Service Provider and the IdP. It can issue SAML assertions on behalf of users, manage user sessions, and provide other features like role-based access control, user federation, and social logins.
+
+
+
 
 
