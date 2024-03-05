@@ -250,6 +250,23 @@ Copy here X509 Certificate for formatting:
 https://www.samltool.com/format_x509cert.php
 ```
 
+#### Spring Security - oauth2Login versus oauth2Client
+**HttpSecurity.oauth2Client(..)** should be used when the application needs exclusive OAuth capability to access a Resource Server. By calling the method, the relevant filters are registered in the Spring Security Filter chain and it generates the redirect "**authorize**" URL. This redirect URL needs to be registered with the Identity Provider.
 
+The format of the redirect authorize URL is:
+```
+<APPLICATION_ROOT>/authorize/oauth2/code/REG-ID
+ 
+# Example for registration id 'gitlab-oauth'
+http://localhost:8080/authorize/oauth2/code/gitlab-oauth
+```
+**HttpSecurity.oauth2Login(..)** should be used when the application needs to login to the application using OpenID Connect and optionally want to call microservice using an access token. By calling the method, the relevant filters are registered in the Spring Security Filter chain and it generates the redirect "**login**" URL. This login URL needs to be registered with the Identity Provider.
 
+The format of the redirect login URL is:
+```
+<APPLICATION_ROOT>/login/oauth2/code/REG-ID
+ 
+# Example for registration id 'keycloak-oidc'
+http://localhost:8080/login/oauth2/code/keycloak-oidc
+```
 
