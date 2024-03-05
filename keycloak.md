@@ -1,4 +1,4 @@
-# Keycloack
+# Keycloak
 
 #### Download page
 ```
@@ -245,6 +245,10 @@ With SAML, Keycloak can be used to provide authentication and authorization serv
 
 Keycloak handles the exchange of SAML messages (in XML format) between the Service Provider and the IdP. It can issue SAML assertions on behalf of users, manage user sessions, and provide other features like role-based access control, user federation, and social logins.
 
+Copy here X509 Certificate for formatting:
+```
+https://www.samltool.com/format_x509cert.php
+```
 
 
 
