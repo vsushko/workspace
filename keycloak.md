@@ -269,4 +269,7 @@ The format of the redirect login URL is:
 # Example for registration id 'keycloak-oidc'
 http://localhost:8080/login/oauth2/code/keycloak-oidc
 ```
-
+Spring Security OAuth Client and Login:
+```
+https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html#oauth2-client
+```
