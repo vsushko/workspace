@@ -380,4 +380,12 @@ public class MyProvider implements UserStorageProvider {
     // Implement the other methods defined in the UserStorageProvider interface...
 }
 ```
+#### Scopes
+- ProviderFactory: Application
+- KeycloackSession: Request scoped (in addition to other async tasks running in the background)
+- Provider: created on demand, lives for the whole Session
+
+How keycloak defines priorities:
+- it looks at the order() method()
+- otherewise loads them based on Classpath order (normally internal ones will always come first)
 In this example, MyProvider is a custom Provider class that implements the UserStorageProvider interface. It uses a KeycloakSession to access the user's session.
