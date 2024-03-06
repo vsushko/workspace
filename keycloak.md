@@ -273,3 +273,111 @@ Spring Security OAuth Client and Login:
 ```
 https://docs.spring.io/spring-security/reference/servlet/oauth2/index.html#oauth2-client
 ```
+
+#### ServiceLoader
+```
+https://docs.oracle.com/javase/8/docs/api/java/util/ServiceLoader.html
+```
+
+#### Spi
+Keycloak's `Spi` class is part of Keycloak's Service Provider Interface (SPI). SPIs are used in Keycloak to provide extensibility. They allow you to plug in your own providers for various aspects of the system.
+
+For example, you might want to plug in your own provider for user storage, so you would implement the UserStorageProvider SPI. Or you might want to plug in your own provider for events, so you would implement the EventListenerProvider SPI.
+
+The `Spi` class itself is a base class for all SPIs. It defines a few methods that all SPIs must implement, such as getName() (which returns the name of the SPI) and getProviderClass() (which returns the class of the provider for this SPI).
+
+Here is a simple example of how you might define a new SPI:
+```java
+public class MySpi implements Spi {
+
+    @Override
+    public boolean isInternal() {
+        return false;
+    }
+
+    @Override
+    public String getName() {
+        return "mySpi";
+    }
+
+    @Override
+    public Class<? extends Provider> getProviderClass() {
+        return MyProvider.class;
+    }
+
+    @Override
+    public Class<? extends ProviderFactory> getProviderFactoryClass() {
+        return MyProviderFactory.class;
+    }
+}
+```
+In this example, `MyProvider` would be your custom provider class, and `MyProviderFactory` would be a factory class that creates instances of `MyProvider`.
+
+Keycloak's SPIs:
+```
+http://127.0.0.1:9090/admin/master/console/#/master/providers
+```
+
+#### ProvierFactory
+The `ProviderFactory` class in Keycloak is part of Keycloak's Service Provider Interface (SPI). It's used to create instances of a specific `Provider`.
+
+A `Provider` in Keycloak is a specific implementation of a service. For example, you might have a `UserStorageProvider` that interfaces with a MySQL database, and another `UserStorageProvider` that interfaces with a PostgreSQL database. Each of these would be a `Provider`.
+
+The `ProviderFactory` is responsible for creating instances of these `Providers`. It has a single method, `create(KeycloakSession session)`, which creates and returns a new instance of the `Provider`.
+
+Here's a simple example of a `ProviderFactory`:
+
+```java
+public class MyProviderFactory implements ProviderFactory<MyProvider> {
+
+    @Override
+    public MyProvider create(KeycloakSession session) {
+        return new MyProvider(session);
+    }
+
+    // Other methods like init, postInit, close, getId...
+}
+```
+In this example, MyProvider is a custom Provider class, and MyProviderFactory is a factory that creates instances of MyProvider. The create method takes a KeycloakSession as a parameter, which can be used to access various aspects of the current Keycloak session.
+
+In Keycloak, the `Provider` class is a part of the Service Provider Interface (SPI). It represents a specific implementation of a service. For instance, you might have different `Provider` implementations for user storage, each interfacing with a different type of database.
+
+A `Provider` is created by a `ProviderFactory`, which is also part of the SPI. The `ProviderFactory` is responsible for creating instances of a `Provider`.
+
+Here's a simple example of a `Provider`:
+
+```java
+public class MyProvider implements UserStorageProvider {
+
+    private KeycloakSession session;
+
+    public MyProvider(KeycloakSession session) {
+        this.session = session;
+    }
+
+    // Implement the methods defined in the UserStorageProvider interface...
+}
+```
+In this example, MyProvider is a custom Provider class that implements the UserStorageProvider interface. It uses a KeycloakSession to access various aspects of the current Keycloak session.
+The `KeycloakSession` class in Keycloak represents a session with the Keycloak server. It provides methods to access various aspects of the session, such as the user's authentication state, the user's identity, and the user's permissions.
+
+Here's a simple example of how you might use a `KeycloakSession`:
+
+```java
+public class MyProvider implements UserStorageProvider {
+
+    private KeycloakSession session;
+
+    public MyProvider(KeycloakSession session) {
+        this.session = session;
+    }
+
+    public void doSomething() {
+        UserSessionModel userSession = session.getUserSession();
+        // Do something with the user session...
+    }
+
+    // Implement the other methods defined in the UserStorageProvider interface...
+}
+```
+In this example, MyProvider is a custom Provider class that implements the UserStorageProvider interface. It uses a KeycloakSession to access the user's session.
