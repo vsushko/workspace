@@ -78,3 +78,7 @@ make file executable:
 ```
 git update-index --chmod=+x filename
 ```
+Commits per author:
+```
+git shortlog -s -n
+```
