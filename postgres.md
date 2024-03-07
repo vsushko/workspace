@@ -4,7 +4,10 @@
 ```
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 ```
-
+find postgresql by port:
+```
+netstat -vanp tcp | grep 5432
+```
 ### Commands
 list all users:
 ```
