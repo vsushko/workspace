@@ -389,3 +389,12 @@ How keycloak defines priorities:
 - it looks at the order() method()
 - otherewise loads them based on Classpath order (normally internal ones will always come first)
 In this example, MyProvider is a custom Provider class that implements the UserStorageProvider interface. It uses a KeycloakSession to access the user's session.
+
+#### Authentication
+Configuring authentication:
+```
+https://www.keycloak.org/docs/latest/server_admin/index.html#configuring-authentication_server_administration_guide
+```
+
+
+
