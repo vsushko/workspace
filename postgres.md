@@ -8,6 +8,25 @@ find postgresql by port:
 ```
 netstat -vanp tcp | grep 5432
 ```
+
+#### Stopping a running server (macOS)
+installation directory:
+```
+cd /Library/PostgreSQL/<version>/bin
+```
+stop the Postgresql server:
+```
+pg_ctl stop
+```
+if above fails:
+```
+pg_ctl stop -D /Library/PostgreSQL/<version>/data
+```
+alternative approach:
+```
+sudo lsof -i:5432
+```
+
 ### Commands
 list all users:
 ```
