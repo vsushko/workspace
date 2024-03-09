@@ -395,6 +395,50 @@ Configuring authentication:
 ```
 https://www.keycloak.org/docs/latest/server_admin/index.html#configuring-authentication_server_administration_guide
 ```
+#### Configuring providers
+```
+https://www.keycloak.org/server/configuration-provider
+```
+
+```
+    command: ["start-dev", "--spi-email-sender-default-my-config=myValue",
+              "--spi-email-sender-provider=void-email-sender",
+              "--spi-password-policy-dollar-password-enabled=true"]
+```
+#### Add custom REST endpoints
+Add custom REST endpoints:
+```
+https://www.keycloak.org/docs/latest/server_development/#_extensions
+```
+test custom provider:
+```
+curl -v "localhost:8080/realms/master/email-exists?email=admin@admin.com"
+```
+get token:
+```
+http://localhost:8080/realms/master/protocol/openid-connect/auth?client_id=account-console&response_type=token&redirect_uri=https://httpbin.org/
+```
+take token from the output:
+```
+https://httpbin.org/#/session_state=8aed1318-2e37-4561-bd52-176f2ff3d42a&access_token=<my_token>&token_type=Bearer&expires_in=900
+export TOKEN=<my_token>
+```
+call the resource:
+```
+curl -H "Authorization: Bearer $TOKEN" "localhost:8080/realms/master/email-exists?email=admin@admin.com"
+```
+#### Required Actions:
+Required actions for all users:
+```
+https://www.keycloak.org/docs/latest/server_admin/#proc-setting-default-required-actions_server_administration_guide
+```
+#### Theme resources
+```
+https://www.keycloak.org/docs/latest/server_development/#_theme_resource
+```
+
+
+
 
 
 
