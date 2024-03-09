@@ -6,43 +6,44 @@ add user your to docker group:
 sudo usermod -aG docker your-user
 ```
 run container sh:
-
-`docker exec -it <container-id> 'sh'`
-
+```
+docker exec -it <container-id> 'sh'
+```
 display running containers:
-
-`docker ps`
-
+```
+docker ps
+```
 restart containers:
-
-`docker restart <container-name>`
-
+```
+docker restart <container-name>
+```
 stop all containers:
-
-`docker stop $(docker ps -a -q)`
-
+```
+docker stop $(docker ps -a -q)
+```
 remove all containers:
-
-`docker rm $(docker ps -a -q)`
-
+```
+docker rm $(docker ps -a -q)
+```
 examine logs container (display the logs and then continue watching -f or --follow):
-
-`docker logs <container-name>`
-
+```
+docker logs <container-name>
+```
 stop container:
-
-`docker stop <container-name>`
-
+```
+docker stop <container-name>
+```
 download, install and start container running application:
-
-`docker run --detach --name <container-name> <image>`
-
+```
+docker run --detach --name <container-name> <image>
+```
 creating a PID namespace:
-
-`docker run -d --name namespaceA <image> /bin/sh -c "sleep 30000"`
-
-`docker run -d --name namespaceB <image> /bin/sh -c "nc -l -p 0.0.0.0:80"`
-
+```
+docker run -d --name namespaceA <image> /bin/sh -c "sleep 30000"
+```
+```
+docker run -d --name namespaceB <image> /bin/sh -c "nc -l -p 0.0.0.0:80"
+```
 examine (docker exec command runs additional process in a running container):
 
 `docker exec namespaceA ps`
