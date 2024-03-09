@@ -445,8 +445,14 @@ Themes:
 ```
 https://www.keycloak.org/docs/latest/server_development/#deploying-themes
 ```
-
-
+#### Add custom JPA entities to the Keycloak data model
+```
+https://www.keycloak.org/docs/latest/server_development/#_extensions_jpa
+```
+#### User Storage SPI
+```
+https://www.keycloak.org/docs/latest/server_development/#_user-storage-spi
+```
 
 
 
