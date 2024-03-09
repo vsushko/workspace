@@ -45,47 +45,48 @@ docker run -d --name namespaceA <image> /bin/sh -c "sleep 30000"
 docker run -d --name namespaceB <image> /bin/sh -c "nc -l -p 0.0.0.0:80"
 ```
 examine (docker exec command runs additional process in a running container):
-
-`docker exec namespaceA ps`
-
-`docker exec namespaceB ps`
-
+```
+docker exec namespaceA ps
+```
+```
+docker exec namespaceB ps
+```
 shows list all processes running on the computer(optionaly create container without their own PID namespace - docker create):
-
-`docker run --pid host <image> ps`
-
+```
+docker run --pid host <image> ps
+```
 rename the container with the docker rename command:
-
-`docker rename <container-name> <new-container-name>`
-
+```
+docker rename <container-name> <new-container-name>
+```
 use container-id with stop or exec command:
-
-`docker exec <container-id> ps`
-
-`docker stop <container-id> ps`
-
+```
+docker exec <container-id> ps
+```
+```
+docker stop <container-id> ps
+```
 create container without starting it (in a stopped state):
-
-`docker create <container-name>`
-
+```
+docker create <container-name>
+```
 assing container id to a shell variable and print it:
-
-`CID=$(docker create <image-name>) | echo $CID`
-
+```
+CID=$(docker create <image-name>) | echo $CID
+```
 write the ID of a new container to a known file:
-
-`docker create --cidfile /tmp/<file-name>.cid <image-name>`
-
+```
+docker create --cidfile /tmp/<file-name>.cid <image-name>
+```
 get the trancated ID of the last created container (--no-trunc for full container ID):
-
-`CID=$(docker ps --latest --quiet)`
-
+```
+CID=$(docker ps --latest --quiet)
+```
 See all the containers(including those in the exited state):
-
-`docker ps -a`
-
+```
+docker ps -a
+```
 create new instance using variables(needs to be started in reverse order of their dependency chain):
-
 ```
 VARIABLE1_CID=$(docker run -d <image>)
 VARIABLE2_CID=$(docker run -d <image>)
@@ -100,13 +101,13 @@ link docker containres
 docker run -it --link "container1:tag" container2 /bin/bash
 ```
 start container in read-only state:
-
-`docker run -d --name <name> --read-only <image>`
-
+```
+docker run -d --name <name> --read-only <image>
+```
 start container:
-
-`docker run --rm --name <container-name> -it <container-name:tag> bash`
-
+```
+docker run --rm --name <container-name> -it <container-name:tag> bash
+```
 print true if the container named <name> is running and false otherwise:
 
 `docker inspect --format "{{.State.Running}}" <name>`
