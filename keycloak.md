@@ -436,6 +436,29 @@ https://www.keycloak.org/docs/latest/server_admin/#proc-setting-default-required
 ```
 https://www.keycloak.org/docs/latest/server_development/#_theme_resource
 ```
+### Configuring Authentication
+Authentication flows:
+```
+https://www.keycloak.org/docs/latest/server_admin/#_authentication-flows
+```
+Themes:
+```
+https://www.keycloak.org/docs/latest/server_development/#deploying-themes
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
