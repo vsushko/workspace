@@ -40,6 +40,18 @@ or:
 ```
 git diff --stat origin/master
 ```
+generate new key:
+```
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+Always use the "git" user:
+```
+ssh -T GITHUB-USERNAME@github.com
+```
+You should verify your connection by typing:
+```
+ssh -T git@github.com
+```
 will get you back 1 commit:
 ```
 git reset --hard HEAD~1
