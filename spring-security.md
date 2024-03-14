@@ -17,3 +17,14 @@ OAuth2.0:
 ```
 https://oauth.net/2/
 ```
+
+Using OAuth 2.0 to Access Google APIs:
+```
+https://developers.google.com/identity/protocols/oauth2
+```
+Basic steps:
+1. Obtain OAuth 2.0 credentials from the Google API Console.
+2. Obtain an access token from the Google Authorization Server.
+3. Examine scopes of access granted by the user.
+4. Send the access token to an API.
+5. Refresh the access token, if necessary.
