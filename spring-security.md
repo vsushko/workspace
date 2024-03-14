@@ -28,3 +28,8 @@ Basic steps:
 3. Examine scopes of access granted by the user.
 4. Send the access token to an API.
 5. Refresh the access token, if necessary.
+
+OAuth 2.0 Playground
+```
+https://www.oauth.com/playground/
+```
