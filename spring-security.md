@@ -12,3 +12,8 @@ Bcrypt-Generator:
 ```
 https://bcrypt-generator.com/
 ```
+
+OAuth2.0:
+```
+https://oauth.net/2/
+```
