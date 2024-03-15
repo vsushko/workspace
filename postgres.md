@@ -9,13 +9,9 @@ find postgresql by port:
 netstat -vanp tcp | grep 5432
 ```
 #### Starting a server (macOS)
-go to installation directory:
+start postgresql:
 ```
-cd /Library/PostgreSQL/16/bin/
-```
-starting postgresql:
-```
-pg_ctl start -D /Library/PostgreSQL/16/data
+sudo -u postgres /Library/PostgreSQL/16/bin/pg_ctl start -D /Library/PostgreSQL/16/data
 ```
 #### Stopping a running server (macOS)
 installation directory:
