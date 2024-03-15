@@ -31,7 +31,7 @@ https://jwt.io/
 #### Commands:
 start keycloak:
 ```
-kc.sh start-dev
+./kc.sh start-dev --http-port <PORT>
 ```
 
 ### Key Terms
