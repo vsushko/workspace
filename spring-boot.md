@@ -1,6 +1,7 @@
+# Spring Boot
 
-
-build-packs:
+### Containerization
+#### build-packs:
 ```
 https://buildpacks.io/
 ```
@@ -18,4 +19,21 @@ build image using buildpacks:
 ```
 ```
 mvn spring-boot:build-image 
+```
+#### google jib:
+```
+https://github.com/GoogleContainerTools/jib
+```
+build image using jib:
+```xml
+  <plugin>
+      <groupId>com.google.cloud.tools</groupId>
+      <artifactId>jib-maven-plugin</artifactId>
+      <version>3.4.1</version>
+      <configuration>
+          <to>
+              <image>eazybytes/${project.artifactId}:s4</image>
+          </to>
+      </configuration>
+  </plugin>
 ```
