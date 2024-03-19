@@ -37,3 +37,6 @@ build image using jib:
       </configuration>
   </plugin>
 ```
+```
+mvn compile jib:dockerBuild
+```
