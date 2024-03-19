@@ -3,7 +3,7 @@
 ### Containerization
 #### build-packs:
 ```
-https://buildpacks.io/
+https://buildpacks.io/features
 ```
 build image using buildpacks:
 ```xml
