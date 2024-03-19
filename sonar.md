@@ -9,3 +9,7 @@ Login and Password:
 ```
 When installing SonarQube, a default user with Administer System permission is created automatically: Login: admin. Password: admin.
 ```
+test coverage:
+```
+https://docs.sonarsource.com/sonarcloud/enriching/test-coverage/java-test-coverage/
+```
