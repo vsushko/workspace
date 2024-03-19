@@ -12,7 +12,7 @@ build image using buildpacks:
       <artifactId>spring-boot-maven-plugin</artifactId>
       <configuration>
           <image>
-              <name>eazybytes/${project.artifactId}:s4</name>
+              <name>vsushkodev/${project.artifactId}:s4</name>
           </image>
       </configuration>
   </plugin>
@@ -31,8 +31,11 @@ build image using jib:
       <artifactId>jib-maven-plugin</artifactId>
       <version>3.4.1</version>
       <configuration>
+          <from>
+              <image>openjdk:21-jdk</image>
+          </from>
           <to>
-              <image>eazybytes/${project.artifactId}:s4</image>
+              <image>vsushkodev/${project.artifactId}:s4</image>
           </to>
       </configuration>
   </plugin>
