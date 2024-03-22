@@ -49,14 +49,22 @@ connecting to the docker container from outside:
 ```
 https://stackoverflow.com/questions/37694987/connecting-to-postgresql-in-a-docker-container-from-outside
 ```
+SQL Vacuum:
+```
 https://www.postgresql.org/docs/9.1/sql-vacuum.html
-
+```
+list databases:
+```
+SELECT datname FROM pg_database;
+```
 list tables:
 ```
 \dt
 ```
 postgress location:
-`sudo ls -l /usr/lib/postgresql/12`
+```
+sudo ls -l /usr/lib/postgresql/12
+```
 
 db cluster (PGDATA): 
 `ls -l /var/lib/postgresql/12/main`
