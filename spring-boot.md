@@ -62,5 +62,5 @@ mvn compile jib:dockerBuild
 ```
 #### Environment version
 ```
-SPRING_PROFILES_ACTIVE=prod BUILD_VERSION=1.0.0
+SPRING_PROFILES_ACTIVE=prod;BUILD_VERSION=1.0.0;
 ```
