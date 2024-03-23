@@ -51,3 +51,8 @@ mvn compile jib:dockerBuild
 - ServletContext init parameters
 - ServletConfig init parameters
 - Command line arguments
+
+#### Program Arguments
+```
+--spring.profiles.active=dev --build.version=1.1.0
+```
