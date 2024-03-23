@@ -60,3 +60,7 @@ mvn compile jib:dockerBuild
 ```
 -Dspring.profiles.active=prod -Dbuild.version=1.1
 ```
+#### Environment version
+```
+SPRING_PROFILES_ACTIVE=prod BUILD_VERSION=1.0.0
+```
