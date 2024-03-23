@@ -56,3 +56,7 @@ mvn compile jib:dockerBuild
 ```
 --spring.profiles.active=dev --build.version=1.1.0
 ```
+#### VM Options
+```
+-Dspring.profiles.active=prod -Dbuild.version=1.1
+```
