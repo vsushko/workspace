@@ -64,3 +64,24 @@ mvn compile jib:dockerBuild
 ```
 SPRING_PROFILES_ACTIVE=prod;BUILD_VERSION=1.0.0;
 ```
+#### Actuator
+```yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+```
+```
+http://localhost:8080/actuator
+```
+Refresh (POST):
+```
+http://localhost:8080/actuator/refresh
+```
+```
+[
+  "config.client.version",
+  "accounts.message"
+]
+```
