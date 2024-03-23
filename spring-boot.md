@@ -43,3 +43,11 @@ build image using jib:
 ```
 mvn compile jib:dockerBuild
 ```
+#### Properties
+- Properties present inside files like application properties
+- OS Environmental variables
+- Java System propertiees (System.getProperties())
+- JNDI attributes from java:comp/env
+- ServletContext init parameters
+- ServletConfig init parameters
+- Command line arguments
