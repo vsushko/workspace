@@ -93,4 +93,5 @@ https://console.hookdeck.com/
 brew install hookdeck/hookdeck/hookdeck
 hookdeck login --cli-key 4epjt46jdobco7bay8a03jk4fzu555p1l6jngsiw8wll2ruxwa
 hookdeck listen [port] Source
+hookdeck logout
 ```
