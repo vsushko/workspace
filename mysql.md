@@ -68,9 +68,14 @@ mysqld --verbose --help | grep bind-address
 
 ```
 docker container run -it --detach -p 3306:3306 --name mysql-server --env MYSQL_RANDOM_ROOT_PASSWORD=yes mysql:latest
-vsushko$ docker inspect mysql-server | grep -i IPAddress
+docker run -p 3306:3306 --name accountsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=accountsdb -d mysql
 ```
+inspect running mysql instance:
 ```
+docker inspect mysql-server | grep -i IPAddress
+```
+create database:
+```sql
 CREATE USER 'user'@'localhost' IDENTIFIED BY '';
 GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost' WITH GRANT OPTION;
 show databases;
