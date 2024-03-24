@@ -66,10 +66,12 @@ show databases;
 mysqld --verbose --help | grep bind-address
 ```
 
-```
+```sh
 docker container run -it --detach -p 3306:3306 --name mysql-server --env MYSQL_RANDOM_ROOT_PASSWORD=yes mysql:latest
-docker run -p 3306:3306 --name accountsdb -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=accountsdb -d mysql
-```
+# or
+docker run -it -d -p 3306:3306 --name accountsdb -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=accountsdb mysql:latest
+docker run -it -d -p 3307:3306 --name loansdb -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=loansdb mysql:latest
+docker run -it -d -p 3308:3306 --name cardsdb -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=cardsdb mysql:latest```
 inspect running mysql instance:
 ```
 docker inspect mysql-server | grep -i IPAddress
