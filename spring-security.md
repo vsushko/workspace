@@ -7,7 +7,10 @@ https://docs.spring.io/spring-boot/docs/current/reference/html/application-prope
 ```
 https://docs.spring.io/spring-security/reference/migration-7/configuration.html
 ```
-
+#### Sprinig Authorization Server
+```
+https://spring.io/projects/spring-authorization-server
+```
 Bcrypt-Generator:
 ```
 https://bcrypt-generator.com/
