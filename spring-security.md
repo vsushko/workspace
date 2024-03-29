@@ -17,7 +17,10 @@ OAuth2.0:
 ```
 https://oauth.net/2/
 ```
-
+Github Scopes for OAuth:
+```
+https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/scopes-for-oauth-apps
+```
 Using OAuth 2.0 to Access Google APIs:
 ```
 https://developers.google.com/identity/protocols/oauth2
