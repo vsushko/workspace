@@ -219,3 +219,7 @@ How to Install Minikube on Ubuntu 22.04 LTS:
 ```
 https://www.fosstechnix.com/how-to-install-minikube-on-ubuntu-22-04-lts/
 ```
+Apache HTTP Server:
+```
+https://httpd.apache.org/docs/2.4/getting-started.html
+```
