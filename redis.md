@@ -20,6 +20,10 @@ brew tap redis-stack/redis-stack
 brew install redis-stack
 redis-stack-server
 ```
+docker:
+```
+docker run -p 6379:6379 --name myredis -d redis
+```
 To connect to your local Redis server and execute commands, run redis-cli
 
 Design considerations:
