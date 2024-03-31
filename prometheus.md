@@ -6,3 +6,7 @@ Targets:
 ```
 http://localhost:9090/targets?search=
 ```
+Visualizations:
+```
+https://prometheus.io/docs/visualization/grafana/
+```
