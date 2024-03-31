@@ -10,3 +10,7 @@ local running grafana url:
 ```
 http://localhost:3000/
 ```
+Collections of shared dashboards:
+```
+https://grafana.com/grafana/dashboards/
+```
