@@ -2,5 +2,5 @@
 
 Documentation:
 ```
-https://opentelemetry.io/docs/
+https://opentelemetry.io/docs/getting-started/dev/
 ```
