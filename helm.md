@@ -1,6 +1,39 @@
+# Helm
+Using helm:
+```
+https://helm.sh/docs/intro/using_helm/
+```
 install helm via brew:
 ```
 brew install helm
+```
+list helm charts:
+```
+helm ls
+```
+search artifact hub:
+```
+helm search hub spring
+```
+Application Dashboard for Kubernetes:
+```
+https://kubeapps.dev/
+```
+add repo repo:
+```
+helm repo add bitnami https://repo.com/chart
+```
+Installs chart from repo:
+```
+helm install <name> repo/chart
+```
+display environment variables:
+```
+helm env
+```
+remove release helm chart:
+```
+helm uninstall helm-chart-name
 ```
 create chart:
 ```
@@ -10,7 +43,6 @@ check for communication with EKS:
 ```
 kubectl config current-context
 ```
-
 install application with helm:
 ```
 cd chart-folder
