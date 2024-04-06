@@ -53,6 +53,10 @@ install application with helm:
 cd chart-folder
 helm install vsushko-chart .
 ```
+takes a Helm chart in the current directory and renders its templates using the values specified in the values.yaml file:
+```
+helm template .
+```
 Upgrade chart with modifying the service type from ClusterIP to LoadBalanceer in valuees.yaml file.
 Make the application publicly accesseble and save file:
 ```
