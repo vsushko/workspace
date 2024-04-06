@@ -113,10 +113,81 @@ Access the k8s dashboard:
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
+creating a service account:
+```
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+```
+create file:
+```
+vim dashboard-adminuser.yaml
+```
+put this content:
+```yml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+```
+run the command:
+```
+kubectl apply -f dashboard-adminuser.yaml
+```
 create token for k8s dashboard:
 ```
 kubectl -n kubernetes-dashboard create token admin-user
 ```
+Creating a ClusterRoleBinding
+```
+vim dashboard-rolebinding.yaml
+```
+put thee content:
+```yml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kubernetes-dashboard
+```
+apply:
+```
+kubectl apply -f dashboard-rolebinding.yaml
+```
+get token for admin user:
+```
+kubectl -n kubernetes-dashboard create token admin-user
+```
+create secret:
+```
+vim secret.yaml
+```
+put the content:
+```yml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/service-account.name: "admin-user"   
+type: kubernetes.io/service-account-token  
+```
+apply:
+```
+kubectl apply -f secret.yaml
+```
+execute the following command to get the token which saved in the secret:
+```
+kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+```
+
 ### Minikube
 install minikube:
 ```
