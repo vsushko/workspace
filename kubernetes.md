@@ -95,6 +95,14 @@ apiVersion: v1
 kind: Config
 preferences: {}
 ```
+switch to docker desktop context:
+```
+kubectl config use-context docker-desktop
+```
+switching verification:
+```
+kubectl config current-context
+```
 Install Kubernetes Dashboard:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
