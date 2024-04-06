@@ -566,7 +566,23 @@ Send curl request 1000 times and grep string:
 ```sh
 for i in {1..1000}; do curl -s http://my-app | grep -o "<title>[^<]*" | tail -c+8; done
 ```
-
+get services:
+```
+kubectl get svc
+```
+sample output:
+```
+| NAME          | TYPE          | CLUSTER-IP     | EXTERNAL-IP | PORT(S)        | AGE  |
+| ------------- | ------------- | -------------- | ----------- | -------------- | ---- |
+| s1            | LoadBalancer  | 10.105.146.79  | localhost   | 8080:31486/TCP | 90m  |
+| s2            | LoadBalancer  | 10.105.108.199 | localhost   | 9000:32001/TCP | 89m  |
+| configserver  | LoadBalancer  | 10.111.49.6    | localhost   | 8071:32600/TCP | 111m |
+| eurekaserver  | LoadBalancer  | 10.107.192.200 | localhost   | 8070:31409/TCP | 90m  |
+| gatewayserver | LoadBalancer  | 10.111.81.99   | localhost   | 8072:32381/TCP | 89m  |
+| keycloak      | LoadBalancer  | 10.109.3.171   | localhost   | 7080:31256/TCP | 90m  |
+| kubernetes    | ClusterIP     | 10.96.0.1      | <none>      | 443/TCP        | 126m |
+| s3            | LoadBalancer  | 10.105.24.136  | localhost   | 8090:30578/TCP | 90m  |
+```
 ## Namespace
 Virtual cluster / Partitioning within a cluster
 - Isolating a group of resources within a cluster
