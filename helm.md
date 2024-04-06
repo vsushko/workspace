@@ -3,6 +3,10 @@ Using helm:
 ```
 https://helm.sh/docs/intro/using_helm/
 ```
+bitnami charts:
+```
+https://github.com/bitnami/charts
+```
 install helm via brew:
 ```
 brew install helm
