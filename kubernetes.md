@@ -68,6 +68,12 @@ kind get kubeconfig gives unclear error:
 ```
 https://github.com/kubernetes-sigs/kind/issues/2205
 ```
+
+get cluster events:
+```
+kubectl get events --sort-by=.metadata.creationTimestamp
+```
+
 ### Nodes
 Kubernetes runs your workload by placing containers into Pods to run on Nodes. 
 A **node** is a worker machine and it may be either a physical machine or virtual, depending on the cluster. 
@@ -445,6 +451,10 @@ spec:
       operator: In
       values: [ "team-a", "team-b" ]
 ```
+scale deployment:
+```
+kubectl scale deployment <deployment-name> --replicas=1
+```
 
 ### Deployment
 A *Deployment* provides declarative updates for Pods and ReplicaSets.
@@ -502,6 +512,18 @@ kubectl rollout undo deploy/order-service-deploy --to-revision=1
 Checking Rollout Changes:
 ```
 kubectl rollout history deploy --revision=5
+```
+change deployment image:
+```
+kubectl set image deployment orderserver-deployment orderserver=vsushko/orderserver:1.2.1 --record
+```
+show rollout history:
+```
+kubectl rollout history deployment order-deployment
+```
+got to revision:
+```
+kubectl rollout undo deployment orderserver-deployment --to-revision=1
 ```
 ### Deployment Strategy
 
