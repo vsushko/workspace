@@ -1,6 +1,6 @@
 install helm via brew:
 ```
-brew install hel
+brew install helm
 ```
 create chart:
 ```
