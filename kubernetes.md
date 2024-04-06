@@ -781,6 +781,10 @@ Delete Persistent Volumes (PVs):
 kubectl delete -f <file.yaml>
 # pv will be deleted automatically
 ```
+Delete PersistentVolumeClaim (PVCs):
+```
+kubectl delete pvc <pvc-name>
+```
 Delete all PersistentVolumeClaim (PVCs):
 ```
 kubectl delete pvc --all
