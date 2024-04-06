@@ -39,6 +39,11 @@ create chart:
 ```
 helm create vsushko-chart
 ```
+compile helm chart:
+```
+cd vsushko-chart
+helm dependencies build
+```
 check for communication with EKS:
 ```
 kubectl config current-context
