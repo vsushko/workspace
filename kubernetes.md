@@ -562,6 +562,8 @@ This is the default option if we do not specify. Mostly this is what we use.
 - To be used in the cloud provider
 - To receive external traffiic and foward to pods
 
+**ExternalName** - Services of type ExternalName map a Service to a DNS name, not to a typical selector such as my-service or cassanra
+
 Send curl request 1000 times and grep string:
 ```sh
 for i in {1..1000}; do curl -s http://my-app | grep -o "<title>[^<]*" | tail -c+8; done
