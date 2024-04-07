@@ -61,6 +61,10 @@ takes a Helm chart in the current directory and renders its templates using the 
 ```
 helm template .
 ```
+helm upgrade:
+```
+helm upgrade release prod-env
+```
 Upgrade chart with modifying the service type from ClusterIP to LoadBalanceer in valuees.yaml file.
 Make the application publicly accesseble and save file:
 ```
