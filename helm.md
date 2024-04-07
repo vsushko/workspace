@@ -85,3 +85,17 @@ What is HELM | Why We need HELM | Create HELM Chart?:
 ```
 https://www.fosstechnix.com/what-is-helm-why-we-need-helm-helm-charts/
 ```
+helm history:
+```
+helm history release
+```
+rollback:
+```
+helm rollback release 1
+```
+helm uninstall:
+```
+helm ls
+helm uninstall release
+helm uninstall <chart-name>
+```
