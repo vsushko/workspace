@@ -14,3 +14,9 @@ which aws
 $ aws --version
 aws-cli/2.15.36 Python/3.11.8 Darwin/22.6.0 exe/x86_64 prompt/off
 ```
+list AWS IAM users:
+```
+aws iam list-users
+# or
+aws iam list-users --region me-central-1
+```
