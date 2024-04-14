@@ -1,7 +1,11 @@
 # AWS
-global-infrastructure:
+#### Global infrastructure
 ```
 https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4
+```
+#### AWS Policy Generator
+```
+https://awspolicygen.s3.amazonaws.com/policygen.html
 ```
 cli installation:
 ```
