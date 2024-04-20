@@ -24,3 +24,7 @@ aws iam list-users
 # or
 aws iam list-users --region me-central-1
 ```
+create default vpc:
+```
+https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-vpc
+```
