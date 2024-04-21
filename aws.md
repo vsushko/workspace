@@ -33,3 +33,7 @@ https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default
 ```
 https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html
 ```
+#### AWS Global Accelerator. Speed Comparison
+```
+https://speedtest.globalaccelerator.aws/
+```
