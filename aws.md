@@ -28,3 +28,8 @@ create default vpc:
 ```
 https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-vpc
 ```
+
+#### Amazon S3 Transfer Acceleration. Speed Comparison
+```
+https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html
+```
