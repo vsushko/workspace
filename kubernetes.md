@@ -879,6 +879,10 @@ Check ingress on cluster with specifying namespace:
 ```
 kubectl get ns -n <my-namespace>
 ```
+get the full ingress object:
+```
+kubectl get ingress -n <my-namespace> -o json
+```
 
 #### Host
 |OS|Host File Path|
