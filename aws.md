@@ -37,3 +37,7 @@ https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-
 ```
 https://speedtest.globalaccelerator.aws/
 ```
+CIDR:
+```
+cidr.xyz
+```
