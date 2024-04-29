@@ -39,5 +39,5 @@ https://speedtest.globalaccelerator.aws/
 ```
 CIDR:
 ```
-cidr.xyz
+https://cidr.xyz/
 ```
