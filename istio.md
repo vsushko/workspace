@@ -122,6 +122,7 @@ Istio adapters seamlessly integrate a number of tools:
 - Systematic fault injection
 
 ## Installation
+### Manual installation
 Get Istio and extract:
 ```
 curl -sL https://istio.io/downloadIstioctl | sh -
@@ -143,7 +144,6 @@ Install Istio via Helm:
 ```
 https://istio.io/latest/docs/setup/install/helm/
 ```
-
 ```
 for i in install/kubernetes/helm/istio-init/files/crd*yaml; do kubectl apply -f $i; done
 kubectl apply -f install/kubernetes/istio-demo-auth.yaml
@@ -157,6 +157,16 @@ Install the Istio CRDs:
 ```
 istioctl install --set profile=demo -y
 ```
+### Installation with helm
+```
+https://istio.io/latest/docs/setup/install/helm/
+```
+get service install in instio namespace:
+```
+kubectl get svc -n istio-system
+```
+
+
 
 ## Troubleshooting
 Install go:
