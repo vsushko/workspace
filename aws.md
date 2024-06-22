@@ -45,3 +45,7 @@ AWS Free Tier:
 ```
 https://aws.amazon.com/free/
 ```
+7 Strategies for Migrating Applications to the Cloud, introducing AWS Mainframe Modernization and AWS Migration Hub Refactor Spaces:
+```
+https://aws.amazon.com/blogs/enterprise-strategy/new-possibilities-seven-strategies-to-accelerate-your-application-migration-to-aws/
+```
