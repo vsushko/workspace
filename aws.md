@@ -10,6 +10,26 @@
 - Improve thrrough game days
 - - Simulate applications for rflash scale days
 
+### AWS Cloud Best Practices - Design Principles
+- Scalability: vertical & horizontal
+- Disposable Resources: servers should be disposable & easily configured
+- Automation: Serverless, Infrastructure as a Service, Auto Scaling ...
+- Loose Coupling:
+- - Monolith are applications that do more and more over time, become bigger
+  - Break it down int smaller, loosely coupled components
+  - A change or a failure in one component should not cascade to other components
+- Services, not Servers:
+- Don't use just EC2
+- Use managed services, databases, serverless, etc!
+
+### Well Architected Framework. 6 Pillars
+- Operational Excellence
+- Security
+- Rreliabilityy
+- Performance Efficiency
+- Cost Optimization
+- Sustainability
+
 #### Global infrastructure
 ```
 https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4
