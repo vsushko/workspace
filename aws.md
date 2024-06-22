@@ -1,4 +1,15 @@
 # AWS
+
+### Well Architected Framework General Guiding Principles
+- Stop guessing your capacity needs
+- Test systems at production scale
+- Automate to make architectural experimentation easier
+- Allow for evolutionary architectures
+- - Design based on changing requirements
+- Drive architectures using data
+- Improve thrrough game days
+- - Simulate applications for rflash scale days
+
 #### Global infrastructure
 ```
 https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&loc=4
