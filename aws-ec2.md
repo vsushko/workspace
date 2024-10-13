@@ -25,6 +25,10 @@ sudo yum install stress -y
 ```
 sudo yum install stress -y
 ```
+will create a high CPU load by running 4 processes that continuously perform computations:
+```
+stress -c 4
+```
 
 ## Troubleshooting:
 user is not authorized to perform: ecr:GetAuthorizationToken on resource: * because no identity-based policy allows the ecr:GetAuthorizationToken action:
