@@ -16,12 +16,16 @@ putty download link:
 ```
 https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 ```
-#### Install Stress Utility on Amazon Linux 2
+#### Install Stress Utility on Amazon Linux 2 and Amazon Linux 2023
 stress.sh
 ```sh
 sudo amazon-linux-extras install epel -y
 sudo yum install stress -y
 ```
+```
+sudo yum install stress -y
+```
+
 ## Troubleshooting:
 user is not authorized to perform: ecr:GetAuthorizationToken on resource: * because no identity-based policy allows the ecr:GetAuthorizationToken action:
 ```
