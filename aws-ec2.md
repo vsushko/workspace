@@ -40,3 +40,7 @@ https://stackoverflow.com/questions/38587325/aws-ecr-getauthorizationtoken
 ```
 https://stackoverflow.com/questions/63262449/no-basic-auth-credentials-github-to-aws-ecr-deployment-on-git-events
 ```
+install commands such as dig, nslookup
+```
+sudo yum install -y bind-utils
+```
