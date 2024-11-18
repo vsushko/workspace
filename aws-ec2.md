@@ -44,3 +44,17 @@ install commands such as dig, nslookup
 ```
 sudo yum install -y bind-utils
 ```
+
+Configuring a profile:
+```
+aws configure --profile my-aws-account
+cat config
+aws s3 ls --profile my-aws-account
+```
+aws cli with MFA:
+```
+aws sts get-session-token --seriial-number arn:aws:iam::1414124124124:mfa/vasushko -- token-code 812412
+aws configure --profile mfa
+cat ~/.aws/credentials
+aws s3 ls --profile mfa
+```
