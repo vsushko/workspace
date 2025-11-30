@@ -1,6 +1,8 @@
 ### Installation
 https://kubernetes.io/docs/tasks/tools/install-kubectl/
 
+https://kubernetes.github.io/ingress-nginx/examples/rewrite/
+
 install kubectl on macOS:
 ```
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl"
