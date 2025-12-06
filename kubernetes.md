@@ -1042,9 +1042,8 @@ kubectl run time-check \
   --command -- /bin/sh -c "while true; do date; sleep \$TIME_FREQ; done > /opt/time/time-check.log" \
   --dry-run=client -o yaml > pod.yaml
 ```
-
 then add volume + mount:
-``yaml
+```yaml
 spec:
   volumes:
     - name: log-volume
