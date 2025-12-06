@@ -964,3 +964,60 @@ spec:
 status: {}
 ```
 
+### Network policy is blocking incoming and outgoing connections:
+```sh
+k get networkpolicy -o yaml
+```
+NetworkPolicy:
+```yaml
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: NetworkPolicy
+  metadata:
+    creationTimestamp: "2025-12-06T20:40:46Z"
+    generation: 1
+    name: default-deny
+    namespace: default
+    resourceVersion: "4797"
+    uid: 328cd052-1bc8-4f3d-8955-6eeeca92d9a7
+  spec:
+    podSelector: {}
+    policyTypes:
+    - Ingress
+kind: List
+metadata:
+  resourceVersion: ""
+```
+create new NetwowrkPolicy:
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: test-network-policy
+  namespace: default
+spec:
+  podSelector:
+    matchLabels:
+      run: secure-pod
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          name: webapp-color
+    ports:
+    - protocol: TCP
+      port: 80
+```
+test:
+```
+k exec -it webapp-color -- sh
+
+nc -v -z -w 5 secure-service 80
+```
+
+
+
+
