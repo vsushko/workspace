@@ -892,3 +892,79 @@ kubectl get ingress -n <my-namespace> -o json
 |Mac/Linux|/etc/hots|
 |Windows|c:\Winows\System32\Drivers\etc\hosts|
 
+-----------------------------------------------------------------
+Create PV, PVC and POD:
+
+#### PV
+There is no kubectl generator for PersistentVolume.
+
+You must write yaml:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: log-volume
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /opt/volume/nginx
+```
+Generator for PVC:
+```sh
+kubectl create pvc log-claim \
+  --storage=200Mi \
+  --access-modes=ReadWriteMany \
+  --class=manual \
+  --dry-run=client -o yaml > log-claim.yaml
+```
+#### PVC
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: log-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 200Mi
+  storageClassName: manual
+```
+#### POD
+Generator for simple POD:
+```sh
+kubectl run logger \
+  --image=nginx:alpine \
+  --labels=run=logger \
+  --dry-run=client -o yaml > logger.yaml
+```
+Add volumes and volumeMounts and PVC reference:
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: logger
+  name: logger
+spec:
+  containers:
+    - image: nginx:alpine
+      name: nginx
+      volumeMounts:
+        - mountPath: "/var/www/nginx"
+          name: log-volume
+  volumes:
+    - name: log-volume
+      persistentVolumeClaim:
+        claimName: log-claim
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+```
+
