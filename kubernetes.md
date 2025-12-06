@@ -893,7 +893,7 @@ kubectl get ingress -n <my-namespace> -o json
 |Windows|c:\Winows\System32\Drivers\etc\hosts|
 
 -----------------------------------------------------------------
-Create PV, PVC and POD:
+### Create PV, PVC and POD:
 
 #### PV
 There is no kubectl generator for PersistentVolume.
@@ -1025,6 +1025,76 @@ nc -v -z -w 5 secure-service 80
 wget -qO- http://secure-service:80
 ```
 
+### Create a BusyBox-based pod that runs a loop writing timestamps to /opt/time/time-check.log, using a ConfigMap (TIME_FREQ=10) and a persistent volume mount inside the dvl1987 namespace:
+```sh
+k create ns dvl1987
+```
+configmap creation:
+```sh
+k create cm time-config --from-literal=TIME_FREQ=10 -n dvl1987
+```
+pod creation:
+```
+time-check
 
 
+kubectl run time-check \
+  -n dvl1987 \
+  --image=busybox \
+  --labels=run=time-check \
+  --command -- /bin/sh -c "while true; do date; sleep \$TIME_FREQ; done > /opt/time/time-check.log" \
+  --dry-run=client -o yaml > pod.yaml
 
+
+then add volume + mount:
+```
+
+spec:
+  volumes:
+    - name: log-volume
+      emptyDir: {}
+  containers:
+    - name: time-check
+      image: busybox
+      volumeMounts:
+        - mountPath: /opt/time
+          name: log-volume
+```
+Replace the env section with proper configMapKeyRef (and fix indentation):
+```yaml
+      env:
+        - name: TIME_FREQ
+          valueFrom:
+            configMapKeyRef:
+              name: time-config
+              key: TIME_FREQ
+```
+Result:
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-deploy
+  name: nginx-deploy
+  namespace: default
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx-deploy
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 2
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: nginx-deploy
+    spec:
+      containers:
+      - image: nginx:1.16
+        imagePullPolicy: IfNotPresent
+        name: nginx
+```
