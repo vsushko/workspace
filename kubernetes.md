@@ -914,15 +914,11 @@ spec:
   hostPath:
     path: /opt/volume/nginx
 ```
-Generator for PVC:
-```sh
-kubectl create pvc log-claim \
-  --storage=200Mi \
-  --access-modes=ReadWriteMany \
-  --class=manual \
-  --dry-run=client -o yaml > log-claim.yaml
-```
 #### PVC
+There is no kubectl generator for PersistentVolumeClaim.
+
+You must write yaml:
+
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
