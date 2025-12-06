@@ -989,6 +989,11 @@ kind: List
 metadata:
   resourceVersion: ""
 ```
+check labesl for pods:
+```
+k get po --show-labels
+k get svc --show-labels
+```
 create new NetwowrkPolicy:
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -1016,6 +1021,8 @@ test:
 k exec -it webapp-color -- sh
 
 nc -v -z -w 5 secure-service 80
+# or
+wget -qO- http://secure-service:80
 ```
 
 
