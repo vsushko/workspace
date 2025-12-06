@@ -1034,21 +1034,17 @@ configmap creation:
 k create cm time-config --from-literal=TIME_FREQ=10 -n dvl1987
 ```
 pod creation:
-```
-time-check
-
-
+```sh
 kubectl run time-check \
   -n dvl1987 \
   --image=busybox \
   --labels=run=time-check \
   --command -- /bin/sh -c "while true; do date; sleep \$TIME_FREQ; done > /opt/time/time-check.log" \
   --dry-run=client -o yaml > pod.yaml
-
-
-then add volume + mount:
 ```
 
+then add volume + mount:
+``yaml
 spec:
   volumes:
     - name: log-volume
