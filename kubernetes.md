@@ -937,7 +937,6 @@ Generator for simple POD:
 ```sh
 kubectl run logger \
   --image=nginx:alpine \
-  --labels=run=logger \
   --dry-run=client -o yaml > logger.yaml
 ```
 Add volumes and volumeMounts and PVC reference:
@@ -1038,8 +1037,6 @@ pod creation:
 kubectl run time-check \
   -n dvl1987 \
   --image=busybox \
-  --labels=run=time-check \
-  --command -- /bin/sh -c "while true; do date; sleep \$TIME_FREQ; done > /opt/time/time-check.log" \
   --dry-run=client -o yaml > pod.yaml
 ```
 then add volume + mount:
