@@ -1115,6 +1115,10 @@ k get pods
 
 kubectl rollout history deploy nginx-deploy
 ```
+set image:
+```
+kubectl set image deployment nginx nginx=nginx:1.17 --record
+```
 do the rollback:
 ```sh
 kubectl rollout undo deploy nginx-deploy --to-revision=1
