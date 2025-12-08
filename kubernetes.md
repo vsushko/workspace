@@ -1093,3 +1093,110 @@ spec:
         imagePullPolicy: IfNotPresent
         name: nginx
 ```
+
+### Create an nginx-deploy Deployment with nginx:1.16, four replicas, and a RollingUpdate strategy (maxSurge=1, maxUnavailable=2), upgrade it to 1.17, then roll back to the previous version.
+
+```sh
+k create deploy nginx-deploy --image=nginx:1.16 --replicas=4 --dry-run=client -o yaml > deploy.yaml
+```
+
+add strategy:
+```yaml
+ strategy:
+   type: RollingUpdate
+   rollingUpdate:
+     maxSurge: 1
+      maxUnavailable: 2
+```
+
+check:
+```sh
+k get pods
+
+kubectl rollout history deploy nginx-deploy
+```
+do the rollback:
+```sh
+kubectl rollout undo deploy nginx-deploy --to-revision=1
+```
+check:
+```
+k get pods
+
+k describe deploy
+```
+
+### Create a redis Deployment (redis:alpine) with one replica, label app=redis, a 200m CPU request, port 6379, and two volumes: an emptyDir data volume mounted at /redis-master-data and a ConfigMap redis-config volume mounted at /redis-master.
+
+```
+k create deploy redis --image=redis:alpine --replicas=1 --port=6379 --dry-run=client -o yaml > deploy.yaml
+```
+
+add CPU request:
+```yaml
+resources:
+  requests:
+    cpu: "200m"
+```
+
+Add VolumeMounts;
+```yaml
+volumeMounts:
+  - mountPath: /redis-master-data
+    name: data
+  - mountPath: /redis-master
+    name: redis-config
+```
+add Volumes:
+```yaml
+volumes:
+  - name: data
+    emptyDir: {}
+  - name: redis-config
+    configMap:
+      name: redis-config
+```
+Final result
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: redis
+  name: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      containers:
+      - image: redis:alpine
+        name: redis
+        ports:
+        - containerPort: 6379
+        resources:
+          requests:
+            cpu: "200m"
+        volumeMounts:
+         - mountPath: /redis-master-data
+           name: data
+         - mountPath: /redis-master
+           name: redis-config
+      volumes:
+       - name: data
+         emptyDir: {}
+       - name: redis-config
+         configMap:
+           name: redis-config
+status: {}
+```
+
+
+
+
