@@ -1066,32 +1066,35 @@ Replace the env section with proper configMapKeyRef (and fix indentation):
 ```
 Result:
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Pod
 metadata:
   labels:
-    app: nginx-deploy
-  name: nginx-deploy
-  namespace: default
+    run: time-check
+  name: time-check
+  namespace: dvl1987
 spec:
-  replicas: 4
-  selector:
-    matchLabels:
-      app: nginx-deploy
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 2
-    type: RollingUpdate
-  template:
-    metadata:
-      labels:
-        app: nginx-deploy
-    spec:
-      containers:
-      - image: nginx:1.16
-        imagePullPolicy: IfNotPresent
-        name: nginx
+  containers:
+  - image: busybox
+    name: time-check
+    volumeMounts: 
+      - mountPath: /opt/time
+        name: log-volume
+    env:
+      - name: TIME_FREQ
+        valueFrom:
+          configMapKeyRef:
+            name: time-config
+            key: TIME_FREQ
+    command: ["/bin/sh"]
+    args: ["-c", "while true; do date; sleep $TIME_FREQ; done > /opt/time/time-check.log"]
+    resources: {}
+  volumes:
+    - name: log-volume
+      emptyDir: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
 ```
 
 ### Create an nginx-deploy Deployment with nginx:1.16, four replicas, and a RollingUpdate strategy (maxSurge=1, maxUnavailable=2), upgrade it to 1.17, then roll back to the previous version.
