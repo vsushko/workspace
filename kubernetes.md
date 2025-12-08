@@ -1202,7 +1202,7 @@ status: {}
 ```
 
 ### Fix Readiness Probe
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
