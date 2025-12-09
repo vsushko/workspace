@@ -1260,7 +1260,96 @@ spec:
   schedule: "0/1 * * * *"
 status: {}
 ```
+valid solution:
+```yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: dice
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      completions: 1
+      backoffLimit: 25 # This is so the job does not quit before it succeeds.
+      activeDeadlineSeconds: 20
+      template:
+        spec:
+          containers:
+          - name: dice
+            image: kodekloud/throw-dice
+          restartPolicy: Never
+```
 check that job was created:
 ```sh
-k get c
+k get cj
+```
+
+### Create a pod named my-busybox in the dev2406 namespace using the busybox image, with a container named secret that sleeps for 3600 seconds. Mount the existing secret dotfile-secret as a read-only volume called secret-volume at /etc/secret-volume.
+solution:
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: my-busybox
+  name: my-busybox
+  namespace: dev2406
+spec:
+  volumes:
+  - name: secret-volume
+    secret:
+      secretName: dotfile-secret
+  nodeSelector:
+    kubernetes.io/hostname: controlplane
+  containers:
+  - command:
+    - sleep
+    args:
+    - "3600"
+    image: busybox
+    name: secret
+    volumeMounts:
+    - name: secret-volume
+      readOnly: true
+      mountPath: "/etc/secret-volume"
+```
+
+### A pod called dev-pod-dind-878516 has been deployed in the default namespace. Inspect the logs for the container called log-x and redirect the warnings to /opt/dind-878516_logs.txt on the controlplane node
+```sh
+kubectl logs dev-pod-dind-878516 -c log-x | grep WARNING > /opt/dind-878516_logs.txt
+```
+
+### Create an ingress named ingress-vh-routing that routes HTTP traffic to two hostnames: watch.ecom-store.com serving the video-service at the path /video, and apparels.ecom-store.com serving the apparels-service at /wear. Use port 30093 for the Ingress controller and include the rewrite annotation nginx.ingress.kubernetes.io/rewrite-target: /.
+
+```yaml
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: ingress-vh-routing
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: watch.ecom-store.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/video"
+        backend:
+          service:
+            name: video-service
+            port:
+              number: 8080
+  - host: apparels.ecom-store.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/wear"
+        backend:
+          service:
+            name: apparels-service
+            port:
+              number: 8080
 ```
