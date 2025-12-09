@@ -1243,12 +1243,10 @@ spec:
       name: dice
     spec:
       template:
-        metadata: {}
         spec:
           containers:
           - image: kodekloud/throw-dice
             name: dice
-            resources: {}
           restartPolicy: Never
       backoffLimit: 25
       podFailurePolicy:
@@ -1271,7 +1269,7 @@ spec:
   jobTemplate:
     spec:
       completions: 1
-      backoffLimit: 25 # This is so the job does not quit before it succeeds.
+      backoffLimit: 25
       activeDeadlineSeconds: 20
       template:
         spec:
@@ -1286,12 +1284,15 @@ k get cj
 ```
 
 ### Create a pod named my-busybox in the dev2406 namespace using the busybox image, with a container named secret that sleeps for 3600 seconds. Mount the existing secret dotfile-secret as a read-only volume called secret-volume at /etc/secret-volume.
-solution:
+pod creation command:
+```sh
+k run my-busybox --image=busybox --dry-run=client -oyaml > pod.yaml 
+```
+set the namespace to the dev2406, add volume and volume mounts and node scheduling nodename property:
 ```yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  creationTimestamp: null
   labels:
     run: my-busybox
   name: my-busybox
@@ -1306,7 +1307,6 @@ spec:
   containers:
   - command:
     - sleep
-    args:
     - "3600"
     image: busybox
     name: secret
@@ -1315,14 +1315,8 @@ spec:
       readOnly: true
       mountPath: "/etc/secret-volume"
 ```
-
-### A pod called dev-pod-dind-878516 has been deployed in the default namespace. Inspect the logs for the container called log-x and redirect the warnings to /opt/dind-878516_logs.txt on the controlplane node
-```sh
-kubectl logs dev-pod-dind-878516 -c log-x | grep WARNING > /opt/dind-878516_logs.txt
-```
-
 ### Create an ingress named ingress-vh-routing that routes HTTP traffic to two hostnames: watch.ecom-store.com serving the video-service at the path /video, and apparels.ecom-store.com serving the apparels-service at /wear. Use port 30093 for the Ingress controller and include the rewrite annotation nginx.ingress.kubernetes.io/rewrite-target: /.
-
+copy ingress configuration from documentaiton and modify it:
 ```yaml
 kind: Ingress
 apiVersion: networking.k8s.io/v1
@@ -1353,3 +1347,10 @@ spec:
             port:
               number: 8080
 ```
+
+### A pod called dev-pod-dind-878516 has been deployed in the default namespace. Inspect the logs for the container called log-x and redirect the warnings to /opt/dind-878516_logs.txt on the controlplane node
+```sh
+k get pods
+kubectl logs dev-pod-dind-878516 -c log-x | grep WARNING > /opt/dind-878516_logs.txt
+```
+
