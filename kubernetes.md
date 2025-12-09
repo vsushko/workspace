@@ -1225,5 +1225,42 @@ replace pod:
 k replace --force -f fpod.yaml 
 ```
 
+### Create a CronJob named dice that runs every minute using the pod template at /root/throw-a-dice. The throw-dice image succeeds only on value 6 and fails otherwise. The job must run once (non-parallel), use backoffLimit 25, and fail with pod termination if it does not finish within 20 seconds.
 
-
+job creation:
+```sh
+k create cj dice --image=throw-dice --schedule='*/1 * * * *' --dry-run=client -oyaml > cj.yaml
+```
+add change backoffLimit to 25, add podFailurePolicy, change restartPolicy to Never:
+```yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: dice
+spec:
+  jobTemplate:
+    metadata:
+      name: dice
+    spec:
+      template:
+        metadata: {}
+        spec:
+          containers:
+          - image: kodekloud/throw-dice
+            name: dice
+            resources: {}
+          restartPolicy: Never
+      backoffLimit: 25
+      podFailurePolicy:
+        rules:
+        - action: FailJob
+          onExitCodes:
+            operator: NotIn
+            values: [6]
+  schedule: "0/1 * * * *"
+status: {}
+```
+check that job was created:
+```sh
+k get c
+```
