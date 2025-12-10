@@ -1354,3 +1354,33 @@ k get pods
 kubectl logs dev-pod-dind-878516 -c log-x | grep WARNING > /opt/dind-878516_logs.txt
 ```
 
+### Create a redis deployment using the image redis:alpine with 1 replica and label app=redis. Expose it via a ClusterIP service called redis on port 6379. Create a new Ingress Type NetworkPolicy called redis-access which allows only the pods with label access=redis to access the deployment.
+to create a deployment:
+```sh
+kubectl create deployment redis --image=redis:alpine --replicas=1
+```
+to expose a deployment with ClusterIP:
+```sh
+kubectl expose deployment redis --name=redis --port=6379 --target-port=6379
+```
+to create ingress rule:
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: redis-access
+spec:
+  podSelector:
+    matchLabels:
+       app: redis
+  policyTypes:
+  - Ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          access: redis
+    ports:
+     - protocol: TCP
+       port: 6379
+```
