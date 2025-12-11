@@ -1524,3 +1524,15 @@ spec:
         - "echo 'cowsay I am going to ace CKAD!'"
       restartPolicy: Never
 ```
+
+expose service with NodePort:
+```sh
+k expose deployment my-webapp --name front-end-service --type NodePort --port=80
+```
+create ingress imperatively with host:
+```
+k create ing ingress --rule="ckad-mock-exam-solution/video*=my-video-service:8080"
+```
+
+
+
