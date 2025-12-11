@@ -1384,3 +1384,143 @@ spec:
      - protocol: TCP
        port: 6379
 ```
+
+### Add a NoSchedule taint to node01 with key app_type and value alpha, then deploy a pod named alpha using the redis image that includes a matching toleration so it can be scheduled onto node01.
+
+k get nodes
+
+k taint nodes node01 app_type=alpha:NoSchedule
+
+k run alpha --image=redis --dry-run=client -oyaml > pod2.yaml
+
+k apply -f pod2.yaml 
+
+k describe node | grep Taint
+
+k get pod alpha -owide
+
+
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: alpha
+  name: alpha
+spec:
+  containers:
+  - image: redis
+    name: alpha
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  tolerations:
+  - key: "app_type"
+    operator: "Equal"
+    value: "alpha"
+    effect: "NoSchedule"
+status: {}
+
+
+
+### Label the controlplane node with app_type=beta, then create a 3-replica nginx deployment named beta-apps that uses node affinity to ensure all pods are scheduled exclusively on the controlplane node.
+
+kubectl get node controlplane --show-labels
+
+k label node controlplane app_type=beta
+
+kubectl get node controlplane --show-labels
+
+k create deploy beta-apps --image=nginx --replicas=3 --dry-run=client -oyaml > deploy3.yaml
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: beta-apps
+  name: beta-apps
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: beta-apps
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: beta-apps
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: app_type
+                operator: In
+                values:
+                - beta
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
+```
+to verify:
+```sh
+kubectl get pods --output=wide
+```
+
+### Create an ingress that exposes the my-video-service at http://ckad-mock-exam-solution.com:30093/video by defining host ckad-mock-exam-solution.com, path /video, and adding the nginx.ingress.kubernetes.io/rewrite-target: / annotation.
+
+vim ing4.yaml
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-video-service-ing
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "ckad-mock-exam-solution.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/video"
+        backend:
+          service:
+            name: my-video-service
+            port:
+              number: 8080
+
+
+
+### Create a job named whalesay using the busybox image that runs the command echo "cowsay I am going to ace CKAD!", configured with 10 completions, a backoffLimit of 6, and a Never restart policy.
+job creation:
+```
+kubectl create job whalesay   --image=busybox   --dry-run=client -o yaml   -- echo "cowsay I am going to ace CKAD!" > cj7.yaml
+```
+add completions and backoffLimit:
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: whalesay
+spec:
+  completions: 10
+  backoffLimit: 6
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - name: busybox-cowsay
+        image: busybox
+        command:
+        - sh
+        - -c
+        - "echo 'cowsay I am going to ace CKAD!'"
+      restartPolicy: Never
+```
