@@ -63,6 +63,3 @@
   ```bash
   hf update
   ```
-
-  For additional information, see the official [Hugging Face CLI documentation](https://huggingface.co/docs/huggingface_hub/guides/cli) and [Buckets documentation](https://huggingface.co/
-  docs/huggingface_hub/guides/buckets).
