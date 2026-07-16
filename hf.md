@@ -14,14 +14,6 @@
   export PATH="$HOME/.local/bin:$PATH"
   ```
 
-  ### Windows PowerShell
-
-  ```powershell
-  powershell -ExecutionPolicy ByPass -c "irm https://hf.co/cli/install.ps1 | iex"
-  ```
-
-  Restart PowerShell after installation.
-
   ### Verify the installation
 
   ```bash
